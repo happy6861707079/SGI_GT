@@ -1,0 +1,834 @@
+GT/GTX overview
+
+Main References
+"High-Performance Polygon Rendering", Kurt Akeley and Tom Jermoluk, SIGGRAPH Computer Graphics, Volume 22, Number 4, August 1988, pp 239-246
+sgi 007-1203-040 "Graphics Library Reference, C Edition", September 1990
+sgi 007-1120-020 "Graphics Library Programming Guide v2.0", May 1990
+
+http://www.sgistuff.net/hardware/graphics/clover2.html (general info and board photos)
+
+sgi headers from irix 4.0.5 distribution
+  sys/clover2.h
+  sys/gtx.h
+  gl/gl.h
+
+Additional References
+sgi 007-0908-020 "Tuning Graphics Code for Your IRIS-4D Workstation", 1988
+sgi 007-0909-010 "Porting Applications to the IRIS-4D Family v1.1", 1988
+
+Board numbers
+
+  Geometry Engine 
+  030-0075-00x GE4
+
+  Geometry Manager
+  030-0076-00x GM1   for Professional IRIS sytems
+  030-0085-00x GM2   for POWER IRIS systems
+
+  Raster Manager and Video
+  030-0077-00x RV1   provides video output and 1/5 of rasterizer 
+  030-0078-00x RM1   single board provides 2/5 of rasterizer
+  030-0154-00x RV1.5 provides video output and 1/5 of rasterizer
+  030-0381-00x RV2   provides advanced video output (video output formatter, vof) and all 5/5 of rasterizer on single board
+
+  Video Option (also work with VGX graphics ?)
+  030-0116-00x VP1  video ? ?, video frame grabber, can digitize a frame of video at a time
+  030-0175-00x VO1  video overlay ?, can combine live video with graphics, might only be supported with RV2
+  030-0190-00x VS1  video splitter, can split video output to four screens, might only be supported with RV2
+
+  Other Option
+  030-0045-00x CG2  VME board, composite video genlock
+
+A graphics board set consists of
+  one GE4
+  one GM
+  one RV1 and two RM1 
+    or 
+  one RV1.5 and two RM1
+    or
+  one RV2
+  one or zero video options (if the backplane has a slot)
+  one or zero CG2 (backplane has traces from the VME slot nearest the graphics to provide genlock sync signals)
+
+----
+
+Hardware Overview
+
+The GE4 board provides a pipeline of five Geometry Engines
+  Each Geometry Engine has 
+    a Weitek 3332 floating point processor
+    a sequencer/controller (GEC chips)
+    a memory pointer register
+    a program ram
+    a data ram
+    a FIFO to store a command with four parameters (DP chips)
+  The first two have (8K * 64 bit wide) of program ram and the remaining three have only (2K * 64 bit wide)
+  The first two have (8K * 32 bit wide) of data ram and the remaining three have only (2K * 32 bit wide)
+  Each instruction word is 64 bits, specifying sources to the Weitek inputs, a Weitek instruction, destinations for Weitek outputs,
+    memory pointer operation, data bus transfer source and destination, program control / branching and a sixteen bit field for immediate data.
+  
+  The first Geometry Engine FIFO is connected to the host (MIPS) system through a data converter (graphics pipe)
+  that converts float, double, int and packed int arguments into 32 bit floats.
+  
+  The last Geometry Engine pushes its output into a FIFO buffer and into the vertex buffer for the Polygon Processor on the GM board.
+
+  The Geometry Engine processes commands by using each 8 bit command tag as an address into the first 256 instructions.
+  
+The GM board has
+   a Motorola 68020 as the Graphics Manager
+   a boot PROM for the 68020
+   8*128K DRAM for the GM, holds GM microcode and data
+   8*128K DRAM for host-GM communications visible to the MIPS/system bus
+   a SCN2681 UART for GM debug console
+   an interface to load the GE4 microcode program rams
+   an interface to the GE4 graphics pipe (FIFO inputs)
+   a video bus interface to the raster managers and video options
+   the Polygon Processor (PP)
+   GM-PP interface and GM state registers
+   the Edge Processor (EP)
+   pixel buffer for framebuffer readback
+
+The GM2 board adds
+   pixel buffer dma
+   tag ram and interface to graphics pipe, allows the system bus to use cache refill operations to transfer data to the graphics pipe
+   Sync Bus Controller (SBCC), allows the GM to work in a multi-processor (MP) system, routes interrupts to the processor assigned to graphics
+   
+The Polygon Processor (PP) is a processor built from discrete components
+   the ALU is provided by a Logic L4C381 (operational equivalent of 4 74381 ALU's to provide 16 bit, with 2 input registers and 1 output register)
+   2 * 2 * 74 377 8 bit registers to provide 16 bit registers for pipelined register of ALU outputs ?
+   72 bit wide (9 * 2 * 4 bits * 4K) microcode ram
+   16 bit wide (4 * 4 bits * 4K) SRAM data memory
+   two 16 bit wide (4 * 4 bits * 4K) vertex buffers, the GE can write data into one buffer while the PP works with data in the other
+   3 * 74 283 adders for a 12 bit program counter
+   3 * 74 258 2 to 1 multiplexer for 12 bit branch address selection
+   3 * PAL16R8 for a program stack
+   2 * 74 569 up/down counters + another 4 bits of register (PAL16R4?) for a 12 bit memory/vertex pointer
+   3 * 74 157 2 to 1 multiplexer for 12 bit memory address selection
+   1 * PAL16L4? for condition flag latch and branch condition calculation
+   1 * 74 151 8 to 1 multiplexer for branch condition selection
+   interface to Edge Processor (EP) and Slope Calculator (SC)
+   
+   The Polygon Processor uses each 8 bit command tag as an address into the first 256 instructions.
+   
+The Edge Processor (EP)   
+   7 dda's for X,Y,Z, R,G,B,A
+     computes two horizontal edges (edge a and edge b)
+     each dda has 8 registers
+       edge a slope, high bits
+       edge a slope, low bits
+       edge b slope, high bits
+       edge b slope, low bits
+       edge a start value
+       edge b start value
+       edge a and b start value (set both identical with one register write)
+       counter
+   8 additional registers
+     command register, uses 6? bits as index into EP program PROM
+     stipple register, 16 bit pattern to enable or disable pixel outputs
+     pixel buffer ptr
+     mode register, color index vs. RGB, stipple on/off, anti-alias (coverage alpha) on-off, anti-alias line type, pixel buffer access
+       for anti-alias "Filtering Edges for Gray-Scale Displays, Satish Gupta and Robert F. Sproull, Computer Graphics Vol 15. Number 3, August 1981)
+     recip (slope calculator input)
+     and 3 unused/unknown indices
+     
+     Appears to have a 6 bit command tag.
+
+Span Processors (SP)
+   given spans with constant x values, computes values of R,G,B,A,Z between the two span endpoints
+   appears to apply the screen mask (scissoring window) and a 1 bit on/off stencil pattern (framebuffer aligned)
+
+Image Engines (aka IMP, Image Memory Processor?)
+  appears to have 5 registers
+    write mask (logical and with pixel value ?)
+    blend and depth state (on enhanced RV2 hardware also supports logicop)
+    buffer selection state
+    window ID
+    and 1 unknown register
+
+Video
+  XMAP provides pixel output format for each window id, color palettes for color index mode, overlay/underlay
+  support for 4 bt457 RAMDAC, 2 bt431 cursors, configurable clock and monitor type
+  board type ID register
+
+----
+
+Software Overview
+
+GM PROM
+  initializes UART, test DRAM, initialize DRAM, test PP ucode RAM, PP SRAM, PP wordcount
+  load textport PP microcode (contained in GM PROM), test PP command interface
+  enter gm monitor
+  provide support for graphics commands in gmhost.h
+  provide support for host to load ucode
+GM PROM textport PP microcode
+  commands
+   00 PP reset (waits for EP)
+   07 set screen mask
+   08 PP_SETMODE
+   10 set color
+   13 charstr
+   16 write IMP register
+   18 PP_INIT
+   4a draw rectangle
+   5d draw line of packed RGB data (for drawing logo)
+   5f cmov (cursor move)
+
+gfxinit
+  probes for graphics hardware
+  loads ucode (gm1.u, ge1.u ge2.u ge3.u ge4.u ge5.u pp1.u)
+  sends GE initialize command, 0xc0
+gt kernel dev (gtx.o)
+  provide support for communication between kernel and graphics, gtx.h, gm.h, gfx.h
+    describes graphics hardware
+    attaches graphics hardware
+    maps graphics addresses into process virtual addresses
+    sends GE swap buffer commands (GE passes data to the GM)
+    sends GE vertical retrace event commands (GE passes data to the GM)
+    assigns graphics context to user process, sends scrmask, 0xd5 and widreg, 0xd6 GE commands
+    sends XMAP settings
+    sends cursor settings
+    handles communications and interrupts from GM
+    initiates graphics dma operations (including rectops), managing host memory assigned to dma
+gl library
+  provides support for communications between user process and graphics
+  translates graphics library calls (gl.h, sgi 007-1120-020 "Graphics Library Programming Guide v2.0", May 1990) into GE commands
+  converts parametric curves and surfaces into a common format for GE
+  font management
+  offers immediate mode, graphics lists and distibuted graphics (graphics calls over network connection)
+  manages keyboard state (as part of a graphics console)
+  manages dial and buttons box inputs
+  provides X windows services
+  provides pop up / menu windows
+  VP1 support
+  
+GE4 microcode
+  00 data tag
+  01,02,03,04 (GE1) load model matrix
+  05,06,07,08 (GE1) multiply model matrix, push matrix
+  09,0A,0B (GE1) load projection matrix
+  0C,0D,0E (GE1) multiply projection matrix, push matrix
+  0F set nmode normalize flag
+    2, enable
+    -2, disable
+  10 get matrix, feedback
+  11 push model matrix
+  12 pop model matrix
+  13 set/do curve iterations, draw curve (cubic interpolation)
+  14 two coord (x,y) point
+  15 three coord (x,y,z) point
+  16 four coord (x,y,z,w) point
+  17 two coord (x,y) point, relative to last point
+  18 three coord (x,y,z) point, relative to last point
+  19 begin polygon, shaded prim
+  1A begin closed line, prim outline
+  1B begin line
+  1C end polygon, shaded prim
+  1D end closed line, prim outline
+  1E end line
+  1F set color index
+  20 set RGBA color, 32 bits
+  21 set RGBA color, float
+  22 get color, writemask
+  23 begin string / block pattern ( sends set color command to PP )
+  24 set color range / scale
+  25 set GE,2 memory
+    address, data 0
+  26 set GE,2 memory
+    address, data 0, data 1
+  27 set GE,2 memory
+    address, data 0, data 1, data 2
+  28 load specular table, GE,2
+    address
+  29 load specular table, GE,2
+    data 0, data 1, data 2, data 3
+  2A set depth attribute, GE,5 memory (002b + index), 1 value
+    depthcue (002b)
+      0000, [2 enable, -2 disable]
+    vbufdebug mode (0034) ( not implemented )
+      0009, [2 enable, -2 disable]
+    glcompat, z range map ?, polygon outlines, (0035)
+      000a
+        off, range GD_ZMIN to GD_ZMAX
+        on, range 0x000000 to 0x7FFFFF
+    linesmooth, RGB (0036)
+      000b
+    subpixel (0037)
+      000c
+    face culling (0038)
+      000d
+    front face (0039)
+      000e
+    back face (003a)
+      000f
+    line smooth subpixel adjustment (003b)
+      0010
+        off, from integer pixel grid
+        on, half pixel from float coord
+    color index write mask byte selection (003c) sets GE5 mem (07fc) flag
+      0011
+        off, byte 0
+        on, byte 1
+    ?, if not set, clips viewport to range (-1280.0, 2559.0, -1024.0, 2047.0)
+      0012
+    pntsmooth, pntsize
+      0013
+  2B set shaderange, GE,5 memory, 2 values
+    args 0001, z near, z far
+  2C set shade, GE,5 memory, 3 values
+    0003, R, G, B slopes
+    0006, R, G, B intercepts
+  2D set viewport
+    left, right, bottom, top
+      sizex (right-left)/2, centerx (right+left)/2
+      sizey (top-bottom)/2, centery (top+bottom)/2
+  2E set depth, viewport z
+    sizez (far-near)/2 , centerz (far+near)/2
+  2F pass one 32 bit arg to PP
+    arg0
+  30 pass two 32 bit args to PP
+    arg0, arg1
+  31 pass three 32 bit args to PP
+    arg0, arg1, arg2
+  32 pass four 32 bit args to PP
+    arg0, arg1, arg2, arg3
+  33 pass one 16 bit arg to PP
+  34 pass two 16 bit args to PP
+  35 pass three 16 bit args to PP
+  36 pass four 16 bit args to PP
+  37 pass 16 bit command to PP
+  38 load infinity light position
+    X, Y, Z, W
+  39 load light position
+    X, Y, Z, W
+  3A vertex normal
+    X, Y, Z
+  3B move lights up/down (push/pull)
+    address, direction, data, data
+  3C load/push single value, GE2 memory
+    data 0
+  3D begin relative draw line segment
+  3E end tmesh / qstrip
+  3F end point
+  40 begin tmesh / qstrip
+  41 set color index mode shift/scale (pup or color buffer)
+  42 begin polygon, clear state
+  43 begin point
+  44-47 error (GE1, 2)
+  48 swap tmesh
+  49 error (GE1, 2)
+  4A set c mode, 2 enable, -2 disable (RGB mode)
+  4B pass four 32 bit packed args to PP (writepixels)
+  4C end shaded prim, connect/close to start point
+  4D get gpos
+  4E set RGB color, 24 bits
+  4F set RGB color, float
+  50 set shademodel
+    2 FLAT
+    -2 GOURAUD
+  51 set GE,1 memory ptr, surface interpolation value ptr
+    arg0
+  52 set GE,2 memory ptr
+    address
+  53 set GE,3 memory ptr (error GE3, 2)
+    arg0
+  54 set GE,4 memory ptr (error GE3, 2)
+    arg0
+  55 set GE,5 memory ptr (error GE3, 2)
+    arg0
+  56 push/load GE1, memory, surface interpolation value
+    arg0
+  57 push/load GE,2 memory (cmd 52)
+    data 0
+  58 push/load GE,3 memory (error GE3, 2)
+    arg0
+  59 push/load GE,4 memory (error GE3, 2)
+    arg0
+  5A push/load GE,5 memory (error GE3, 2)
+    arg0
+  5B push surface interpolation values
+    arg0, arg1, arg2, arg3
+  5C push/load GE,2 memory (cmd 52)
+    data 0, data 1, data 2, data 3
+  5D push/load GE,3 memory (error GE3, 2)
+    arg0, arg1, arg2, arg3
+  5E push/load GE,4 memory (error GE3, 2)
+    arg0, arg1, arg2, arg3
+  5F push/load GE,5 memory (error GE3, 2)
+    arg0, arg1, arg2, arg3
+  60 begin polygon, 3 coord (x,y,z) point
+  60-63 used for tag / DMA commands
+    error (GE1, 2)
+  64 push surface interpolation values
+    arg0, arg1, arg2
+  65 error (GE3, 2)
+    arg0, arg1, arg2
+  66 error (GE1, 2)
+  67 increment surface interpolation value ptr
+  68 error (GE3, 2)
+    arg0
+  69-6A error (GE1, 2)
+  6B set surface type
+    -1 rational, 1 non-rational
+  6C set surface steps ?
+    -U?, -V?, U?, V?
+  6D set surface point index ?
+    S?, T?
+  6E set surface interpolation distance ?
+  6F set surface coord ?
+  70 set surface coord ?
+  71 set surface coord ?
+  72 set surface interpolation start coord and steps
+  73 set curve interpolation value ptr (cmds 75-78)
+  74 set curve interpolation slope and intercept ?
+  75 set curve points
+    points, flag (-1 nonrational, 1 rational)
+  76 curvstrip
+  77 curvpt
+  78 set surface coord ?
+  79 set screen mask, xl,xh,yl,yh
+  7A set writemask, 12 bits (color index mode, over planes, under planes, pup planes, aux/wid planes, cursor)
+  7B set RGB writemask, 32 bits
+  7C clear viewport with pattern
+    arg0 IMP reg 1, blend/depth mode
+  7D clear viewport, no pattern, RV1, block clear, write once for 320 pixel width ?
+    arg0 IMP reg 1 block write, arg1 IMP reg 1 single write
+  7E clear viewport, no pattern, RV2
+    arg0 IMP reg 1 block write, arg1 IMP reg 1 40 pixel block write, arg2
+  7F-94 error (GE1, 2)
+  81 access tag ram
+
+  83 (from GE3) clipped primitive (polygon) coord (first), (X,Y,Z,W) ( init flags, init tmesh vertex list, passed clip test ? )
+  84 (from GE3) clipped primitive (polygon) coord (second), (X,Y,Z,W) ( no flag modification )
+  85 (from GE3) clipped primitive (polygon) coord (first), (X,Y,Z,W) ( init flags, failed clip test ? )
+  86 (from GE3) clipped primitive (polygon/tmesh) coord (last), (X,Y,Z,W) ( no flag modification, failed clip test )
+  87 (from GE3) (tmesh) end triangle, do clipping?
+  88 unused
+  89 (from GE3) clipped primitive (line) coord (first), (X,Y,Z,W) ( passed clip test ? )
+  8A (from GE3) clipped primitive (line) coord (first), (X,Y,Z,W) ( failed clip test ? )
+  8B (from GE3) clipped primitive (line) coord (last), (X,Y,Z,W) ( failed clip test )
+  8C unused
+  8D (from GE3) end line, clipped
+  8E (from GE3) (begin/end tmesh/qstrip ?, get gpos) (discard previous state ?)
+  8F (from GE3) draw point (X,Y,Z,W), (from GE4) (X,Y,Z,1/W)
+  90 (from GE3) primitive coord (X,Y,Z,W) (line) (passed clip test), (from GE4) (X,Y,Z,1/W)
+  91 (from GE3) primitive coord (X,Y,Z,W) (polygon/tmesh) (passed clip test), (from GE4) (X,Y,Z,1/W)
+
+  92 (from GE4) draw depthcue point (X/W, Y/W, Z/W)
+  93 (from GE4) draw depthcue line (X/W, Y/W, Z/W)
+  94 (from GE4) draw depthcue polygon/tmesh (X/W, Y/W, Z/W)
+
+  95 set LMC
+    diffuse flag, specular flag, ambient flag, emission flag
+  96 load material diffuse
+    R, G, B, A
+  97 load material specular
+    R, G, B
+  98 load material ambient
+    R, G, B
+  99 load material emission
+    R, G, B
+  9A load ambient light sum
+    R, G, B
+  9B load light color
+    light index, R, G, B
+  9C pass rectcopy x,y args to PP ?
+  9D draw 2D line (screen space ?, color index)
+    arg0 X1, arg1 Y1, arg2 X2, arg3 Y2
+  9E end buffer clear, restore writemask ?
+  9F-BF error (GE1, 2)
+  C0 init GE unit
+  C1 send GE error
+  C2 initialize new context
+  C3 free context
+  C4 load/restore context
+  C5 save context (deactivate context)
+  C6 switch context
+  C7 send/get context, feedback
+  C8 save register context (GE1)
+  C9 load GE2 memory / context
+    data 0, data 1, data 2, data 3
+  CA load GE3 memory / context
+    arg0, arg1, arg2, arg3
+  CB load GE4 memory / context
+    arg0, arg1, arg2, arg3
+  CC load GE5 memory / context
+    arg0, arg1, arg2, arg3
+  CD, enable lighting ?
+  CE send/get context (GE2), feedback, PP 5E
+  CF set .f12, .f13, .f14, .f15, polygon/graphics pos (GE1)
+  D0 store cursor pos (GE2)
+  D1 restore cursor pos (GE2)
+  D2 no op
+  D3 enable surface/curve (cmd 56) feedback
+  D4 disable surface/curve (cmd 56) feedback
+  D5 set rect/scrmask
+    arg0 xl, arg1 xh, arg2 yl, arg3 yh
+  D6 set widreg
+    arg0 index, arg1 data
+  D7-EA error, used for tag / DMA commands
+  EB-F6 error
+  F7-FE used for tag / DMA commands
+  F7 begin polygon, 2 coord (x,y) point
+  F8-FA error
+  FB begin polygon, 4 coord (x,y,z,w) point
+  FC-FE error
+  FF error
+
+PP microcode
+  00 - reset state / sync GM
+  01 - pass GE error to GM, intr 03
+    unit id, error id
+  02 - save context data from GE to GM, intr 01
+    data 0 high, data 0 low, data 1 high, data 1 low, data 2 high, data 2 low, data 3 high, data 3 low
+  03 - passthru arg/command to gm, intr 04
+  command token, {command args}
+	05 activate context, reload
+	06 init context
+	07 increment context id, create new context
+	08 set rvstate |= 1e00, alpha bitplanes enabled ?
+	09 get color map
+	  args ???, start index, entry count
+	0b save ? context to host
+	0c save GE1 context to host
+	0d save GE2 context to host
+	0e save GE3 context to host
+	0f save GE4 context to host
+	10 save GE5 context to host
+	14 add retrace func, 98069d68, _aux_map_color
+	15 add retrace func, 98069e42, _blank_screen
+	16 set blink parameters
+	1b set cycle parameters
+	1d add retrace func, 98060e6a, _gamma_ramp
+	1e get cpos
+	1f get GE feedback (matrix or gpos or color, writemask)
+	21 init names/namestack, start pickmode
+	22 load name token
+	23 set color map request
+	24 pop name token
+	25 push name token
+	27 load cursor to cursorcache
+	29 set monitor (display engine) register
+	2b add retrace func, 98061260, _g_sync	(sched retrace event)
+	  args retrace id
+  	33 add retrace func, 9806a284, _setxmapmode		
+	  args id, mode high, mode low
+	34 add retrace func, 9806a2b6, _swap_dispbuf
+	  args context id, swap time/frame high, swap time/frame low, mode high, mode low
+	35 unsched swap buf
+	  args context id
+	3c no op / flush
+	3d load page table (pcx_pt)
+	3e load context (PP shadow, vbuf)
+	3f save context (PP shadow, vbuf, GM) to host
+	(41) load PP shadow context
+	42 end feedback mode
+	43 end pick feedback mode
+	44 bbox start
+	45 bbox end
+	48 get monitor (video board, display engine) register
+	49 set context id/wid
+	  args wid
+	4a start (raw) feedback mode
+	4b passthrough feedback token
+	(4C) load feedback context
+	64 print vertex buffer, hex
+	65 print vertex buffer, decimal
+	66 print ppshadow, hex
+	67 print ppshadow, decimal
+	82 GM_PICKHIT, increment hits
+	87 retrace func, 9806478c, _pp_retrace_now
+	8c write pixels from feedback dma, send PP command 62
+	8d activate cm, reload PP shadow, vbuf
+	96 retrace func, 980647a2, _give_shadow
+	a0 set VP1 register
+	a2 send VP1 command
+	a3 get VP1 register
+	a4 add retrace func, 98067e62, _vo1_hires_buf_set, send VO1 command
+	a9 send VS1 command
+  04 - error, unimplemented, GM intr 04
+  05 - give shadow (pattern)
+  06 - error, unimplemented, GM intr 06
+  07 - set PP render mode
+    data high, data low
+  08 - set PP memory word (16 bits)
+    word address, data
+  09 - rectcopy
+    direction flag, dest width, zoomx, dest height
+  0A - read pixels
+    source size, color mode flag, dest size, 000C (color index) or 0014 (RGB)
+  0B - prepare getchunks dma, pixel buffer operation, GM intr 86
+  0C - set pattern
+    0000, 0000, {pattern data words}
+  0D - buffer/window clear
+    min x, min y, max x, max y, 0000, 0000
+  0E - error, unimplemented, GM intr 0E
+  0F - set screen mask
+    xl, xh, yl, yh
+  10 - set color
+    R (low), G, B, A (high)
+  11 - draw points
+    {X, Y, Z high word, Z low word, R,G,B,A or color index}
+  12 - draw line
+    {X, Y, Z high word, Z low word, R,G,B,A or color index}
+  13 - outcharmap, not first tile
+  14 - draw polygon, z range {GD_ZMIN, GD_ZMAX}
+    {X, Y, Z high word, Z low word, R,G,B,A or color index}
+  15 - flush, discard arg list, (also get gpos ?)
+    none
+  16 - set IMP register
+    index, 0000, data high, data low
+  17 - error, unimplemented, GM intr 17
+  18 - init PP unit
+  19 - error, unimplemented, GM intr 19
+  1A - error, unimplemented, GM intr 1a
+  1B - print vertex buffer, GM intr 8b
+  1C-21, body of command 1B, GE and GM should not issue commands with these indices
+  22 - resume from print vertex buffer, return to GE control of PP ?
+  23 - resume from print vertex buffer
+  24-25, body of command 23, GE and GM should not issue commands with these indices
+  26-5B, PP private routines, GE and GM should not issue commands with these indices
+  5C - loadls
+    {000D, 000F} or {000E, 0010}
+  5D - write pixels
+    count, 0000, {pixel data words}
+  5E - from GE2, command CE, -> GM interrupt 64, print vertex buffer
+    args {lighting matrix}
+  5F - from video (VP1, VO1, VS1) command, pass command to EP
+    args EP command
+  60 - rectop read
+  61 - rectop write
+  62 - after getchunks dma (command 0B), writepixels dma
+  63 - after GM intr 87, retrace now, restore cursor x,y from command 68
+  64 - write rect, from pixel buffer
+  65 - outcharmap, first tile
+  66 - end string (outcharmap)
+  67 - draw polygon, draw polygon outline (glcompat)
+    {X, Y, Z high word, Z low word, R,G,B,A or color index}
+  68 - save cursor x,y
+  69 - error, unimplemented, GM intr 69
+  6A - error, unimplemented, GM intr 6A
+  6B - error, unimplemented, GM intr 6B
+  6C - backface polygon, draw polyline,  vertex list in PP sram
+  6D -> send PP interrupt A5, rect read (video ?)
+  6E -> send PP interrupt A6, rect write (video ?)
+  6F - error, unimplemented, GM intr 6F
+  70 - error, unimplemented, GM intr 70
+  71 - enable pattern ? (IMP reg 1, bit 10)
+  72 - disable pattern ? (IMP reg 1, bit 10)
+  73 - error, unimplemented, GM intr 73
+  74 - error, unimplemented, GM intr 74
+  75 - error, unimplemented, GM intr 75
+  76 - error, unimplemented, GM intr 76
+  77 - error, unimplemented, GM intr 77
+  78 - error, unimplemented, GM intr 78
+  79 - error, unimplemented, GM intr 79
+  7A - error, unimplemented, GM intr 7A
+  7B - error, unimplemented, GM intr 7B
+  7C - error, unimplemented, GM intr 7C
+  7D - error, unimplemented, GM intr 7D
+  7E - X smoothline, color indexed
+  7F - Y smoothline, color indexed
+  80-FB, PP private routines, GE and GM should not issue commands with these indices
+  FC - rect read line/block (fill pixel buffer for dma) ?
+  FD-FE, PP private routines, GE and GM should not issue commands with these indices
+  FF - end dma, resume/restore state ?
+
+GM microcode
+  The EP can handle polygons with at most 2 overlapping horizontal edges.  If the PP detects a polygon with more than 2 overlapping edges,
+  it sends the polygon vertices to the GM for further decomposition, issuing intr 02 from the PP.  The GM breaks the polygon into trapezoids
+  that the EP can handle and sends the trapezoids to the PP as polygon commands.
+  
+  The GM also maintains a full context for each of 16 windows.  The GE units each pass data down the pipeline to the GM whenever a context 
+  needs to be saved.  The GM then passes this data back when the context is restored, issuing commands to the GE pipe.
+  
+  As the GM (68020) is the only processor with access to the video bus, all reads and writes to the XMAPs, RAMDACs, cursors and other video
+  hardware must be passed down the pipe from the GEs through the PP and to the GM.  The GM also is tasked with responding to vertical retrace
+  interrupts and performing any registered callbacks to update palettes, change buffers and so on.  It also needs to probe the video hardware
+  to inform the host about what is installed.
+
+  The GM is also responsible for managing feedback data from the graphics pipe and transferring the data to the host.
+  
+  The GM will pass ucode from the host and manage loading it to the desired graphics device.  This includes video formats for the RV2 and VO1.
+
+EP commands
+  00 flush, init ?
+  01 ??
+  02 write pixel, ep test
+  03-05 ??
+  06 write pixels from pixel buffer with stride/interleave ?
+  07 read pixels to pixel buffer with stride/interleave ?
+  08 spsingle, set single sp mode, ep test
+  09 spnoop, ep test
+  0a write pixel
+  0b sp mode, set all sp mode
+  0c set pattern
+  0d draw line, stipple, no z buffer
+  0e draw line, no stipple, no z buffer
+  0f draw line, stipple, z buffer
+  10 draw line, no stipple, z buffer
+  11 draw anti-alias line, no z buffer
+  12-14 ??
+  15 set IMP register
+  16-19 ??
+  1a draw anti-alias line, color index, no z buffer
+  1b ??
+  1c draw anti-alias line, color index, z buffer
+  1d ??
+  1e write pixels from pixel buffer
+  1f read pixels to pixel buffer
+  20-30 ??
+  31 draw trapezoid, load a side, resume b side
+  32 draw trapezoid, resume a side, load b side
+  33 draw trapezoid, load a side, load b side
+  34-37 ??
+  38 diagnostic, slope test ?
+  39 ??
+  3a diagnostic, test conditional a branch
+  3b diagnostic, test conditional b branch
+  3c diagnostic, DG_LD_DUMP
+  3d diagnostic, DG_LDBIAS_DUMP
+  3d diagnostic, DG_ITER_DUMP
+  3f set screen mask
+  
+From the 4.0.5J diagnostics
+
+ide - interactive diagnostics environment ?
+  offers the following tests
+    gm1mem, "GM1 DRAM test"
+    gm2mem, "GM2 DRAM test"
+    gm2tagram, "GM2 Tag Ram test"
+    gm2threeway, "GM2 3WAY Transfer test"
+    eptest, "Run EP diagnostic tests"
+    epdiag, "Run EP diagnostic shell"
+    ppucramdata, "PP Microcode Ram Data Line test"
+    ppucramaddr, "PP Microcode Ram Address Line test"
+    ppucmem, "PP Microcode Ram Full Memory test"
+    ppdone, "PP Done Test"
+    ppgm, "PP<-->GM Handshake Test"
+    ppsram, "PP SRAM Test"
+    ppmloop, "PP SRAM Memory Loop Test"
+    ppdiag, "PP Functional Test"
+    ppint, "PP Interrupt Test"
+    ge4diag, "Test the ge4"
+    vofstep, "interactive vof debug command"
+    pause, "for ide scripting-wait for user"
+    flash, "interactive register access command"
+    rvlca, "Test the Xilinx LCA (RV2 only)"
+    rvreg, "Test the RV VC, CC, and Multihead Registers"
+    rvcursor, "Test the RV1/RV2 Cursor Generator chip"
+    rvdac, "Test the RV1/RV2 DAC chips"
+    rvvoframdata, "Data Line Test of the RV2 VOF ram"
+    rvvoframaddr, "Address Line Test of the RV2 VOF ram"
+    rvvofmem, "Full Memory Test of the RV2 VOF ram"
+    rvvofbank, "RV2 VOF Ram Bank Uniqueness Test"
+    rvmemxmap, "RV1/RV2 XMAP chip test"
+    rvxamp4, "RV2 XMAP4 chip test"
+    rvpixrdwr, "RV1/RV2 Pixel read/write test"
+    rvspan, "RV1/RV2 SP (span) chip test"
+    rvimp, "RV1/RV2 IMP chip test"
+    rvimp2, "RV2 IMP2 chip test"
+    rvmemimp, "RV2 IMP-to-VRAM test"
+    vo1, "VO1 Tests"
+    vo1dac, "VO1 DAC Tests"
+    vo1adc, "VO1 ADC Tests"
+    vo1cursor, "VO1 Cursor chips Tests"
+    vo1vofram, "VOF RAM Tests"
+    vo1eeprom, "VO1 EEPROM Tests"
+
+ppdiag microcode for the ppdiag test, commands
+  00 no op
+  01 alu add 1 carry in 0 test, (c800c000) = ffff
+  02 alu add carry in 1 test, (c800c000) = 0000
+  03 alu add 1 carry in 1 test, (c800c000) = 0001
+  04 alu Add test, (c800c000) = ffff
+  05 write SRAM () = error data
+  07 alu And test, (c800c000) = ffff
+  08 write SRAM () = error address/offset
+  09 write SRAM () = error data or address/offset
+  0d COND EQ true test, (c800c000) = 0005, zero flag set
+  0e COND EQ false test, (c800c000) = ffff, zero flag not set
+  0f COND latch true test, (c800c000) = 0005, no condition latch this test
+  10 COND LT true test, (c800c000) = 0005, negative flag set
+  11 COND LTEQ true test, (c800c000) = 0005, zero flag set ?
+  12 COND LTEQ1 true test, (c800c000) = 0005, negative flag set
+  13 COND LTEQ false test, (c800c000) = 0001, zero flag set, negative flag set
+  14 COND LT false test, (c800c000) = 0001, negative flag set ?
+  15 COND NEQ true test, (c800c000) = 0005, zero flag set ?
+  16 COND NEQ false test, (c800c000) = 0000, zero flag not set ?
+  17 alu carry control-0 test, (c800c000) = 0000
+  18 alu carry control-1 test, (c800c000) = 0001
+  19 alu carry control test, (c800c000) = 0000
+  1a alu DecA test, (c800c000) = ffff
+  1b alu DecB test, (c800c000) = ffff
+  1c PP done test
+  1d PP_EP cmd interface test, (c800c000) = 0000
+  1f alu IncA test, (c800c000) = 0000
+  20 alu IncB test, (c800c000) = 0000
+  21 pp to gm interrupt test, (a8001404) = 00000001
+  22 alu InvA test, (c800c000) = ffff
+  23 alu InvB test, (c800c000) = 0000
+  24 alu neg sub test, (c800c000) = 0001
+  25 alu neg sub 0 test, (c800c000) = 0001
+  26 alu One test, (c800c000) = ffff
+  27 alu Or test, (c800c000) = ffff
+  28 alu PassA test, (c800c000) = ffff
+  29 alu PassB test, (c800c000) = ffff
+  2c write PP SRAM word, address SRAM (000) to (c800c000)
+  2e SRAM write test, PPSRAM wrt 0x5555/0xAAAA, (c800c000) = 0000, last (fault) address
+  2f SRAM write test, PPSRAM wrt 0xAAAA/0x5555, (c800c000) = 0000
+  30 write SRAM error data ?
+  32 SRAM read test, (c800c000) == SRAM (000), aaaa
+  33 SRAM read test, (c800c000) == SRAM (001), aaaa
+  34 SRAM write test, SRAM (000) = aaaa
+  35 SRAM write test, SRAM (001) = aaaa
+  36 SRAM write test, PPSRAM wrt addr=data, (c800c000) = 0000
+  37 SRAM write test, PPSRAM inv addr=data, (c800c000) = 0fff
+  39 alu SUB0DIAG test, (c800c000) = 0000
+  3a alu SUB1DIAG test, (c800c000) = 0001
+  3b alu SUBCIDIAG test, (c800c000) = 0000
+  3c alu SUBDIAG test, (c800c000) = ffff
+  40 VP decrementer test, (c800c000) = 0000
+  41 VP incrementer test, (c800c000) = 0000
+  42 VP test for loading addr, (c800c000) = 0fff
+  43 read VP, vertex pointer
+  44 write VP, vertex pointer
+  47 write GM PP wordcount to (c800c000)
+  48 write PP SRAM word data SRAM (001) to address SRAM (000)
+  49 alu Xor test, (c800c000) = ffff
+  4a alu Zero test, (c800c000) = 0000
+  4b COND GT true test, (c800c000) = 0005, carry flag set
+  80 PP done diagnostic loop
+
+----
+
+Useful tool
+
+https://gist.github.com/camthesaxman/dcc60d98f152b4fed32dfc18d7246551/raw/dda1b80bfe90f93d5de23936b92caf2ca41a53db/irixswextract.c
+This program can extract files from a IRIX distribution without needing to run the IRIX install.  Works for IRIX 4 and 5.
+
+IRIX 4 and 5 software distributions contain a 'sw' binary blob and a 'idb' text index.  Entries in the index contains a destination path,
+an original source tree path, an offset into the binary blob, a compressed size, an uncompressed size, a checksum and a list of supported
+machine hardware configurations.  This program will attempt to extract the files from the 'sw' and create the destination paths.
+Slight modification was made to extract the files to the source tree paths, allowing each hardware version of the gl library to be 
+extracted and identified.
+
+From IRIX 4.0.5 eoe1.idb
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/CLOVER1IP4G.S/libgl_s eoe1.sw.unix sum(6726) size(1302668) mach(GFXBOARD=CLOVER1 SUBGR=IP4G) f(3663199416) cmpsize(647257)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/CLOVER2IP17.S/libgl_s eoe1.sw.unix sum(8085) size(1195312) mach(GFXBOARD=CLOVER2 SUBGR=IP17) f(2735380776) cmpsize(607661)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/CLOVER2IP4GT.S/libgl_s eoe1.sw.unix sum(45084) size(1189740) mach(GFXBOARD=CLOVER2 SUBGR=IP4GT) f(1660323362) cmpsize(601489)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/CLOVER2IP5GT.S/libgl_s eoe1.sw.unix sum(50127) size(1195416) mach(GFXBOARD=CLOVER2 SUBGR=IP5GT) f(2699767616) cmpsize(607709)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/CLOVER2IP7GT.S/libgl_s eoe1.sw.unix sum(3940) size(1195428) mach(GFXBOARD=CLOVER2 SUBGR=IP7GT) f(541821085) cmpsize(606387)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/ECLIPSEECLIPSE.S/libgl_s eoe1.sw.unix sum(17830) size(1180312) mach(GFXBOARD=ECLIPSE SUBGR=ECLIPSE) f(280126922) cmpsize(595581)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/EXPRESSEXPRESS.S/libgl_s eoe1.sw.unix sum(8393) size(1370952) mach(GFXBOARD=EXPRESS SUBGR=EXPRESS) f(331637391) cmpsize(694743)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/EXPRESSIP17.S/libgl_s eoe1.sw.unix sum(23107) size(1370408) mach(GFXBOARD=EXPRESS SUBGR=IP17) f(2938479646) cmpsize(693411)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/LIGHTIP17.S/libgl_s eoe1.sw.unix sum(22725) size(1463908) mach(GFXBOARD=LIGHT SUBGR=IP17) f(2805073386) cmpsize(757289)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/LIGHTLIGHT.S/libgl_s eoe1.sw.unix sum(50597) size(1457840) mach(GFXBOARD=LIGHT SUBGR=LIGHT) f(4147058645) cmpsize(756169)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/SERVERSERVER.S/libgl_s eoe1.sw.unix sum(62352) size(541800) mach(GFXBOARD=SERVER SUBGR=SERVER) f(3359866409) cmpsize(221341)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/STAPUFTIP17.S/libgl_s eoe1.sw.unix sum(25672) size(1414736) mach(GFXBOARD=STAPUFT SUBGR=IP17) f(3359142950) cmpsize(710572)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/STAPUFTIP17SKY.S/libgl_s eoe1.sw.unix sum(60427) size(1654108) mach(GFXBOARD=STAPUFT SUBGR=IP17SKY) f(1424311800) cmpsize(765803)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/STAPUFTIP7GT.S/libgl_s eoe1.sw.unix sum(45184) size(1414592) mach(GFXBOARD=STAPUFT SUBGR=IP7GT) f(2670665978) cmpsize(710737)
+f 0755 root sys usr/lib/libgl_s gfx/lib/libgl/STAPUFTSKYWR.S/libgl_s eoe1.sw.unix sum(13674) size(1653960) mach(GFXBOARD=STAPUFT SUBGR=SKYWR) f(1759931749) cmpsize(762897)
+
+With the modification, running the program on eoe1 creates a gfx/lib/libgl/CLOVER1IP4G.S/libgl_s, a gfx/lib/libgl/CLOVER2IP17.S/libgl_s, and so on.
+For reference, CLOVER1 is 'G' graphics, CLOVER2 is 'GT', ECLIPSE is Personal IRIS 'GR1', EXPRESS is 'GR2', LIGHT is 'LG1', STAPUFT is 'VGX' 
+and SERVER is no graphics.
