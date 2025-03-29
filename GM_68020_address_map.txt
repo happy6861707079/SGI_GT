@@ -1,0 +1,550 @@
+00000000, PROM
+02000000, UART, SCN2681
+28000000, GE4 interface
+	(0) address
+		bits 7-4, dest (GE) index
+		bits 3-0, chip select / byte lane index, 0 lsb, 7 msb
+	(1) command / status ?
+		0, select ucode ram, write halts GE
+		1
+		2
+		3, write starts GE
+		4, dummy read? (28000003) to reset/latch address counter
+	     bit 0
+	     bit 1
+	     bit 2
+	     bit 3
+	     bit 4
+	     bit 5, LDMAPRAM bit (tag map ram)
+	     bit 6
+	     bit 7
+	(2) data ? register
+	(3) data register, auto increment word address with read/write
+30000000 + 80, video channel bus
+
+80000000-87FFFFFF, MP bus, pixel dma trigger (GM2)
+	8xxxxxxx, where xxxxxxx is MP physical address (RAM only ?)
+		data
+			bits 31-16, pixel buffer address
+			bit 15, read/write
+			bits 14-0, longword count - 1
+			
+88000000-88002000 (GM1) Pixel Buffer memory data bus
+        (0) pixel data
+	
+90000000, GE pipe / FIFO interface
+	bits 13-6 GE token
+	  00, set data only, do not send command
+	  81, tag map ram
+	  all other tokens indicate GE command
+	bits 5-4 data format
+	bits 3-2 arg index
+	bits 1-0 ignore
+	
+	taking bits 5-4,3-2 together adheres to gtx_pipe from gtx.h
+                struct gtx_pipe {
+		   union { float f; long i; } xf;
+		   union { float f; long i; } yf;
+		   union { float f; long i; } zf;
+		   union { float f; long i; } wf;
+		   long xd, yd, zd, wd;
+		   long xi, yi, zi, wi;
+		   long xyi;
+		   long lswd;
+		   long zwi;
+		   long xyzwi;
+		};
+			0, float, arg0
+			1, float, arg1
+			2, float, arg2
+			3, float, arg3
+			4, double, first word, arg0
+			5, double, first word, arg1
+			6, double, first word, arg2
+			7, double, first word, arg3
+			8, int (24 bit), arg0
+			9, int (24 bit), arg1
+			A, int (24 bit), arg2
+			B, int (24 bit), arg3
+			C, packed int (16 bit), arg0, arg1
+			D, lswd, double, second word
+			E, packed int (16 bit), arg2, arg3
+			F, packed int (8 bit), arg0, arg1, arg2, arg3 (used by RGB writemask, wmpack)
+
+	
+	token 81, (2040), access GE LDMAPRAM (both GM1 and GM2) (load MAP RAM), possibly GE 28000001 command register
+	writes token 81 with data 00000000, ((2040) = 00000000), 
+	     further writes to GE pipe will write the tag MAP RAM
+	     diagnostics expects bit 5 of GE 28000001 command register set while access active
+	     GE token field will be the tagram index/command and data field will be the GE token translation for command
+	     skips index/command 81 (would be misinterpreted ?)
+	writes token 81 with data 00000000 to end access
+
+90009000 + 10000, parameter format tag ram, 4096 * 4 bits  (GM2), loaded from tag.u
+	(0008) 4 bits, parameter format, (04-07 doubles format possibly ignores format for second word)
+	(0018) 4 bits
+	...
+	(0078) 4 bits
+	(0088) - (00F8) possibly unused ( only 8 parameters per tag token ? )
+	(0108) 4 bits
+	...
+	(FFF8) 4 bits
+
+        Tag ram 00xx corresponds to GE command 00, 01xx to GE command 01, ...
+        When the GTX tag trigger is armed the next write from processor is to the start address to fetch data (1 16 byte cache line)
+	the following write is to the end address, if address bit 4 differs, the next 16 byte line will also be fetched
+	data is 16 bits
+	    bits 15-8 are tag token (lookup data format and pipe command token), bit 7 is trigger,  bits 6-0 are word count-1
+        The tag token is translated by the GE MAP RAM and the data formats are taken from the parameter tag ram.
+	For example in tag.u, for offset 0xdf * 8 + 0x42 byte header = 73a, data is
+	  00 01 ff ff ff ff ff ff
+	and for 0xe0 -> 742
+	  08 09 ff ff ff ff ff ff
+	In GE MAP RAM, the gfxinit program wrote 0x14 for 0xdf and 0xe0.
+	The GE MAP RAM will translate both 0xdf and 0xe0 to command 0x14 for a two coord point.
+	The parameter tags will be interpreted as 00, float arg0 and 01, float arg1 for the 0xdf command
+	and as 08, int arg0 and 09, int arg1 for the 0xe0 command.  These represent the gl lib commands v2f and v2i.
+
+
+98000000 + 100000, DRAM, 8 * 128K ?
+
+98F00000 ?? possibly accessed by GM ucode
+
+A0000000, HOST - GM DRAM, 0x100000 bytes (gtx.h)?, pages mapped to host memory (VME a32 space?) ( 1 page, 0x1000 bytes )	
+A0001000, Host to GM communications DRAM, see gmhost.h, gm.h
+A0001800, GM to Host communications DRAM
+A0002000, GM diag stuff
+A0002400, GM shared data DRAM
+
+
+C8000000 start of GM-PP address space
+C8002000 + 2000, GM/PP SRAM (GM byte addresses, PP word addresses)
+	(0) PP command token / available scratchpad for each command
+	(3F16) copy to window context (18) + 0xEA, shadowed by GM, (PP F8B-FFF)
+C8004000, GM/PP SRAM word count, PP visible ? (should match cc000010)
+C8008000 + 2000, PP vertex buffer (two different vertex buffers exist, CC000000 bit 2 indicates active buffer)
+C800A000, vertex buffer word count
+C800C000, PP debug ? register, access to PP ALU output ?
+
+CC000000, GM board registers ?
+	(00)	write, PP command, set GM status bit 3 (PP to GM command ready)
+		read, GM status (as indicated by diagnostic test)
+			bit 7, (1) GE / (0) GM control pix buffer (CINDEXMODE)
+			bit 6, PP switched to (1) GM / (0) GE
+			bit 5, PixBus (1) paused / (0) not paused
+			bit 4, EP (1) not ready / (0) ready
+			bit 3, PP to GM command (1) ready / (0) not ready
+			bit 2, VBUF A (1) / B (0) active
+			bit 1, PP (1) Done (halted) / (0) Busy flag
+			bit 0, GE FIFO (1) below / (0) above high water / done flag
+	(10) GM/PP SRAM Word Count register load (PP command data length), write through to c8004000 ?
+	(20) clear to zero to clear fifo interrupt, CPU level 6 interrupt (GM2)
+	(22) reset signal (1->0) transition, raster/Pixel Bus subsystem
+	(24) clear to zero to clear Vertical Retrace interrupt, CPU level 4 interrupt (GM2) ( disable interrupt ? )
+	(26) reset signal (1->0) transition ?, related 28000000, GE reset or GE halt ?
+	(28) clear to zero to clear PP interrupt, CPU level 2 interrupt (GM2)
+	(2A) reset signal (1->0) transition, PP ?, 0 Host driving GE pipe FIFO, 1 GM driving GE pipe FIFO ?
+	(2C) reset signal (1->0) transition, EP ?
+	(2E) reset signal (1->0) transition, video output (may reset/halt PP)
+	(50) clear to zero to clear Pixel Buffer DMA interrupt, CPU level 3 interrupt (GM2)
+	(54) IP7, clear to zero before MP bus access, set to one after
+	(60) cleared before sending PP command ?, unhalt PP, clear interrupt ?
+	(70) GM or PP ucode write/read access, (when GM access (0), halt PP, set GM status bit 1, PP done and bit 6), cleared before PP command sent
+
+CE000000, PP Ucode RAM, read/write
+	(0) 0x1000 * 9 byte ucode line ( + 7 bytes nonexistant extra per line )
+
+E0000000, SBCC base address, CPU level 5 interrupt (GM2)
+        (0) kernel half of lock array (512 pages (0x1000 bytes, only uses low 0x100 bytes) * 64 locks per page * 4 bytes per lock) (32K + 32K locks)
+		(0) bit 0, set if locked,  set with read, cleared with write (test and set)
+        (200000) user half of lock array
+	(400000) interrupt mapping
+            (00) 4 * 14, CPU int levels, MP ids 0-D , write mask 0x0F (level bit mask)
+	    (40) 4 * 14, Status regs, MP ids 0-D    , write mask 0xFF, (read to clear int pending) (interrupt type id)
+	    (80) 4 * 1, CPU int level, MP id E (VME), write mask 0x0F, (read to clear int pending)
+	    (A0) 4 * 1, CPU int level, MP id F (VME), write mask 0x0F, (read to clear int pending)
+	    (B0) 4 * 1, interrupt vector overrun , write mask (IP5 00003FFF, IP7/9 003F00FF) (read to clear int pending ?)
+	    (C0) 4 * 1, sync bus id  , write mask 0x0F, ( per controller, same as MP bus ID, set by kernel/cpu )
+	    (C4) 4 * 1, VME int enable, MP id E  , write mask 0xFF
+	    (C8) 4 * 1, VME int pending, MP id E , write mask 0xFF, (read to clear ?) (int pending cleared by reading int level)
+			can set any of the eight bits by writing
+	    (CC) 4 * 1, VME int enable, MP id F  , write mask 0xFF
+	    (D0) 4 * 1, VME int pending, MP id F , write mask 0xFF, (read to clear ?) (int pending cleared by reading int level)
+	    (D4) 4 * 1, int enable mask by id , write mask (IP5 0000FFFF, IP7/9 00FF00FF)
+	    (D8) 4 * 1, int pending mask by id, write mask (IP5 00003FFF, IP7/9 003F00FF) (int pending cleared by reading status)
+	    (FC) 4 * 1, xmit (enable/busy bit, destination type, destination id, interrupt status) (IP5/GM 00009FFF, IP7/9 009F00FF)
+			bit 15, enable/busy bit (interrupt pending/not cleared ?)
+			bit 12, destination type, 0 single, 1 group
+			bits 11-8, destination single id / group id
+			bits 7-0, interrupt status / interrupt id
+        (C00000) diagnostics lock array
+        (E00000) user half of diagnostics lock array
+
+
+interrupts (GM2)
+	level 1, SBCC id 0
+	level 2, PP
+	level 3, pixel buffer DMA
+	level 4, vertical retrace
+	level 5, SBCC id 1 / host
+	level 6, FIFO
+	level 7, UART
+
+
+
+
+video channel, 30000000 + 80
+        RV1
+	(0) bt457 RAMDAC 0, red
+		(0) register index
+		(1) color palette ram (register 0)
+		(2) register data
+		(3) overlay color (register 0) , used for cursor
+	(4) bt457 RAMDAC 1, green
+	(8) bt457 RAMDAC 2, blue
+	(C) bt457 RAMDAC 3, unpopulated, alpha
+	(10) bt431 cursor 0
+		(0) address register 0
+		(1) address register 1
+		(2) read/write RAM
+		(3) read/write control register
+	(14) bt431 cursor 1 ?
+	(18) monitor type	
+	(19) control / status
+		bit 7
+		bit 6, toggle on swap, field index ?
+		bit 4
+		bit 3
+		bit 2, stereo display select
+		bit 1, set before XMAP color lookup table access ?
+		bit 0, video output enable
+	(1A) clock control register
+	(1B) boardIDreg, can produce bus error, if slot empty
+		write
+			bit 2, enable /test ?
+			bits 1-0, board slot index
+		read
+			bit 2, board type ?
+			  0, multiple board set ? RV1 ?
+			  1, single board set ? RV2 ?
+			bits 1-0, board slot index
+	(1C)
+	(1D)
+	(1E)
+	(1F)
+	(20) XMAP 0
+		(0,1,2,3) aux color map (addresses 0x0000-0x????), color map lookup table (0x1000 entries) (addresses 0x1000-0x1fff)
+		(1) ?blue?
+		(2) ?green?
+		(3) ?red?
+		(4)
+		(5) mode register (0x10 entries, addresses 0x0000-0x001f), one for each WID (also readback for registers 0x20,0x21,0x22 colormap readback RGB)
+			two bytes, even address and odd address
+			(0) low byte
+			(1) high byte, multimap palette index
+		(6) address high
+		(7) address low
+	(28) XMAP 1
+	(30) XMAP 2
+	(38) XMAP 3
+	(40) XMAP 4
+	(48) XMAP broadcast
+	
+	
+	RV2
+	(0) bt457 RAMDAC 0, red
+		(0) register index
+		(1) color palette ram (register 0)
+		(2) register data
+		(3) overlay color (register 0) , used for cursor
+	(4) bt457 RAMDAC 1, green
+	(8) bt457 RAMDAC 2, blue
+	(C) bt457 RAMDAC 3, unpopulated, alpha
+	(10) bt431 cursor 0
+		(0) address register 0
+		(1) address register 1
+		(2) read/write RAM
+		(3) read/write control register
+	(14) bt431 cursor 1 ?
+	(18) VCreg, vof EEprom, serial interface (ST 24Cxx I2C)
+		bit 7, data bit
+		bit 6, clock bit
+		bit 5
+		bit 4
+		bit 3
+		bit 2
+		bit 1
+		bit 0
+		
+		vof EEprom format
+			(0) magic = 4570
+			(2) length ( does not include 0xD header size )
+			(4) date
+			(8) ~checksum
+			(C) data			
+	(19) control/status
+		bit 7
+		bit 4, halt vof ?
+		bit 3, video output enable
+		bit 2
+		bit 1
+		bit 0
+	(1A) clock control register, ccr ( reload/restart vof ? )
+		bit 7
+		bit 6, reset ?
+		bit 5, clock ?
+		bit 4-1, data, monitor type ?
+		bit 0, enable vof clock ?
+	(1B) boardIDreg, can produce bus error, if slot empty
+		write
+			bit 4, set LCA RDBK
+			bit 3
+			bit 2, enable ?
+			bits 1-0, board slot index
+		read
+			bit 4, LCA RDBK signal, should be clear after board reset
+			bit 3, LCA (XC3030) HDC (High during configuration) signal, should be set after board reset
+			bit 2, VC bus (3000001f), LCA configuration ready ?, set if slot empty ? (ready for next configuration byte, (2F) ?)
+			bit 2, board type ?
+			  0, multiple board set ? RV1 ?
+			  1, single board set ? RV2 ?
+			bits 1-0, board slot index
+	(1C)
+	        bit 0, set after ccr (1A) write ?
+	(1D)
+		bit 3, set for VS1 hires interrupt
+		bit 2, set for VP1 vof, multihead (?)
+		bit 0, set to access pixelbus, VO1 vof (?)
+	(1E)
+	(1F) can produce bus error ( RV2 extended feature ? )
+		read
+			bit 3, set if slot empty ?
+	(20) vof pc load address, low
+	(21) vof pc load address, high
+	(22) vof pc current/run address, low
+	(23) vof pc current/run address, high
+	(28-2B) vof/LCA data register
+		(28) byte 3 of word (21):(20)
+		---
+		(2B) byte 0 of word (21):(20)
+	(2C-2F) vof/LCA config data register
+	(30/32/34/36/38) XMAP rev 4, broadcast
+		(0) data
+		(1) addr
+			reg 0		addr low
+			reg 1		addr high
+			reg 4,5,6	Color Index CLUT, three bytes (start address 0x1000, 0x2000? entries)
+			reg 8,9,A       Multimap? CLUT readback ?
+			reg C,D,E	Mode registers, three bytes (0x10 entries), one for each WID
+				bit 16
+				bit 15, 1 use color plane bits 31-24 for color index
+				bit 14, underlay enable ? 1 invert AUX planes mask ?
+				bits 13-10, AUX (overlay/underlay) planes mask
+				bit 9
+				bits 8-5, multimap palette (bits 11-8) index
+				bit 4, multimap enable, 1 8 bit color index (multimap), 0 12 bit color index
+				bit 3
+				bit 2, buffer select
+				bit 1
+				bit 0, 1 RGB, 0 color index
+			reg 10,11,12	Aux Color LUT, three bytes (0x10 entries) (addresses 0x0000-0x????)
+			reg 14		WID/AUX control, alpha map ?, one byte
+			reg 18/19/1A	three bytes, test control ?
+				18
+					bit 6, toggled by dg vertical retrace handler
+			reg 1C
+
+
+	probing for VS1,VP1,V01
+	(50)-(7F) address space reserved for VS1,VP1 or VO1
+		VS1, VO1, VP1 video card bus, produce bus error if no card
+		(56) present on VS1 and VO1
+			write
+				bits 2-0
+		(7F) present on VP1 and VO1
+			write
+				bits 2-0
+
+		
+	VS1 register map ( only supported with RV2 ? )
+	(50) chip registers, select with (58)
+		bt431 cursor chip
+		(0)
+		(1)
+		(2)
+		(3)
+		memory
+		(0)
+		vof
+		(0) pc address, low byte
+		(1) pc address, high byte
+		(2-5) vof data register
+			(2) byte 3 (low), (3) byte 2, (4) byte 1, (5) byte 0 (high)
+		config reg
+		(0)
+	(54)
+	(55)
+	(56) present on VO1 and VS1 ?
+		write
+			bit 6, set if VO1 detected and (98085CDA) & 80 (board id/type == ?) != 0
+			bit 5, set if VO1 detected ?
+			bit 3
+			bit 2-0, index
+	(57)
+		bit 7
+		bit 6
+		bit 5
+		bit 4
+		bit 3
+		bit 2
+		bit 1
+		bit 0
+	(58) index register
+		bit 6
+		bits 5-0, chip select index ?, (50)
+			07-0E, VS1 bt431 cursors ?
+			0F-12, VS1 hires bt431 cursors ?
+			  0F memory cursor
+			18, config register 2 ?
+			1A, config register 4 ?
+			30, vof pc, data
+			40, vof control ?
+			58, config register 2 ?
+			5A, config register 4 ?
+			62, memory, 0x10 bytes, read from (50)
+			63, memory address, check bit 2 of (5A) for memory ready after setting address
+	(59) config register 1
+		bit 6, set _VS1VOFHalt, cleared _VS1VOFStart
+		bit 5
+		bit 4, clear _VS1VOFHalt, set _VS1VOFStart
+		bit 3, set _VS1VOFHalt, cleared _VS1VOFStart
+		bit 2
+		bit 1	
+		bit 0, reset ((5A) bit 1) on 0->1 transition ?
+	(5A) status register
+		bit 3, retrace interrupt? update VS1, VS1 hires cursors on 0->1 transition ?
+		bit 2, memory ready when set
+		bit 1, update VS1 if set ?
+	(5D) can produce bus error, present on VO1 and VS1 ?
+		write
+			bits 1-0
+
+
+	VO1 register map
+	(50) bt431
+		(0) register address, low
+		(1) register address, high
+		(2) read/write cursor ram
+		(3) read/write selected control reg
+	(54) bt431
+		(0) register address, low
+		(1) register address, high
+		(2) read/write cursor ram
+		(3) read/write selected control reg
+	(55)
+		bit 7, VO vof eeprom, clock bit ?
+		bit 6, VO vof eeprom, data bit ?
+		bit 1, VO vof ?, 1, 0, cleared by vovofhalt
+		bit 0, VO vof, 1 halt, 0 start
+	(56)
+		bit 6, set for RV1
+		bit 5
+		bit 1, set before host frame write
+	(57) vof control ?
+		bit 7, cleared before writing (56) bits 3,2-0, set after writing (56) bits 3,2-0, set by vovofhalt
+		bits 6-5
+		bit 4
+		bit 3, set by vovofhalt
+		bit 2, reset ?? on 0->1 transition ? frame write, pixel read
+		bit 1, set by vovofhalt
+		bit 0
+	(58)
+		bit 7
+		bit 6, reset ?
+	(59) status, interrupt pending ?
+		bit 7, vblank
+		bit 5, checked during vert. retrace / soft swap
+		bit 4, VO vof eeprom data out bit
+		bit 3, related reg (58), frame write
+		bit 2, (v)buf interrupt ?
+		bit 1, transfer complete ?
+		bit 0, transfer ready ?
+	(5A) transfer parameter/address ?
+	(5B) transfer parameter/address ?
+	(5C) transfer parameter/address ?
+	(5D)
+		bit 1
+		bit 0
+	(5F)
+		bit 7, transfer buffer index ?
+		bit 0, start transfer ?
+	(60) vof pc addr, low, register (7F) set to 4
+	(61) vof pc addr, high, register (7F) set to 4
+	(62-65) vof data register, register (7F) set to 4
+		(62) byte 3 (low), (63) byte 2, (64) byte 1, (65) byte 0 (high)
+	(66) register (7F) set to 6 before reading/writing
+	(70) hires cursor, bt431
+		(0) register address, low
+		(1) register address, high
+		(2) read/write cursor ram
+		(3) read/write selected control reg
+	(74) hires cursor, bt431
+		(0) register address, low
+		(1) register address, high
+		(2) read/write cursor ram
+		(3) read/write selected control reg
+	(77) (command register set)
+		bits 7-4
+		bits 3-0
+	(78)
+		bit 7, soft swap index
+		bit 6
+		bits 5-2
+		bit 1
+		bit 0
+	(79)
+		bit 5
+	(7A)
+		bit 2
+		bit 1
+		bit 0
+	(7B)
+		bit 7
+		bits 3-2, sync status ?
+		bits 1-0, sync status ?
+	(7F) register set selection ?
+		0, command registers
+		4, cursor registers
+		6, vof? register (66) ??
+
+
+			
+	VP1 register map (gl/vp1.h)
+	(60) VP_STATUS0
+	(61) VP_STATUS1
+	(62) VP_FGMODE
+	(63) VP_CMD
+	(64) VP_HBLANK
+	(65-66) VP_PIXCNT
+	(67) VP_MAPSRC
+	(68) VP_WIDTH
+	(69) VP_HEIGHT
+	(6A) VP_FBXORG
+	(6B) VP_FBYORG
+	(6C-6D) VP_GBXORG
+	(6E-6F) VP_GBYORG
+	(70) second data word for FBXORG, FBYORG, WIDTH and HEIGHT
+	(71) VP_ALPHA
+	(72) VP_MAPADD
+	(73) VP_VBLANK
+	(74) VP_CONT
+	(75) VP_BRITE
+	(76) VP_HUE
+	(77) VP_SAT
+	(78) VP_MAPRED
+	(79) VP_MAPGREEN
+	(7A) VP_MAPBLUE
+	(7B) VP_MAPSTROBE
+	(7C) VP_DIGVAL
+
+
