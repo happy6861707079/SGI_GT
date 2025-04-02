@@ -1,0 +1,742 @@
+PP reset
+no args
+0000: 0n0 0s21w z0 I0000        PASS A                r I                 b     P100 GM(0) # jump to 0100
+
+0001: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                 b     P12a       # A = 0001, jump to 012a, error
+0002: 0n1 0s21w z0 I0002        PASS A         LOAD A r I                 b     P12a       # A = 0002, jump to 012a, error
+0003: 0n1 0s21w z0 I0003        PASS A         LOAD A r I                 b     P12a       #
+0004: 0n1 0s21w z0 I0004        PASS A         LOAD A r I                 b     P12a       #
+0005: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                 b     P12a       #
+0006: 0n1 0s21w z0 I0006        PASS A         LOAD A r I                 b     P12a       #
+
+set sp mode and screen mask
+0007: 0n0 0s21w z0 I0000        PASS A                r I                 b     P130 GM(0) # jump to 0130
+
+PP_SETMODE
+0008: 0n0 0s21w z0 I0000        PASS A                r I                 b     P15b GM(0) # jump to 015b
+
+0009: 0n1 0s21w z0 I0009        PASS A         LOAD A r I                 b     P12a       #
+000a: 0n1 0s21w z0 I000a        PASS A         LOAD A r I                 b     P12a       #
+000b: 0n1 0s21w z0 I000b        PASS A         LOAD A r I                 b     P12a       #
+000c: 0n1 0s21w z0 I000c        PASS A         LOAD A r I                 b     P12a       #
+000d: 0n1 0s21w z0 I000d        PASS A         LOAD A r I                 b     P12a       #
+000e: 0n1 0s21w z0 I000e        PASS A         LOAD A r I                 b     P12a       #
+000f: 0n1 0s21w z0 I000f        PASS A         LOAD A r I                 b     P12a       #
+
+set color
+0010: 0n0 0s21w z0 I0000        PASS A                r I                 b     P188 GM(0) # jump to 0188
+
+0011: 0n1 0s21w z0 I0011        PASS A         LOAD A r I                 b     P12a       #
+0012: 0n1 0s21w z0 I0012        PASS A         LOAD A r I                 b     P12a       #
+
+charstr
+0013: 0n0 0s21w z0 I0000        PASS A                r I                 b     P224 GM(0) # jump to 0224
+
+0014: 0n1 0s21w z0 I0014        PASS A         LOAD A r I                 b     P12a       #
+0015: 0n1 0s21w z0 I0015        PASS A         LOAD A r I                 b     P12a       #
+
+write IMP register
+0016: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1f6 GM(0) # jump to 01f6
+
+0017: 0n1 0s21w z0 I0017        PASS A         LOAD A r I                 b     P12a       #
+
+PP_INIT
+0018: 0n0 0s21w z0 I0000        PASS A                r I                 b     P102 GM(0) # jump to 0102
+
+0019: 0n1 0s21w z0 I0019        PASS A         LOAD A r I                 b     P12a       #
+001a: 0n1 0s21w z0 I001a        PASS A         LOAD A r I                 b     P12a       #
+001b: 0n1 0s21w z0 I001b        PASS A         LOAD A r I                 b     P12a       #
+001c: 0n1 0s21w z0 I001c        PASS A         LOAD A r I                 b     P12a       #
+001d: 0n1 0s21w z0 I001d        PASS A         LOAD A r I                 b     P12a       #
+001e: 0n1 0s21w z0 I001e        PASS A         LOAD A r I                 b     P12a       #
+001f: 0n1 0s21w z0 I001f        PASS A         LOAD A r I                 b     P12a       #
+0020: 0n1 0s21w z0 I0020        PASS A         LOAD A r I                 b     P12a       #
+0021: 0n1 0s21w z0 I0021        PASS A         LOAD A r I                 b     P12a       #
+0022: 0n1 0s21w z0 I0022        PASS A         LOAD A r I                 b     P12a       #
+0023: 0n1 0s21w z0 I0023        PASS A         LOAD A r I                 b     P12a       #
+0024: 0n1 0s21w z0 I0024        PASS A         LOAD A r I                 b     P12a       #
+0025: 0n1 0s21w z0 I0025        PASS A         LOAD A r I                 b     P12a       #
+0026: 0n1 0s21w z0 I0026        PASS A         LOAD A r I                 b     P12a       #
+0027: 0n1 0s21w z0 I0027        PASS A         LOAD A r I                 b     P12a       #
+0028: 0n1 0s21w z0 I0028        PASS A         LOAD A r I                 b     P12a       #
+0029: 0n1 0s21w z0 I0029        PASS A         LOAD A r I                 b     P12a       #
+002a: 0n1 0s21w z0 I002a        PASS A         LOAD A r I                 b     P12a       #
+002b: 0n1 0s21w z0 I002b        PASS A         LOAD A r I                 b     P12a       #
+002c: 0n1 0s21w z0 I002c        PASS A         LOAD A r I                 b     P12a       #
+002d: 0n1 0s21w z0 I002d        PASS A         LOAD A r I                 b     P12a       #
+002e: 0n1 0s21w z0 I002e        PASS A         LOAD A r I                 b     P12a       #
+002f: 0n1 0s21w z0 I002f        PASS A         LOAD A r I                 b     P12a       #
+0030: 0n1 0s21w z0 I0030        PASS A         LOAD A r I                 b     P12a       #
+0031: 0n1 0s21w z0 I0031        PASS A         LOAD A r I                 b     P12a       #
+0032: 0n1 0s21w z0 I0032        PASS A         LOAD A r I                 b     P12a       #
+0033: 0n1 0s21w z0 I0033        PASS A         LOAD A r I                 b     P12a       #
+0034: 0n1 0s21w z0 I0034        PASS A         LOAD A r I                 b     P12a       #
+0035: 0n1 0s21w z0 I0035        PASS A         LOAD A r I                 b     P12a       #
+0036: 0n1 0s21w z0 I0036        PASS A         LOAD A r I                 b     P12a       #
+0037: 0n1 0s21w z0 I0037        PASS A         LOAD A r I                 b     P12a       #
+0038: 0n1 0s21w z0 I0038        PASS A         LOAD A r I                 b     P12a       #
+0039: 0n1 0s21w z0 I0039        PASS A         LOAD A r I                 b     P12a       #
+003a: 0n1 0s21w z0 I003a        PASS A         LOAD A r I                 b     P12a       #
+003b: 0n1 0s21w z0 I003b        PASS A         LOAD A r I                 b     P12a       #
+003c: 0n1 0s21w z0 I003c        PASS A         LOAD A r I                 b     P12a       #
+003d: 0n1 0s21w z0 I003d        PASS A         LOAD A r I                 b     P12a       #
+003e: 0n1 0s21w z0 I003e        PASS A         LOAD A r I                 b     P12a       #
+003f: 0n1 0s21w z0 I003f        PASS A         LOAD A r I                 b     P12a       #
+0040: 0n1 0s21w z0 I0040        PASS A         LOAD A r I                 b     P12a       #
+0041: 0n1 0s21w z0 I0041        PASS A         LOAD A r I                 b     P12a       #
+0042: 0n1 0s21w z0 I0042        PASS A         LOAD A r I                 b     P12a       #
+0043: 0n1 0s21w z0 I0043        PASS A         LOAD A r I                 b     P12a       #
+0044: 0n1 0s21w z0 I0044        PASS A         LOAD A r I                 b     P12a       #
+0045: 0n1 0s21w z0 I0045        PASS A         LOAD A r I                 b     P12a       #
+0046: 0n1 0s21w z0 I0046        PASS A         LOAD A r I                 b     P12a       #
+0047: 0n1 0s21w z0 I0047        PASS A         LOAD A r I                 b     P12a       #
+0048: 0n1 0s21w z0 I0048        PASS A         LOAD A r I                 b     P12a       #
+0049: 0n1 0s21w z0 I0049        PASS A         LOAD A r I                 b     P12a       #
+
+draw rectangle
+004a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1c1 GM(0) # jump to 01c1
+
+004b: 0n1 0s21w z0 I004b        PASS A         LOAD A r I                 b     P12a       #
+004c: 0n1 0s21w z0 I004c        PASS A         LOAD A r I                 b     P12a       #
+004d: 0n1 0s21w z0 I004d        PASS A         LOAD A r I                 b     P12a       #
+004e: 0n1 0s21w z0 I004e        PASS A         LOAD A r I                 b     P12a       #
+004f: 0n1 0s21w z0 I004f        PASS A         LOAD A r I                 b     P12a       #
+0050: 0n1 0s21w z0 I0050        PASS A         LOAD A r I                 b     P12a       #
+0051: 0n1 0s21w z0 I0051        PASS A         LOAD A r I                 b     P12a       #
+0052: 0n1 0s21w z0 I0052        PASS A         LOAD A r I                 b     P12a       #
+0053: 0n1 0s21w z0 I0053        PASS A         LOAD A r I                 b     P12a       #
+0054: 0n1 0s21w z0 I0054        PASS A         LOAD A r I                 b     P12a       #
+0055: 0n1 0s21w z0 I0055        PASS A         LOAD A r I                 b     P12a       #
+0056: 0n1 0s21w z0 I0056        PASS A         LOAD A r I                 b     P12a       #
+0057: 0n1 0s21w z0 I0057        PASS A         LOAD A r I                 b     P12a       #
+0058: 0n1 0s21w z0 I0058        PASS A         LOAD A r I                 b     P12a       #
+0059: 0n1 0s21w z0 I0059        PASS A         LOAD A r I                 b     P12a       #
+005a: 0n1 0s21w z0 I005a        PASS A         LOAD A r I                 b     P12a       #
+005b: 0n1 0s21w z0 I005b        PASS A         LOAD A r I                 b     P12a       #
+005c: 0n1 0s21w z0 I005c        PASS A         LOAD A r I                 b     P12a       #
+
+draw line, packed RGB data (logo)
+005d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P197 GM(0) # jump to 0197
+
+005e: 0n1 0s21w z0 I005e        PASS A         LOAD A r I                 b     P12a       #
+
+cmov (text cursor move)
+005f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P192 GM(0) # jump to 0192
+
+0060: 0n1 0s21w z0 I0060        PASS A         LOAD A r I                 b     P12a       #
+0061: 0n1 0s21w z0 I0061        PASS A         LOAD A r I                 b     P12a       #
+0062: 0n1 0s21w z0 I0062        PASS A         LOAD A r I                 b     P12a       #
+0063: 0n1 0s21w z0 I0063        PASS A         LOAD A r I                 b     P12a       #
+0064: 0n1 0s21w z0 I0064        PASS A         LOAD A r I                 b     P12a       #
+0065: 0n1 0s21w z0 I0065        PASS A         LOAD A r I                 b     P12a       #
+0066: 0n1 0s21w z0 I0066        PASS A         LOAD A r I                 b     P12a       #
+0067: 0n1 0s21w z0 I0067        PASS A         LOAD A r I                 b     P12a       #
+0068: 0n1 0s21w z0 I0068        PASS A         LOAD A r I                 b     P12a       #
+0069: 0n1 0s21w z0 I0069        PASS A         LOAD A r I                 b     P12a       #
+006a: 0n1 0s21w z0 I006a        PASS A         LOAD A r I                 b     P12a       #
+006b: 0n1 0s21w z0 I006b        PASS A         LOAD A r I                 b     P12a       #
+006c: 0n1 0s21w z0 I006c        PASS A         LOAD A r I                 b     P12a       #
+006d: 0n1 0s21w z0 I006d        PASS A         LOAD A r I                 b     P12a       #
+006e: 0n1 0s21w z0 I006e        PASS A         LOAD A r I                 b     P12a       #
+006f: 0n1 0s21w z0 I006f        PASS A         LOAD A r I                 b     P12a       #
+0070: 0n1 0s21w z0 I0070        PASS A         LOAD A r I                 b     P12a       #
+0071: 0n1 0s21w z0 I0071        PASS A         LOAD A r I                 b     P12a       #
+0072: 0n1 0s21w z0 I0072        PASS A         LOAD A r I                 b     P12a       #
+0073: 0n1 0s21w z0 I0073        PASS A         LOAD A r I                 b     P12a       #
+0074: 0n1 0s21w z0 I0074        PASS A         LOAD A r I                 b     P12a       #
+0075: 0n1 0s21w z0 I0075        PASS A         LOAD A r I                 b     P12a       #
+0076: 0n1 0s21w z0 I0076        PASS A         LOAD A r I                 b     P12a       #
+0077: 0n1 0s21w z0 I0077        PASS A         LOAD A r I                 b     P12a       #
+0078: 0n1 0s21w z0 I0078        PASS A         LOAD A r I                 b     P12a       #
+0079: 0n1 0s21w z0 I0079        PASS A         LOAD A r I                 b     P12a       #
+007a: 0n1 0s21w z0 I007a        PASS A         LOAD A r I                 b     P12a       #
+007b: 0n1 0s21w z0 I007b        PASS A         LOAD A r I                 b     P12a       #
+007c: 0n1 0s21w z0 I007c        PASS A         LOAD A r I                 b     P12a       #
+007d: 0n1 0s21w z0 I007d        PASS A         LOAD A r I                 b     P12a       #
+007e: 0n1 0s21w z0 I007e        PASS A         LOAD A r I                 b     P12a       #
+007f: 0n1 0s21w z0 I007f        PASS A         LOAD A r I                 b     P12a       #
+0080: 0n1 0s21w z0 I0080        PASS A         LOAD A r I                 b     P12a       #
+0081: 0n1 0s21w z0 I0081        PASS A         LOAD A r I                 b     P12a       #
+0082: 0n1 0s21w z0 I0082        PASS A         LOAD A r I                 b     P12a       #
+0083: 0n1 0s21w z0 I0083        PASS A         LOAD A r I                 b     P12a       #
+0084: 0n1 0s21w z0 I0084        PASS A         LOAD A r I                 b     P12a       #
+0085: 0n1 0s21w z0 I0085        PASS A         LOAD A r I                 b     P12a       #
+0086: 0n1 0s21w z0 I0086        PASS A         LOAD A r I                 b     P12a       #
+0087: 0n1 0s21w z0 I0087        PASS A         LOAD A r I                 b     P12a       #
+0088: 0n1 0s21w z0 I0088        PASS A         LOAD A r I                 b     P12a       #
+0089: 0n1 0s21w z0 I0089        PASS A         LOAD A r I                 b     P12a       #
+008a: 0n1 0s21w z0 I008a        PASS A         LOAD A r I                 b     P12a       #
+008b: 0n1 0s21w z0 I008b        PASS A         LOAD A r I                 b     P12a       #
+008c: 0n1 0s21w z0 I008c        PASS A         LOAD A r I                 b     P12a       #
+008d: 0n1 0s21w z0 I008d        PASS A         LOAD A r I                 b     P12a       #
+008e: 0n1 0s21w z0 I008e        PASS A         LOAD A r I                 b     P12a       #
+008f: 0n1 0s21w z0 I008f        PASS A         LOAD A r I                 b     P12a       #
+0090: 0n1 0s21w z0 I0090        PASS A         LOAD A r I                 b     P12a       #
+0091: 0n1 0s21w z0 I0091        PASS A         LOAD A r I                 b     P12a       #
+0092: 0n1 0s21w z0 I0092        PASS A         LOAD A r I                 b     P12a       #
+0093: 0n1 0s21w z0 I0093        PASS A         LOAD A r I                 b     P12a       #
+0094: 0n1 0s21w z0 I0094        PASS A         LOAD A r I                 b     P12a       #
+0095: 0n1 0s21w z0 I0095        PASS A         LOAD A r I                 b     P12a       #
+0096: 0n1 0s21w z0 I0096        PASS A         LOAD A r I                 b     P12a       #
+0097: 0n1 0s21w z0 I0097        PASS A         LOAD A r I                 b     P12a       #
+0098: 0n1 0s21w z0 I0098        PASS A         LOAD A r I                 b     P12a       #
+0099: 0n1 0s21w z0 I0099        PASS A         LOAD A r I                 b     P12a       #
+009a: 0n1 0s21w z0 I009a        PASS A         LOAD A r I                 b     P12a       #
+009b: 0n1 0s21w z0 I009b        PASS A         LOAD A r I                 b     P12a       #
+009c: 0n1 0s21w z0 I009c        PASS A         LOAD A r I                 b     P12a       #
+009d: 0n1 0s21w z0 I009d        PASS A         LOAD A r I                 b     P12a       #
+009e: 0n1 0s21w z0 I009e        PASS A         LOAD A r I                 b     P12a       #
+009f: 0n1 0s21w z0 I009f        PASS A         LOAD A r I                 b     P12a       #
+00a0: 0n1 0s21w z0 I00a0        PASS A         LOAD A r I                 b     P12a       #
+00a1: 0n1 0s21w z0 I00a1        PASS A         LOAD A r I                 b     P12a       #
+00a2: 0n1 0s21w z0 I00a2        PASS A         LOAD A r I                 b     P12a       #
+00a3: 0n1 0s21w z0 I00a3        PASS A         LOAD A r I                 b     P12a       #
+00a4: 0n1 0s21w z0 I00a4        PASS A         LOAD A r I                 b     P12a       #
+00a5: 0n1 0s21w z0 I00a5        PASS A         LOAD A r I                 b     P12a       #
+00a6: 0n1 0s21w z0 I00a6        PASS A         LOAD A r I                 b     P12a       #
+00a7: 0n1 0s21w z0 I00a7        PASS A         LOAD A r I                 b     P12a       #
+00a8: 0n1 0s21w z0 I00a8        PASS A         LOAD A r I                 b     P12a       #
+00a9: 0n1 0s21w z0 I00a9        PASS A         LOAD A r I                 b     P12a       #
+00aa: 0n1 0s21w z0 I00aa        PASS A         LOAD A r I                 b     P12a       #
+00ab: 0n1 0s21w z0 I00ab        PASS A         LOAD A r I                 b     P12a       #
+00ac: 0n1 0s21w z0 I00ac        PASS A         LOAD A r I                 b     P12a       #
+00ad: 0n1 0s21w z0 I00ad        PASS A         LOAD A r I                 b     P12a       #
+00ae: 0n1 0s21w z0 I00ae        PASS A         LOAD A r I                 b     P12a       #
+00af: 0n1 0s21w z0 I00af        PASS A         LOAD A r I                 b     P12a       #
+00b0: 0n1 0s21w z0 I00b0        PASS A         LOAD A r I                 b     P12a       #
+00b1: 0n1 0s21w z0 I00b1        PASS A         LOAD A r I                 b     P12a       #
+00b2: 0n1 0s21w z0 I00b2        PASS A         LOAD A r I                 b     P12a       #
+00b3: 0n1 0s21w z0 I00b3        PASS A         LOAD A r I                 b     P12a       #
+00b4: 0n1 0s21w z0 I00b4        PASS A         LOAD A r I                 b     P12a       #
+00b5: 0n1 0s21w z0 I00b5        PASS A         LOAD A r I                 b     P12a       #
+00b6: 0n1 0s21w z0 I00b6        PASS A         LOAD A r I                 b     P12a       #
+00b7: 0n1 0s21w z0 I00b7        PASS A         LOAD A r I                 b     P12a       #
+00b8: 0n1 0s21w z0 I00b8        PASS A         LOAD A r I                 b     P12a       #
+00b9: 0n1 0s21w z0 I00b9        PASS A         LOAD A r I                 b     P12a       #
+00ba: 0n1 0s21w z0 I00ba        PASS A         LOAD A r I                 b     P12a       #
+00bb: 0n1 0s21w z0 I00bb        PASS A         LOAD A r I                 b     P12a       #
+00bc: 0n1 0s21w z0 I00bc        PASS A         LOAD A r I                 b     P12a       #
+00bd: 0n1 0s21w z0 I00bd        PASS A         LOAD A r I                 b     P12a       #
+00be: 0n1 0s21w z0 I00be        PASS A         LOAD A r I                 b     P12a       #
+00bf: 0n1 0s21w z0 I00bf        PASS A         LOAD A r I                 b     P12a       #
+00c0: 0n1 0s21w z0 I00c0        PASS A         LOAD A r I                 b     P12a       #
+00c1: 0n1 0s21w z0 I00c1        PASS A         LOAD A r I                 b     P12a       #
+00c2: 0n1 0s21w z0 I00c2        PASS A         LOAD A r I                 b     P12a       #
+00c3: 0n1 0s21w z0 I00c3        PASS A         LOAD A r I                 b     P12a       #
+00c4: 0n1 0s21w z0 I00c4        PASS A         LOAD A r I                 b     P12a       #
+00c5: 0n1 0s21w z0 I00c5        PASS A         LOAD A r I                 b     P12a       #
+00c6: 0n1 0s21w z0 I00c6        PASS A         LOAD A r I                 b     P12a       #
+00c7: 0n1 0s21w z0 I00c7        PASS A         LOAD A r I                 b     P12a       #
+00c8: 0n1 0s21w z0 I00c8        PASS A         LOAD A r I                 b     P12a       #
+00c9: 0n1 0s21w z0 I00c9        PASS A         LOAD A r I                 b     P12a       #
+00ca: 0n1 0s21w z0 I00ca        PASS A         LOAD A r I                 b     P12a       #
+00cb: 0n1 0s21w z0 I00cb        PASS A         LOAD A r I                 b     P12a       #
+00cc: 0n1 0s21w z0 I00cc        PASS A         LOAD A r I                 b     P12a       #
+00cd: 0n1 0s21w z0 I00cd        PASS A         LOAD A r I                 b     P12a       #
+00ce: 0n1 0s21w z0 I00ce        PASS A         LOAD A r I                 b     P12a       #
+00cf: 0n1 0s21w z0 I00cf        PASS A         LOAD A r I                 b     P12a       #
+00d0: 0n1 0s21w z0 I00d0        PASS A         LOAD A r I                 b     P12a       #
+00d1: 0n1 0s21w z0 I00d1        PASS A         LOAD A r I                 b     P12a       #
+00d2: 0n1 0s21w z0 I00d2        PASS A         LOAD A r I                 b     P12a       #
+00d3: 0n1 0s21w z0 I00d3        PASS A         LOAD A r I                 b     P12a       #
+00d4: 0n1 0s21w z0 I00d4        PASS A         LOAD A r I                 b     P12a       #
+00d5: 0n1 0s21w z0 I00d5        PASS A         LOAD A r I                 b     P12a       #
+00d6: 0n1 0s21w z0 I00d6        PASS A         LOAD A r I                 b     P12a       #
+00d7: 0n1 0s21w z0 I00d7        PASS A         LOAD A r I                 b     P12a       #
+00d8: 0n1 0s21w z0 I00d8        PASS A         LOAD A r I                 b     P12a       #
+00d9: 0n1 0s21w z0 I00d9        PASS A         LOAD A r I                 b     P12a       #
+00da: 0n1 0s21w z0 I00da        PASS A         LOAD A r I                 b     P12a       #
+00db: 0n1 0s21w z0 I00db        PASS A         LOAD A r I                 b     P12a       #
+00dc: 0n1 0s21w z0 I00dc        PASS A         LOAD A r I                 b     P12a       #
+00dd: 0n1 0s21w z0 I00dd        PASS A         LOAD A r I                 b     P12a       #
+00de: 0n1 0s21w z0 I00de        PASS A         LOAD A r I                 b     P12a       #
+00df: 0n1 0s21w z0 I00df        PASS A         LOAD A r I                 b     P12a       #
+00e0: 0n1 0s21w z0 I00e0        PASS A         LOAD A r I                 b     P12a       #
+00e1: 0n1 0s21w z0 I00e1        PASS A         LOAD A r I                 b     P12a       #
+00e2: 0n1 0s21w z0 I00e2        PASS A         LOAD A r I                 b     P12a       #
+00e3: 0n1 0s21w z0 I00e3        PASS A         LOAD A r I                 b     P12a       #
+00e4: 0n1 0s21w z0 I00e4        PASS A         LOAD A r I                 b     P12a       #
+00e5: 0n1 0s21w z0 I00e5        PASS A         LOAD A r I                 b     P12a       #
+00e6: 0n1 0s21w z0 I00e6        PASS A         LOAD A r I                 b     P12a       #
+00e7: 0n1 0s21w z0 I00e7        PASS A         LOAD A r I                 b     P12a       #
+00e8: 0n1 0s21w z0 I00e8        PASS A         LOAD A r I                 b     P12a       #
+00e9: 0n1 0s21w z0 I00e9        PASS A         LOAD A r I                 b     P12a       #
+00ea: 0n1 0s21w z0 I00ea        PASS A         LOAD A r I                 b     P12a       #
+00eb: 0n1 0s21w z0 I00eb        PASS A         LOAD A r I                 b     P12a       #
+00ec: 0n1 0s21w z0 I00ec        PASS A         LOAD A r I                 b     P12a       #
+00ed: 0n1 0s21w z0 I00ed        PASS A         LOAD A r I                 b     P12a       #
+00ee: 0n1 0s21w z0 I00ee        PASS A         LOAD A r I                 b     P12a       #
+00ef: 0n1 0s21w z0 I00ef        PASS A         LOAD A r I                 b     P12a       #
+00f0: 0n1 0s21w z0 I00f0        PASS A         LOAD A r I                 b     P12a       #
+00f1: 0n1 0s21w z0 I00f1        PASS A         LOAD A r I                 b     P12a       #
+00f2: 0n1 0s21w z0 I00f2        PASS A         LOAD A r I                 b     P12a       #
+00f3: 0n1 0s21w z0 I00f3        PASS A         LOAD A r I                 b     P12a       #
+00f4: 0n1 0s21w z0 I00f4        PASS A         LOAD A r I                 b     P12a       #
+00f5: 0n1 0s21w z0 I00f5        PASS A         LOAD A r I                 b     P12a       #
+00f6: 0n1 0s21w z0 I00f6        PASS A         LOAD A r I                 b     P12a       #
+00f7: 0n1 0s21w z0 I00f7        PASS A         LOAD A r I                 b     P12a       #
+00f8: 0n1 0s21w z0 I00f8        PASS A         LOAD A r I                 b     P12a       #
+00f9: 0n1 0s21w z0 I00f9        PASS A         LOAD A r I                 b     P12a       #
+00fa: 0n1 0s21w z0 I00fa        PASS A         LOAD A r I                 b     P12a       #
+00fb: 0n1 0s21w z0 I00fb        PASS A         LOAD A r I                 b     P12a       #
+00fc: 0n1 0s21w z0 I00fc        PASS A         LOAD A r I                 b     P12a       #
+00fd: 0n1 0s21w z0 I00fd        PASS A         LOAD A r I                 b     P12a       #
+00fe: 0n1 0s21w z0 I00fe        PASS A         LOAD A r I                 b     P12a       #
+00ff: 0n1 0s21w z0 I00ff        PASS A         LOAD A r I                 b     P12a       #
+
+00, PP reset
+no args
+0100: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P100 GM(1) # wait for GM
+0101: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+18, PP init
+no args
+0102: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0103: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0104: 0n1 0s21w z0 I0f9a VPLI   PASS A                w F1I                                # VP = 0f9a; (0f9a) = previous output, A, 0000
+0105: 0n1 0s21w z0 I0000        PASS A                r I                 c     P11a       # call 011a, wait for EP, send EP command 0000
+0106: 0n1 0s21w z0 I0008        PASS A         LOAD B r I                                  # B = 0008
+0107: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0108: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0109: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+010a: 0n1 0s20w z1 I0000        PASS B                r I      recip                       # recip = A, 0000 (inst 0108)
+010b: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+010c: 1n1 1s31w z1 I0000        PASS A                r I      EPmode                      # EP mode = B, 0008 (no pixel buffer operation, no anti-alias, set x major line, RGB)
+010d: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+010e: 1n1 1s31w z1 I0000        PASS B                r I      b_count                     # blue count = A, 0000 (inst 010c)
+010f: 0n1 0s21w z0 I000a        PASS A         LOAD A r I              hf                  # A = 000a
+0110: 1n1 1s31w z1 I0000        PASS A                r I      EPmode                      # EP mode = B, 0008 (inst 010e)
+0111: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0112: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd     c     P11a       # EP command = A, 000a (inst 0110), write pixel; call 011a
+0113: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0114: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0115: 0n1 0s21w z0 I0f93 VPLI   PASS A                w F1I                                # VP = 0f93; (0f93) = previous output, A, 0001
+0116: 0n1 0s21w z0 I0fa1 VPLI   PASS A                w F1I                                # VP = 0fa1; (0f91) = previous output, A, 0001
+0117: 0n1 0s21w z0 I0fa0 VPLI   PASS A                w F1I                                # VP = 0fa0; (0fa0) = previous output, A, 0001
+0118: 0n1 0s21w z0 I0f9b VPLI   PASS A                w F1I                                # VP = 0f9b; (0f9b) = previous output, A, 0001
+0119: 0n1 0s20w z1 I0000        PASS A                r I      recip      b     P100       # recip = inst 0117 output, A, 0001; jump to 0100
+
+wait for EP, send EP command 0000
+011a: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+011b: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+011c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+011d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+011e: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+011f: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0120: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P120       # wait for EP
+0121: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd                      # EP command = A, 0000 (inst 011f)
+0122: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0123: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0124: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0125: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0126: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0127: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0128: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P128       # wait for EP
+0129: 0n1 0s21w z0 I0000        PASS A                r I                 ret              # return
+
+error
+args A, error index
+012a: 0n0 0s21w z0 I0000        PASS A                r I                            GM(0) #
+012b: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+012c: 0n1 0s21w z0 I0000        PASS A                w F1P                                # (0000) = A, error index
+012d: 0n0 0s21w z0 I4000        PASS A                r I                            GM(2) #
+012e: 0n0 0s21w z0 I8000        PASS A                r I                            GM(4) # GM(4) send PP interrupt
+012f: 0n1 0s21w z0 I0000        PASS A                r I                 b     P100       # jump to 0100
+
+07, set sp mode and screen mask
+args 0 sp mode word 0, 1 sp mode word 1
+0130: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0131: 0n1 0s21w z0 I0000 VPLI   PASS A         LOAD A r VBI                                # VP = 0000; A = (0000)
+0132: 0n1 0s21w z0 I0001        PASS A         LOAD B r VBI            hf                  # B = (0001)
+0133: 0n1 0s20w z1 I0000        PASS A                r I      recip                       # recip = A, 0001 (inst 0131)
+0134: 0n1 0s21w z0 I0fb6 VPLI   PASS B                w F1I                                # VP = 0fb6; (0fb6) = A, (0000)
+0135: 0n1 0s21w z0 I0fb7 VPLI   PASS B                w F1I               bEP   P135       # VP = 0fb7; (0fb7) = B, (0001); wait for EP
+0136: 1n1 1s8fw z1 I0000        PASS A                r I      z_a                         # z_a = B, (0000) (inst 0134 or 0135 if branch taken)
+0137: 0n1 0s21w z0 I000b        PASS A         LOAD B r I              hf                  # B = 000b
+0138: 1n1 1s8fw z1 I0000        PASS B                r I      z_b                         # z_b = A, (0001) (inst 0136)
+0139: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+013a: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd                      # EP command = B, 000b (inst 0138), set sp mode
+013b: 0n1 0s21w z0 I0001        PASS A         LOAD A r I              hf                  # A = 0001
+013c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+013d: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+013e: 0n1 0s20w z1 I0000        PASS A                r I      recip   hf                  # recip = A, 0001 (inst 013c)
+013f: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0140: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0141: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                 bEP   P141       # A = 0000; wait for EP
+0142: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0143: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0144: 1n1 1s8fw z1 I0500        PASS A         LOAD A r I      x_a     hf                  # A = 0500; x_a = A, 0000 (inst 0142)
+0145: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0146: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0147: 1n1 1s8fw z1 I0000        PASS A         LOAD A r I      x_b     hf                  # A = 0000; x_b = A, 0500 (inst 0145)
+0148: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0149: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+014a: 1n1 1s8fw z1 I0400        PASS A         LOAD A r I      y_a     hf                  # A = 0400; y_a = A, 0000 (inst 0148)
+014b: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+014c: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+014d: 1n1 1s8fw z1 I0800        PASS A         LOAD A r I      y_b     hf                  # A = 0800; y_b = A, 0400 (inst 014b)
+014e: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+014f: 0n1 0s21w z0 I0005        PASS A         LOAD A r I              hf                  # A = 0005
+0150: 1n1 1s8fw z1 I0000        PASS A                r I      x_ma_lo                     # x_ma_low = A, 0800 (inst 014e), precision shift 0800 is 1.0
+0151: 0n1 0s21w z0 If800        PASS A         LOAD A r I              hf                  # A = f800
+0152: 1n1 1s8fw z1 I0000        PASS A                r I      x_count                     # x_count = A, 0005 (inst 0150), 0005 for each of 5 SP slices
+0153: 0n1 0s21w z0 I0000        PASS A         LOAD A r I              hf                  # A = 0000
+0154: 1n1 1s8fw z1 I0000        PASS A                r I      x_mb_lo                     # x_mb_low = A, f800 (inst 0152), precision shift f800 is -1.0
+0155: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0156: 1n1 1s8fw z1 I0000        PASS A                r I      y_ma_lo                     # y_ma_low = A, 0000 (inst 0154)
+0157: 0n1 0s21w z0 I003f        PASS A         LOAD A r I              hf                  # A = 003f
+0158: 1n1 1s8fw z1 I0000        PASS A                r I      y_mb_lo                     # y_mb_low = A, 0000 (inst 0156)
+0159: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+015a: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd     b     P100       # EP command = 003f (inst 0158), set screen mask; jump to 0100
+
+08, PP_SETMODE
+args 0 address, 1 data value
+015b: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+015c: 0n1 0s21w z0 I0001        PASS A         LOAD A r VBI                                # A = VP(1)
+015d: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+015e: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+015f: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+0160: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = VP(0) address
+0161: 0n1 0s21w z0 I0000        PASS A                w F1P                                # (VP), address = A, VP(1) data value
+0162: 0n1 0s21w z0 I0fa1        PASS A         LOAD A r I                                  # A = 0fa1
+0163: 0n1 0s21w z0 I0fa4        A - B          LOAD A r I                                  # A = 0fa4
+0164: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0165: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P171       # 0fa1 == B, address  (inst 0163)
+0166: 0n1 0s21w z0 I0fa5        PASS A         LOAD A r I              hf                  # A = 0fa5
+0167: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P171       # 0fa4 == B, address  (inst 0165)
+0168: 0n1 0s21w z0 I0fab        PASS A         LOAD A r I              hf                  # A = 0fab
+0169: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P171       # 0fa5 == B, address  (inst 0167)
+016a: 0n1 0s21w z0 I0faa        PASS A         LOAD A r I              hf                  # A = 0faa
+016b: 0n1 0s21w z0 I0000        A - B          LOAD A r I                 beq   P177       # A = 0000; 0fab == B, address  (inst 0169)
+016c: 0n1 0s21w z0 I0f99        PASS A         LOAD A r I              hf                  # A = 0f99
+016d: 0n1 0s21w z0 I0000        A - B          LOAD A r I                 beq   P17c       # A = 0000; 0faa == B, address  (inst 016b)
+016e: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+016f: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                 beq   P182       # B = 0000; 0f99 == B, address  (inst 016d)
+
+none == B, address 
+0170: 0n1 0s21w z0 I0000        PASS A                r I                 b     P100       # jump to 0100
+
+0fa1, 0fa4, 0fa5 == B, address
+0171: 0n1 0s21w z0 I0d20 VPLI   A OR B         LOAD A r VBI                                # VP = 0d20; A = (0d20)
+0172: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = A OR B (A = 0fa1, 0fa4 or 0fa5, B = address)
+0173: 0n1 0s21w z0 I0d28 VPLI   A OR B         LOAD A r VBI                                # VP = 0d28; A = (0d28)
+0174: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = A, (0d20) OR B, address
+0175: 0n1 0s21w z0 I0000        A OR B                r I                                  #
+0176: 0n1 0s21w z0 I0cd0 VPLI   PASS A                w F1I               b     P100       # VP = 0cd0; (0cd0) = A, (0d28) OR B, (0d20) OR address; jump to 0100
+
+0fab == B, address
+0177: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0178: 0n1 0s21w z0 I0fab VPLI   PASS A         LOAD B r SVI            hf                  # VP = 0fab; B = (0fab)
+0179: 0n1 0s20w z1 I0000        PASS B                r I      recip                       # recip = A, 0000 (inst 0177, load inst 016b)
+017a: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+017b: 1n1 1s31w z1 I0000        PASS A                r I      EPmode     b     P100       # EP mode = B, (0fab)  (inst 0179); jump to 0100
+
+0faa == B, address
+017c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+017d: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+017e: 0n1 0s20w z1 I0faa VPLI   PASS A         LOAD B r SVI    recip                       # VP = 0faa; B = (0faa); recip = A, 0000 (inst 017c, load inst 016d)
+017f: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+0180: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0181: 1n1 1s31w z1 I0000        PASS A                r I      stipple    b     P100       # stipple = B, (0faa)  (inst 017f); jump to 0100
+
+0f99 == B, address
+0182: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0183: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0184: 0n1 0s21w z0 I0f99 VPLI   PASS A         LOAD B r SVI            hf                  # VP = 0f99; B = (0f99)
+0185: 0n1 0s20w z1 I0000        PASS B                r I      recip                       # recip = A, 0000  (inst 0183, load inst 0182)
+0186: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+0187: 1n1 1s31w z1 I0000        PASS A                r I      pbptr      b     P100       # pbptr = B, (0f99)  (inst 0185); jump to 0100
+
+10, set color
+args 0 R, 1 G, 2 B, 3 A
+0188: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+0189: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBI                                # A = VP(0)
+018a: 0n1 0s21w z0 I0001        PASS A         LOAD B r VBI                                # B = VP(1)
+018b: 0n1 0s21w z0 I0f9c VPLI   PASS B                w F1I                                # VP = 0f9c; (0f9c) = A, VP(0) red
+018c: 0n1 0s21w z0 I0f9d VPLI   PASS A                w F1I                                # VP = 0f9d; (0f9d) = B, VP(1) green
+018d: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+018e: 0n1 0s21w z0 I0002        PASS A         LOAD A r VBI                                # A = VP(2)
+018f: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+0190: 0n1 0s21w z0 I0f9e VPLI   PASS B                w F1I                                # VP = 0f9e; (0f9e) = A, VP(2) blue
+0191: 0n1 0s21w z0 I0f9f VPLI   PASS A                w F1I               b     P100       # VP = 0f9f; (0f9f) = B, VP(3) alpha; jump to 0100
+
+5f, cmov (text cursor move)
+args 0 X, 1 Y
+0192: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+0193: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBI                                # A = VP(0)
+0194: 0n1 0s21w z0 I0001        PASS A         LOAD B r VBI                                # B = VP(1)
+0195: 0n1 0s21w z0 I0f97 VPLI   PASS B                w F1I                                # VP = 0f97; (0f97) = A, VP(0) X
+0196: 0n1 0s21w z0 I0f98 VPLI   PASS A                w F1I               b     P100       # VP = 0f98; (0f98) = B, VP(1) Y; jump to 0100
+
+5d, draw line, packed RGB data (logo)
+args 0 X, 1 Y, 2 { packed (0RGB) }
+0197: 0n1 0s21w z0 I0000        PASS A         LOAD A r WC                                 # A = WC
+0198: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+0199: 0n1 0s21w z0 I0001 VPLI   PASS B         LOAD A r VBI            hf                  # VP = 0001; A = (0001), Y
+019a: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P100       # A,WC == 0, jump to 0100
+A,WC != 0
+019b: 0n1 0s20w z1 I0000        PASS A         LOAD A r VBI    recip                       # A = VP(0), X; recip = B, 0001 (inst 0199)
+019c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+019d: 1n1 1s8fw z1 I0000        PASS A                r I      y_a                         # y_a = A, Y (inst 019b)
+019e: 0n1 0s21w z0 I0f2a VPLI   PASS A                w F1I                                # VP = 0f2a; (0f2a) = A, X (inst 019d)
+019f: 1n1 1s8fw z1 I0003        PASS A         LOAD A r I      x_a                         # A = 0003; x_a = A, X (inst 019d)
+01a0: 0n1 0s21w z0 I0002        PASS A         LOAD A r I                                  # A = 0002
+01a1: 0n1 0s21w z0 I0f2c VPLI   PASS A                w F1I                                # VP = 0f2c; (0f2c) = 0003
+01a2: 0n1 0s21w z0 I0f2b VPLI   PASS A                w F1I                                # VP = 0f2b; (0f2b) = 0002
+01a3: 0n1 0s21w z0 I0000        PASS A         LOAD B r WC                                 # B = WC
+01a4: 0n1 0s21w z0 I0000        B - A                 r I                                  #
+01a5: 0n1 0s21w z0 I0f2d VPLI   PASS A                w F1I                                # VP = 0f2d; (0f2d) = B,WC - A, 0002
+loop
+01a6: 0n1 0s21w z0 I0000        PASS A                r I                 c     P1b5       # call 01b5
+01a7: 0n1 0s21w z0 I0f2a VPLI   PASS A         LOAD A r SVI                                # VP = 0f2a; A = (0f2a), X
+01a8: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+01a9: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+01aa: 0n1 0s21w z0 I0f2a VPLI   A + B                 w F1I                                # VP = 0f2a; (0f2a) = A,(0f2a) + B,0001 (inst 01a9)
+01ab: 1n1 1s8fw z1 I0002        PASS A         LOAD B r I      x_a                         # B = 0002; x_a = A + B,0001 (inst 01a9)
+01ac: 0n1 0s21w z0 I0f2b VPLI   PASS A         LOAD A r SVI                                # VP = 0f2b; A = (0f2b)
+01ad: 0n1 0s21w z0 I0f2c VPLI   A + B          LOAD A r SVI                                # VP = 0f2c; A = (0f2c)
+01ae: 0n1 0s21w z0 I0f2b VPLI   A + B                 w F1I                                # VP = 0f2b; (0f2b) = A,(0f2b) + B,0002 (inst 01ad)
+01af: 0n1 0s21w z0 I0f2c VPLI   PASS A                w F1I                                # VP = 0f2c; (0f2c) = A,(0f2c) + B,0002 (inst 01ae)
+01b0: 0n1 0s21w z0 I0f2d VPLI   PASS A         LOAD A r SVI                                # VP = 0f2d; A = (0f2d)
+01b1: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+01b2: 0n1 0s21w z0 I0f2d VPLI   PASS A                w F1I            hf                  # VP = 0f2d; (0f2d) = A,(0f2d) - B,0002 (inst 01b1)
+01b3: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P100       # A,(0f2d) - B,0002 == 0 (inst 01b1), jump to 0100
+A,(0f2d) - B,0002 != 0
+01b4: 0n1 0s21w z0 I0000        PASS A                r I                 b     P1a6       # jump to 01a6
+
+write pixel (x_a,y_a) = (0f2c)(0):(0f2b)(0), EP command 000a
+01b5: 0n1 0s21w z0 I0f2c VPLI   PASS A                r SVI                                # VP = 0f2c; R = (0f2c)
+01b6: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = R,(0f2c)
+01b7: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBP                                # A = (VP),(0f2c)(0)
+01b8: 0n1 0s21w z0 I0f2b VPLI   PASS A                r SVI                                # VP = 0f2b; R = (0f2b)
+01b9: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = R,(0f2b)
+01ba: 1n1 1s8fw z1 I0000        PASS A         LOAD A r VBP    z_a                         # A = (VP),(0f2b)(0); z_a = A, (0f2c)(0)  (inst 01b8)
+01bb: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01bc: 0n1 0s21w z0 I000a        PASS A         LOAD A r I                                  # A = 000a
+01bd: 1n1 1s8fw z1 I0000        PASS A                r I      z_b                         # z_b = A, (0f2b)(0)  (inst 01bb)
+01be: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P1be       # wait for EP
+01bf: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd                      # EP command = 000a, write pixel (x_a,y_a) = (z_a:z_b)
+01c0: 0n1 0s21w z0 I0000        PASS A                r I                 ret              # return
+
+4a, draw rectangle
+args 4 vertices {X, Y, Z high word, Z low word, R, G, B, A}
+01c1: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01c2: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01c3: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01c4: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01c5: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+01c6: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P1c6       # wait for EP
+01c7: 0n1 0s21w z0 I0800        PASS A         LOAD A r I                                  # A = 0800
+01c8: 0n1 0s20w z1 I0000        PASS A                r I      recip                       # recip = A, 0001 (inst 01c6)
+01c9: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01ca: 1n1 1s8fw z1 I0000 VPLI   PASS A         LOAD A r VBI    x_mb_lo                     # VP = 0000; A = (0000), X0; x_mb_low = A, 0800 (1.0) (inst 01c8)
+01cb: 0n1 0s21w z0 I0008 VPLI   PASS A         LOAD B r VBI                                # VP = 0008; B = (0008), X1
+01cc: 1n1 1s8fw z1 I0001 VPLI   B - A          LOAD B r VBI    x_ma_lo                     # VP = 0001; B = (0001), Y0; x_ma_low = A, 0800 (1.0) (inst 01ca)
+01cd: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01ce: 1n1 1s8ew z1 I0009 VPLI   PASS A         LOAD A r VBI    x_count                     # VP = 0009; A = (0009), Y1; x_count = B,X1 - A,X0 (inst 01cc)
+01cf: 0n1 0s21w z0 I0004 VPLI   A - B          LOAD A r VBI                                # VP = 0004; A = (0004), R0
+01d0: 1n1 1s8fw z1 I000c VPLI   PASS B         LOAD B r VBI    x_a                         # VP = 000c; B = (000c), R1; x_a = A,X0 (inst 01ce)
+01d1: 1n1 1s31w z1 I0005 VPLI   B - A          LOAD B r VBI    y_ma_lo                     # VP = 0005; B = (0005), G0; y_ma_low = A,Y1 - B,Y0 (inst 01cf)
+01d2: 1n1 1s8bw z0 I000d VPLI   PASS A         LOAD A r VBI    y_a                         # VP = 000d; A = (000d), G1; y_a = B,Y0 (inst 01d0)
+01d3: 1n1 1s35w z0 I0006 VPLI   A - B          LOAD A r VBI    r_ma_lo                     # VP = 0006; A = (0006), B0; r_ma_low = B,R1 - A,R0 (inst 01d1)
+01d4: 1n1 1s8bw z0 I000e VPLI   PASS B         LOAD B r VBI    r_a                         # VP = 000e; B = (000e), B1; r_a = A,R0 (inst 01d2)
+01d5: 1n1 1s31w z0 I0007 VPLI   B - A          LOAD B r VBI    g_ma_lo                     # VP = 0007; B = (0007), A0; g_ma_low = A,G1 - B,G0 (inst 01d3)
+01d6: 1n1 1s8bw z0 I000f VPLI   PASS A         LOAD A r VBI    g_a                         # VP = 000f; A = (000f), A1; g_a = B,G0 (inst 01d4)
+01d7: 1n1 1s31w z0 I0003 VPLI   A - B          LOAD A r VBI    b_ma_lo                     # VP = 0003; A = (0003), Zl0; b_ma_low = B,B1 - A,B0 (inst 01d5)
+01d8: 1n1 1s8bw z0 I000b VPLI   PASS B         LOAD B r VBI    b_a                         # VP = 000b; B = (000b), Zl1; b_a = A,B0 (inst 01d6)
+01d9: 1n1 1s31w z0 I0002 VPLI   B - A          LOAD B r VBI    a_ma_lo                     # VP = 0002; B = (0002), Zh0; a_ma_low = A,A1 - B,A0 (inst 01d7)
+01da: 1n1 1s8bw z0 I000a VPLI   PASS A         LOAD A r VBI    a_a     hf                  # VP = 000a; A = (000a), Zh1; a_a = B,A0 (inst 01d8)
+01db: 1n1 0s21w z0 I0000        A + NOT(B) + C        r I      recip                       # recip = B,Zl1 - A,Zl0 (inst 01d9)
+01dc: 1n1 0s23w z0 I0000        PASS B                r I      recip                       # recip = A,Zl0 (inst 01da)
+01dd: 0n1 1s33w z0 I0010 VPLI   PASS A         LOAD A r VBI    z_ma_lo                     # VP = 0010; A = (0010), X2; z_ma_low = A,Zh1 - B,Zh0 (inst 01db)
+01de: 0n1 1s8dw z0 I0018 VPLI   PASS A         LOAD B r VBI    z_a                         # VP = 0018; B = (0018), X3; z_a = B,Zh0 (inst 01dc)
+01df: 0n1 0s81w z1 I0011 VPLI   B - A          LOAD B r VBI    z_ma_hi                     # VP = 0011; B = (0011), Y2; z_ma_hi = A,Zh1 (inst 01dd)
+01e0: 1n1 0sa5w z1 I0000        PASS A                r I      recip                       # recip = A,X2 (inst 01de)
+01e1: 1n1 1s8ew z1 I0019 VPLI   PASS A         LOAD A r VBI    y_count                     # VP = 0019; A = (0019), Y3; y_count = B,X3 - A,X2 (inst 01df)
+01e2: 0n1 0s21w z0 I0014 VPLI   A - B          LOAD A r VBI                                # VP = 0014; A = (0014), R2
+01e3: 1n1 1s8fw z1 I001c VPLI   PASS B         LOAD B r VBI    x_b                         # VP = 001c; B = (001c), R3; x_b = A,x2 (inst 01e1)
+01e4: 1n1 1s31w z1 I0015 VPLI   B - A          LOAD B r VBI    y_mb_lo                     # VP = 0015; B = (0015), G2; y_mb_low = A,Y3 - B,Y2 (inst 01e2)
+01e5: 1n1 1s8bw z0 I001d VPLI   PASS A         LOAD A r VBI    y_b                         # VP = 001d; A = (001d), G3; y_b = B,Y2 (inst 01e3)
+01e6: 1n1 1s35w z0 I0016 VPLI   A - B          LOAD A r VBI    r_mb_lo                     # VP = 0016; A = (0016), B2; r_mb_low = B,R3 - A,R2 (inst 01e4)
+01e7: 1n1 1s8bw z0 I001e VPLI   PASS B         LOAD B r VBI    r_b                         # VP = 001e; B = (001e), B3; r_b = A,R2 (inst 01e5)
+01e8: 1n1 1s31w z0 I0017 VPLI   B - A          LOAD B r VBI    g_mb_lo                     # VP = 0017; B = (0017), A2; g_mb_low = A,G3 - B,G2 (inst 01e6)
+01e9: 1n1 1s8bw z0 I001f VPLI   PASS A         LOAD A r VBI    g_b                         # VP = 001f; A = (001f), A3; g_b = B,G2 (inst 01e7)
+01ea: 1n1 1s31w z0 I0013 VPLI   A - B          LOAD A r VBI    b_mb_lo                     # VP = 0013; A = (0013), Zl2; b_mb_low = B,B3 - A,B2 (inst 01e8)
+01eb: 1n1 1s8bw z0 I001b VPLI   PASS B         LOAD B r VBI    b_b                         # VP = 001b; B = (001b), Zl3; b_b = A,B2 (inst 01e9)
+01ec: 1n1 1s31w z0 I0012 VPLI   B - A          LOAD B r VBI    a_mb_lo                     # VP = 0012; B = (0012), Zh2; a_mb_low = A,A3 - B,A2 (inst 01ea)
+01ed: 1n1 1s8bw z0 I001a VPLI   PASS A         LOAD A r VBI    a_b     hf                  # VP = 001a; A = (001a), Zh3; a_b = B,A2 (inst 01eb)
+01ee: 1n1 0s21w z0 I0000        A + NOT(B) + C        r I      recip                       # recip = B,Zl3 - A,Zl2 (inst 01ec)
+01ef: 1n1 0s23w z0 I0000        PASS B                r I      recip                       # recip = A,Zl2 (inst 01ed)
+01f0: 0n1 1s33w z0 I0000        PASS A                r I      z_mb_lo                     # z_mb_low = A,Zh3 - B,Zh2 (inst 01ee)
+01f1: 0n1 1s8dw z0 I0000        PASS A                r I      z_b                         # z_b = B,Zh2 (inst 01ef)
+01f2: 0n1 0s81w z1 I0033        PASS A         LOAD A r I      z_mb_hi                     # A = 0033; z_mb_hi = A,Zh3 (inst 01f0)
+01f3: 1n1 0sa5w z1 I0000        PASS A                r I      recip                       # recip = A,Zh3 (inst 01f1)
+01f4: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01f5: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd     b     P100       # EP command = A,0033 draw trapezoid (inst 01f3); jump to 0100
+
+16, write IMP register
+args 0 register index, 1 0000, 2 high word, 3 low word
+01f6: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+01f7: 0n1 0s21w z0 I0000 VPLI   PASS A         LOAD A r VBI                                # VP = 0000; A = VP(0)
+01f8: 0n1 0s21w z0 I0005        PASS A         LOAD B r I                                  # B = 0005
+01f9: 0n1 0s20w z1 I0000        PASS A                r I      recip   hf                  # recip = A, 0001 (inst 01f7)
+01fa: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P213       # A,(0) index == 0 (inst 01f8), jump to 0213
+01fb: 0n1 0s21w z0 I000a        PASS A         LOAD B r I              hf                  # B = 000a
+01fc: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P20f       # A,(0) index == 0005 (inst 01fa), jump to 020f
+01fd: 0n1 0s21w z0 I000f        PASS A         LOAD B r I              hf                  # B = 000f
+01fe: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P20b       # A,(0) index == 000a (inst 01fc), jump to 020b
+01ff: 0n1 0s21w z0 I0014        PASS A         LOAD B r I              hf                  # B = 0014
+0200: 0n1 0s21w z0 I0000        A - B                 r I                 beq   P207       # A,(0) index == 000f (inst 01fe), jump to 0207
+0201: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0202: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P100       # A,(0) index != 0014 (inst 0200), jump to 0100
+A,(0) index == 0014, register 4
+0203: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+0204: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+0205: 0n1 0s21w z0 I0fb4 VPLI   PASS B                w F1I                                # VP = 0fb4; (0fb4) = A,(2)
+0206: 0n1 0s21w z0 I0fb5 VPLI   PASS A                w F1I               b     P217       # VP = 0fb5; (0fb5) = B,(3); jump to 0217
+A,(0) index == 000f, register 3
+0207: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+0208: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+0209: 0n1 0s21w z0 I0fb2 VPLI   PASS B                w F1I                                # VP = 0fb2; (0fb2) = A,(2)
+020a: 0n1 0s21w z0 I0fb3 VPLI   PASS A                w F1I               b     P217       # VP = 0fb3; (0fb3) = B,(3); jump to 0217
+A,(0) index == 000a, register 2
+020b: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+020c: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+020d: 0n1 0s21w z0 I0fb0 VPLI   PASS B                w F1I                                # VP = 0fb0; (0fb0) = A,(2)
+020e: 0n1 0s21w z0 I0fb1 VPLI   PASS A                w F1I               b     P217       # VP = 0fb1; (0fb1) = B,(3); jump to 0217
+A,(0) index == 0005, register 1
+020f: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+0210: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+0211: 0n1 0s21w z0 I0fae VPLI   PASS B                w F1I                                # VP = 0fae; (0fae) = A,(2)
+0212: 0n1 0s21w z0 I0faf VPLI   PASS A                w F1I               b     P217       # VP = 0faf; (0faf) = B,(3); jump to 0217
+A,(0) index == 0 , register 0
+0213: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+0214: 0n1 0s21w z0 I0003        PASS A         LOAD B r VBI                                # B = VP(3)
+0215: 0n1 0s21w z0 I0fac VPLI   PASS B                w F1I                                # VP = 0fac; (0fac) = A,(2)
+0216: 0n1 0s21w z0 I0fad VPLI   PASS A                w F1I               b     P217       # VP = 0fad; (0fad) = B,(3); jump to 0217
+common, A,(0) index
+0217: 0n1 0s21w z0 I0000 VPLI   PASS A         LOAD A r VBI               bEP   P217       # VP = 0000; A = VP(0); wait for EP
+0218: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0219: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+021a: 1n1 1s8fw z1 I0000        PASS A                r I      x_a                         # x_a = A,(0) index (inst 0218)
+021b: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+021c: 1n1 1s8fw z1 I0003        PASS A         LOAD A r VBI    y_a                         # A = VP(3); y_a = A,0000 (inst 021a)
+021d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+021e: 0n1 0s21w z0 I0002        PASS A         LOAD A r VBI                                # A = VP(2)
+021f: 1n1 1s8fw z1 I0000        PASS A                r I      z_a                         # z_a = A, VP(3) (inst 021d)
+0220: 0n1 0s21w z0 I0015        PASS A         LOAD A r I                                  # A = 0015
+0221: 1n1 1s8fw z1 I0000        PASS A                r I      z_b                         # z_b = A, VP(2) (inst 021f)
+0222: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0223: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd     b     P100       # EP command = A, 0015 set IMP register (inst 0221); jump to 0100
+
+13, charstr
+args 0 x offset, 1 y offset, 2 length (rows of patterns), 3 row width in 16 bit patterns 0001, 4 x advance 0009, 5 {char patterns}
+0224: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0225: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0226: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0227: 0n1 0s20w z1 I0000        PASS A                r I      recip   hf bEP   P227       # recip = A,0000 (inst 0225); wait for EP
+0228: 0n1 0s21w z0 I0f9b VPLI   PASS A         LOAD A r SVI                                # VP = 0f9b; A = (0f9b)
+0229: 1n1 1s8fw z1 I0002        PASS A         LOAD B r I      r_count                     # B = 0002; red_count = A,0000 (inst 0227)
+022a: 0n1 0s21w z0 I0000        PASS B                r I              hf                  #
+022b: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+022c: 1n1 1s31w z1 I0000        PASS A         LOAD B r I      EPmode                      # B = 0000; EP mode = B,0002 (enable stipple)
+022d: 0n1 0s21w z0 I0800        PASS A         LOAD A r I                                  # A = 0800
+022e: 0n1 0s20w z1 I0000        PASS A                r I      recip                       # recip = A, 0001 (inst 022c)
+022f: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+0230: 1n1 1s8fw z1 I0000        PASS B                r I      x_ma_lo                     # x_ma_low = A, 0800 (1.0) (inst 022e)
+0231: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0232: 1n1 1s31w z1 I0f9c VPLI   PASS B         LOAD A r SVI    y_ma_lo                     # VP = 0f9c; A = (0f9c); y_ma_low = B, 0000 (inst 0230)
+0233: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0234: 1n1 1s31w z1 I0f9d VPLI   PASS B         LOAD A r SVI    r_ma_lo                     # VP = 0f9d; A = (0f9d); r_ma_low = B, 0000 (inst 0232)
+0235: 1n1 1s8bw z1 I0000        PASS A                r I      r_a                         # r_a = A, (0f9c)  (inst 0233)
+0236: 1n1 1s31w z1 I0f9e VPLI   PASS B         LOAD A r SVI    g_ma_lo                     # VP = 0f9e; A = (0f9e); g_ma_low = B, 0000 (inst 0234)
+0237: 1n1 1s8fw z1 I0000        PASS A                r I      g_a                         # g_a = A, (0f9d)  (inst 0235)
+0238: 1n1 1s31w z1 I0f9f VPLI   PASS B         LOAD A r SVI    b_ma_lo                     # VP = 0f9f; A = (0f9f); b_ma_low = B, 0000 (inst 0236)
+0239: 1n1 1s8fw z1 I0000        PASS A                r I      b_a                         # b_a = A, (0f9e)  (inst 0237)
+023a: 1n1 1s31w z1 I0005        PASS A         LOAD A r I      a_ma_lo                     # A = 0005; a_ma_low = B, 0000 (inst 0238)
+023b: 1n1 1s8fw z1 I0000        PASS A                r I      a_a                         # a_a = A, (0f9f)  (inst 0239)
+023c: 0n1 0s21w z0 I0f2b VPLI   PASS A                w F1I                                # VP = 0f2b; (0f2b) = A, 0005 (inst 023b)
+023d: 0n1 0s21w z0 I0f97 VPLI   PASS A         LOAD A r SVI                                # VP = 0f97; A = (0f97)
+023e: 0n1 0s21w z0 I0f98 VPLI   PASS A         LOAD A r SVI                                # VP = 0f98; A = (0f98)
+023f: 0n1 0s21w z0 I0f2c VPLI   PASS A                w F1I                                # VP = 0f2c; (0f2c) = A, (0f97)  (inst 023e)
+0240: 0n1 0s21w z0 I0f2d VPLI   PASS A                w F1I                                # VP = 0f2d; (0f2d) = A, (0f98)  (inst 02ef)
+0241: 0n1 0s21w z0 I0002 VPLI   PASS A         LOAD A r VBI                                # VP = 0002; A = VP(2)
+0242: 0n1 0s21w z0 I0003 VPLI   PASS A         LOAD A r VBI                                # A = VP(3)
+0243: 0n1 0s21w z0 I0f2e VPLI   PASS A                w F1I                                # VP = 0f2e; (0f2e) = A, VP(2)  (inst 0242)
+0244: 0n1 0s21w z0 I0f2f VPLI   PASS A                w F1I                                # VP = 0f2f; (0f2f) = A, VP(3)  (inst 0243)
+0245: 0n1 0s21w z0 I0000 VPLI   PASS A         LOAD A r VBI                                # VP = 0000; A = VP(0)
+0246: 0n1 0s21w z0 I0f2c VPLI   PASS A         LOAD B r SVI                                # VP = 0f2c; B = (0f2c)
+0247: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0248: 0n1 0s21w z0 I0f2c VPLI   A + B                 w F1I                                # VP = 0f2c; (0f2c) = A, VP(0) + B, (0f2c)  (inst 0247)
+0249: 0n1 0s21w z0 I0f2a VPLI   PASS A                w F1I                                # VP = 0f2a; (0f2a) = A, VP(0) + B, (0f2c)  (inst 0248)
+024a: 0n1 0s21w z0 I0001 VPLI   PASS A         LOAD A r VBI                                # VP = 0001; A = VP(1)
+024b: 0n1 0s21w z0 I0f2d VPLI   PASS A         LOAD B r SVI                                # VP = 0f2d; B = (0f2d)
+024c: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+024d: 0n1 0s21w z0 I0f2d VPLI   PASS A                w F1I                                # VP = 0f2d; (0f2d) = A, VP(1) + B, (0f2d)
+loop
+024e: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+024f: 0n1 0s21w z0 I0f2f VPLI   PASS A         LOAD B r SVI                                # VP = 0f2f; B = (0f2f)
+0250: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0251: 0n1 0s20w z1 I0000        B - A                 r I      recip                       # recip = A, 0000 (inst 024f)
+0252: 0n1 0s21w z0 I0f2f VPLI   PASS A                w F1I                                # VP = 0f2f; (0f2f) = B, (0f2f) - A,0001  (inst 0251)
+0253: 0n1 0s21w z0 I0f2b VPLI   PASS A                r SVI                                # VP = 0f2b; R = (0f2b)
+0254: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = (0f2b)
+0255: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBP                                # A = (VP), (0f2b)(0)
+0256: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0257: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P257       # wait for EP
+0258: 1n1 1s31w z1 I0001        PASS A         LOAD A r I      stipple                     # A = 0001; stipple = A, (0f2b)(0)  (inst 0256)
+0259: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+025a: 0n1 0s21w z0 I0000        PASS A                r I                 c     P280       # call 0280
+025b: 0n1 0s21w z0 I0f2f VPLI   PASS A         LOAD A r SVI                                # VP = 0f2f; A = (0f2f)
+025c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+025d: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+025e: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P267       # A, (0f2f) <= 0 (inst 025c)
+A, (0f2f) !<= 0 ( not end of char width, advance x for next pattern )
+025f: 0n1 0s21w z0 I0f2c VPLI   PASS A         LOAD A r SVI                                # VP = 0f2c; A = (0f2c)
+0260: 0n1 0s21w z0 I0010        PASS A         LOAD B r I                                  # B = 0010
+0261: 0n1 0s21w z0 I0f2b VPLI   A + B          LOAD A r SVI                                # VP = 0f2b; A = (0f2b)
+0262: 0n1 0s21w z0 I0f2c VPLI   PASS A                w F1I                                # VP = 0f2c; (0f2c) = A, (0f2c) + B, 0010 (inst 0261)
+0263: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+0264: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0265: 0n1 0s21w z0 I0f2b VPLI   PASS A                w F1I                                # VP = 0f2b; (0f2b) = A, (0f2b) + B, 0001 (inst 0264)
+0266: 0n1 0s21w z0 I0000        PASS A                r I                 b     P24e       # jump to 024e, next iteration
+A, (0f2f) <= 0 ( end of char width, advance to next y, reset x )
+0267: 0n1 0s21w z0 I0f2a VPLI   PASS A         LOAD A r SVI                                # VP = 0f2a; A = (0f2a)
+0268: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0269: 0n1 0s21w z0 I0f2c VPLI   PASS A                w F1I                                # VP = 0f2c; (0f2c) = A, (0f2a)  (inst 0268)
+026a: 0n1 0s21w z0 I0f2e VPLI   PASS A         LOAD B r SVI                                # VP = 0f2e; B = (0f2e)
+026b: 0n1 0s21w z0 I0000        B - A                 r I                                  #
+026c: 0n1 0s21w z0 I0f2e VPLI   PASS A                w F1I                                # VP = 0f2e; (0f2e) = B, (0f2e) - A, 0001 (inst 026b)
+026d: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+026e: 0n1 0s21w z0 I0f2d VPLI   PASS A         LOAD B r SVI                                # VP = 0f2d; B = (0f2d)
+026f: 0n1 0s21w z0 I0f2b VPLI   A + B          LOAD B r SVI                                # VP = 0f2b; B = (0f2b)
+0270: 0n1 0s21w z0 I0f2d VPLI   A + B                 w F1I                                # VP = 0f2d; (0f2d) = A, 0001 + B, (0f2d) (inst 026f)
+0271: 0n1 0s21w z0 I0f2b VPLI   PASS A                w F1I                                # VP = 0f2b; (0f2b) = A, 0001 + B, (0f2b) (inst 0270)
+0272: 0n1 0s21w z0 I0f2e VPLI   PASS A         LOAD B r SVI                                # VP = 0f2e; B = (0f2e)
+0273: 0n1 0s21w z0 I0003 VPLI   PASS B         LOAD B r VBI                                # VP = 0003; B = VP(3)
+0274: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0275: 0n1 0s21w z0 I0000        PASS B                r I                 blteq P277       # B, (0f2e) <= 0 (inst 0273), jump to 0277
+B, (0f2e) !<= 0
+0276: 0n1 0s21w z0 I0f2f VPLI   PASS A                w F1I               b     P24e       # VP = 0f2f; (0f2f) = B, VP(3) (inst 0275); jump to 024e
+next, end loop, B, (0f2e) <= 0
+0277: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+0278: 0n1 0s21w z0 I0f97 VPLI   PASS B         LOAD A r SVI                                # VP = 0f97; A = (0f97)
+0279: 0n1 0s21w z0 I0004 VPLI   PASS A         LOAD B r VBI                                # VP = 0004; B = VP(4)
+027a: 0n1 0s20w z1 I0faa VPLI   A + B          LOAD A r SVI    recip                       # VP = 0faa; A = (0faa); recip = B, 0000 (inst 0278)
+027b: 0n1 0s21w z0 I0f97 VPLI   PASS A                w F1I                                # VP = 0f97; (0f97) = A, (0f97) + B, VP(4) (inst 027a)
+027c: 0n1 0s21w z0 I0fab VPLI   PASS A         LOAD A r SVI                                # VP = 0fab; A = (0fab)
+027d: 1n1 1s31w z1 I0000        PASS A                r I      stipple                     # stipple = A, (0faa)  (inst 027b)
+027e: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+027f: 1n1 1s31w z1 I0000        PASS A                r I      EPmode     b     P100       # EP mode = A, (0fab) (inst 027d); jump to 0100
+
+draw line ((0f2c) x, (0f2d) y) to (x + 000f, y),  EP command 000d
+0280: 0n1 0s20w z1 I0f2c VPLI   PASS A         LOAD A r SVI    recip                       # VP = 0f2c; A = (0f2c); recip = A, 0001 (inst 0259)
+0281: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0282: 0n1 0s21w z0 I000f        PASS A         LOAD A r I              hf                  # A = 000f
+0283: 1n1 1s8fw z1 I0000        PASS A                r I      x_a                         # x_a = A, (0f2c) (inst 0281)
+0284: 0n1 0s21w z0 I0f2d VPLI   PASS A         LOAD B r SVI            hf                  # VP = 0f2d; B = (0f2d)
+0285: 1n1 1s8fw z1 I0000        PASS B                r I      x_count                     # x_count = A, 000f (inst 0283)
+0286: 0n1 0s21w z0 I000d        PASS A         LOAD B r I              hf                  # B = 000d
+0287: 1n1 1s8fw z1 I0000        PASS B                r I      y_a                         # y_a = B, (0f2d) (inst 0285)
+0288: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0289: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd     ret              # EP command = B, 000d draw line, no z buffer (inst 0287); return
