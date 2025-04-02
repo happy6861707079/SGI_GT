@@ -1,0 +1,89 @@
+# ge4ucode disassembler
+# input binary to text 0/1 for ucode, 64 bits per instruction/line
+
+# for example : xxd -b -c 8 -s 0x79 ge1.u | cut -f2-9 -d' ' | awk -f ge4dasm
+#               xxd -b for binary, -c 8 for 8 8 bit columns, -s 0x79 to skip the header
+#               cut to remove xxd output first field of file offsets
+
+BEGIN {
+  FPAT = "[01]"
+  split("fclsr,fstsr,rsvd ,fmode,fabs ,float,fix  ,flut ", miscOp, ",")
+  split("misc ,fsubr,fsub ,fadd ,rsvd ,fmna ,fmns ,fmac ", Op, ",")
+  split("       ,floadrc,fstore ,fload  ", ioOp, ",")
+  split("cbus,bbus, .t2, .t1, .t3,rsvd, 2.0, 0.0", Abin, ",")
+  split(".t3,.t2,.t1,   ", Adst, ",")
+  split("    ,minc,mldx,mldi,mclr,m5  ,m6  ,m7  ", memptrOp, ",")
+  split("m->m,m->x,x->m,x->x,l->m,l->x,u->m,u->x", busOp, ",")
+  split("     ,    b,  blz, bgez,    c,  clz, cgez,  ret,fetch,   ld, bxlz,bxgez,stall, cxlz,cxgez,  rpt", programflow, ",")
+}
+
+{
+  printf "%04x:", NR-1
+  if ($2 == "0" && $3 == "0" && $4 == "0" && $12 == "0" && $13 == "1" && $14 == "1") { 
+    printf " %s %i%i%i%i%i%i%i%i%i%i%i%i%i                 ", miscOp[1 + hex("0","0",$12,$13,$14)], $9,$8,$7,$6,$5,$19,$18,$17,$16,$15,$30,$29,$28
+  }
+  else {
+   if ($2 == "0" && $3 == "0" && $4 == "0" && $12 == "0") { printf " %s     ,", miscOp[1 + hex("0","0",$12,$13,$14)] }
+   else {
+    if($2 == "0" && $3 == "0" && $4 == "0") { printf " %s", miscOp[1 + hex("0","0",$12,$13,$14)] }
+    else { printf " %s", Op[1 + hex("0","0",$2,$3,$4)] }
+ 
+    printf " .f%02i,", hex($5,$6,$7,$8,$9)
+   }
+  
+   if (($2 == "1" && $3 == "0" && $4 == "1") || \
+       ($2 == "1" && $3 == "1" && $4 == "0") || \
+       ($2 == "1" && $3 == "1" && $4 == "1")) {
+         if ($33 == "0") {
+	  if ($1 == "0") {printf " .f%02i,", hex($10,$11,$12,$13,$14) }
+	   else { printf "  Y%01i ,", hex($10,$11,$12,$13,$14) }  
+	 }
+	 else { printf " cbus," }
+   }  
+   else { printf "     ," }
+
+   if($2 == "0" && $3 == "0" && $4 == "0") { printf "     ," }
+   else {
+     if ($28 == "0" && $29 == "0" && $30 == "1") {
+       if ($1 == "0") {printf " .f%02i,", hex($10,$11,$12,$13,$14) }
+       else { printf "  Y%01i ,", hex($10,$11,$12,$13,$14) }  
+     }
+     else { printf " %s,", Abin[1 + hex("0","0",$28,$29,$30)] }
+   }
+   printf " %s", Adst[1 + hex("0","0","0",$31,$32)]
+
+   if ($20 == "0") {printf " .f%02i", hex($15,$16,$17,$18,$19)}
+   else {printf "     "}
+    
+   if ($36 == "1") {printf " Z%01i", hex("0","0","0",$37,$38)}
+   else {printf "   "}    
+   printf ";"
+  }
+  
+  # bit $34 never set in ucode, unknown effect
+
+  if ($35 == "1") {printf " tag;"}
+  else {printf "    ;"}
+    
+  printf " %s", ioOp[1 + hex("0","0","0",$21,$22)]
+  if ($21 == "0" && $22 == "0") {printf "     ;"}
+  else {printf " .f%02i;", hex($23,$24,$25,$26,$27)}
+    
+  printf " %s;", memptrOp[1 + hex("0","0",$42,$43,$44)]
+  printf " %s;", busOp[1 + hex("0","0",$39,$40,$41)]
+  printf " %s;", programflow[1 + hex("0",$45,$46,$47,$48)]
+  printf " I%x%x%x%x #", hex("0",$49,$50,$51,$52), hex("0",$53,$54,$55,$56), hex("0",$57,$58,$59,$60), hex("0",$61,$62,$63,$64)
+
+  printf "\n"
+}
+
+
+function hex(bit4, bit3, bit2, bit1, bit0,   digit) {
+  digit = 0
+  digit += (bit4 == "1") ? 16 : 0
+  digit += (bit3 == "1") ? 8 : 0
+  digit += (bit2 == "1") ? 4 : 0
+  digit += (bit1 == "1") ? 2 : 0
+  digit += (bit0 == "1") ? 1 : 0
+  return digit
+}

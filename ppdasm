@@ -1,0 +1,123 @@
+# ppucode disassembler
+# input binary to text 0/1 for ucode, 72 bits per instruction/line
+
+# for example : xxd -b -c 9 -s 0x9b pp.u | cut -f2-10 -d' ' | awk -f ppdasm
+#               xxd -b for binary, -c 9 for 9 8 bit columns, -s 0x9b to skip the header
+#               cut to remove xxd output first field of file offsets
+#               xxd -b -c 9 -l 0x16da -s 0xcf81 gm1prom.bin | cut -f2-10 -d' ' | awk -f ppdasm
+#               xxd -b -c 9 -l 0x16da -s 0xcfe9 gm2prom.bin | cut -f2-10 -d' ' | awk -f ppdasm
+
+BEGIN {
+  FPAT = "[01]"
+  split("b,unk1,unk2,unk3,c,unk5,unk6,unk7,b,unk9,unkA,unkB,c,unkD,unkE,unkF", programflow0, ",")
+  split("          ,halt      ,ret       ,unk3,unk4,unk5,unk6,unk7,unk8,unk9,unkA,unkB,unkC,unkD,unkE,unkF", programflow1, ",")
+  split("eq  ,    ,lteq,gt  ,neq ,lt  ,GM  ,EP  ", bc, ",")
+  
+  # carry, operands, operation
+  # C,?,0,1, A+F, B, A, A+B
+#  split(\
+#"CLEAR + C,NOT(A) + F + C,A + NOT(F) + C,A + F + C,A XOR F + C,A OR F + C,A AND F + C,PRESET + C,\
+#CLEAR + C,NOT(0) + B + C,0 + NOT(B) + C,0 + B + C,0 XOR B + C,0 OR B + C,0 AND B + C,PRESET + C,\
+#CLEAR + C,NOT(A) + 0 + C,A + NOT(0) + C,A + 0 + C,A XOR 0 + C,A OR 0 + C,A AND 0 + C,PRESET + C,\
+#CLEAR + C,NOT(A) + B + C,A + NOT(B) + C,A + B + C,A XOR B + C,A OR B + C,A AND B + C,PRESET + C,\
+#CLEAR + ?,NOT(A) + F + ?,A + NOT(F) + ?,A + F + ?,A XOR F + ?,A OR F + ?,A AND F + ?,PRESET + ?,\
+#CLEAR + ?,NOT(0) + B + ?,0 + NOT(B) + ?,0 + B + ?,0 XOR B + ?,0 OR B + ?,0 AND B + ?,PRESET + ?,\
+#CLEAR + ?,NOT(A) + 0 + ?,A + NOT(0) + ?,A + 0 + ?,A XOR 0 + ?,A OR 0 + ?,A AND 0 + ?,PRESET + ?,\
+#CLEAR + ?,NOT(A) + B + ?,A + NOT(B) + ?,A + B + ?,A XOR B + ?,A OR B + ?,A AND B + ?,PRESET + ?,\
+#CLEAR,NOT(A) + F,A + NOT(F),A + F,A XOR F,A OR F,A AND F,PRESET,\
+#CLEAR,NOT(0) + B,0 + NOT(B),0 + B,0 XOR B,0 OR B,0 AND B,PRESET,\
+#CLEAR,NOT(A) + 0,A + NOT(0),A + 0,A XOR 0,A OR 0,A AND 0,PRESET,\
+#CLEAR,NOT(A) + B,A + NOT(B),A + B,A XOR B,A OR B,A AND B,PRESET,\
+#CLEAR + 1,NOT(A) + F + 1,A + NOT(F) + 1,A + F + 1,A XOR F + 1,A OR F + 1,A AND F + 1,PRESET + 1,\
+#CLEAR + 1,NOT(0) + B + 1,0 + NOT(B) + 1,0 + B + 1,0 XOR B + 1,0 OR B + 1,0 AND B + 1,PRESET + 1,\
+#CLEAR + 1,NOT(A) + 0 + 1,A + NOT(0) + 1,A + 0 + 1,A XOR 0 + 1,A OR 0 + 1,A AND 0 + 1,PRESET + 1,\
+#CLEAR + 1,NOT(A) + B + 1,A + NOT(B) + 1,A + B + 1,A XOR B + 1,A OR B + 1,A AND B + 1,PRESET + 1", alu, ",")
+  split(\
+"CLEAR + C     ,NOT(A) + F + C,A + NOT(F) + C,A + F + C     ,A XOR F + C   ,A OR F + C    ,A AND F + C   ,PRESET + C    ,\
+CLEAR + C     ,NOT(0) + B + C,0 + NOT(B) + C,0 + B + C     ,0 XOR B + C   ,0 OR B + C    ,0 AND B + C   ,PRESET + C    ,\
+CLEAR + C     ,NOT(A) + 0 + C,A + NOT(0) + C,A + 0 + C     ,A XOR 0 + C   ,A OR 0 + C    ,A AND 0 + C   ,PRESET + C    ,\
+CLEAR + C     ,NOT(A) + B + C,A + NOT(B) + C,A + B + C     ,A XOR B + C   ,A OR B + C    ,A AND B + C   ,PRESET + C    ,\
+CLEAR + ?     ,NOT(A) + F + ?,A + NOT(F) + ?,A + F + ?     ,A XOR F + ?   ,A OR F + ?    ,A AND F + ?   ,PRESET + ?    ,\
+CLEAR + ?     ,NOT(0) + B + ?,0 + NOT(B) + ?,0 + B + ?     ,0 XOR B + ?   ,0 OR B + ?    ,0 AND B + ?   ,PRESET + ?    ,\
+CLEAR + ?     ,NOT(A) + 0 + ?,A + NOT(0) + ?,A + 0 + ?     ,A XOR 0 + ?   ,A OR 0 + ?    ,A AND 0 + ?   ,PRESET + ?    ,\
+CLEAR + ?     ,NOT(A) + B + ?,A + NOT(B) + ?,A + B + ?     ,A XOR B + ?   ,A OR B + ?    ,A AND B + ?   ,PRESET + ?    ,\
+CLEAR         ,NOT(A) + F    ,A + NOT(F)    ,A + F         ,A XOR F       ,A OR F        ,A AND F       ,PRESET        ,\
+CLEAR         ,DEC B         ,NOT(B)        ,PASS B        ,0 XOR B       ,0 OR B        ,0 AND B       ,PRESET        ,\
+CLEAR         ,NOT(A)        ,DEC A         ,PASS A        ,A XOR 0       ,A OR 0        ,A AND 0       ,PRESET        ,\
+CLEAR         ,NOT(A) + B    ,A + NOT(B)    ,A + B         ,A XOR B       ,A OR B        ,A AND B       ,PRESET        ,\
+CLEAR + 1     ,F - A         ,A - F         ,A + F + 1     ,A XOR F + 1   ,A OR F + 1    ,A AND F + 1   ,PRESET + 1    ,\
+CLEAR + 1     ,PASS+ B       ,NEG B         ,INC B         ,0 XOR B + 1   ,0 OR B + 1    ,0 AND B + 1   ,PRESET + 1    ,\
+CLEAR + 1     ,NEG A         ,PASS+ A       ,INC A         ,A XOR 0 + 1   ,A OR 0 + 1    ,A AND 0 + 1   ,PRESET + 1    ,\
+CLEAR + 1     ,B - A         ,A - B         ,A + B + 1     ,A XOR B + 1   ,A OR B + 1    ,A AND B + 1   ,PRESET + 1    ", alu, ",")
+  split(" LOAD AB; LOAD B ; LOAD A ;        ",aluload, ";")
+  split(\
+"00 ;01 ;02 ;F  ;04 ;05 ;06 ;07 ;08 ;09 ;0A ;I  ;0C ;0D ;0E ;0F ;\
+10 ;R  ;R  ;F  ;14 ;15 ;16 ;17 ;18 ;19 ;I  ;1B ;1C ;1D ;1E ;1F ;\
+20 ;21 ;22 ;23 ;24 ;25 ;26 ;27 ;28 ;29 ;2A ;2B ;2C ;2D ;2E ;2F ;\
+30 ;R  ;32 ;33 ;34 ;35 ;36 ;37 ;I  ;I  ;3A ;3B ;3C ;3D ;3E ;3F ", VPbus, ";")
+
+#  split(\
+#"w bus00 ;w bus01 ;w bus02 ;w bus03 ;w bus04 ;w bus05 ;w bus06 ;w bus07 ;w bus08 ;w bus09 ;w bus0A ;w bus0B ;w bus0C ;w bus0D ;w bus0E ;w bus0F ;\
+#r bus10 ;r bus11 ;r bus12 ;r bus13 ;r bus14 ;r bus15 ;r bus16 ;r bus17 ;r bus18 ;r bus19 ;r bus1A ;r bus1B ;r bus1C ;r bus1D ;r bus1E ;r bus1F ;\
+#w bus20 ;w bus21 ;w bus22 ;w bus23 ;w bus24 ;w bus25 ;w bus26 ;w bus27 ;w bus28 ;w bus29 ;w bus2A ;w bus2B ;w bus2C ;w bus2D ;w bus2E ;w bus2F ;\
+#r bus30 ;r bus31 ;r bus32 ;r bus33 ;r bus34 ;r bus35 ;r bus36 ;r bus37 ;r bus38 ;r bus39 ;r bus3A ;r bus3B ;r bus3C ;r bus3D ;r bus3E ;r bus3F ", bus, ";")
+
+  split(\
+"w bus00 ;w bus01 ;w bus02 ;w F1P   ;w bus04 ;w bus05 ;w bus06 ;w bus07 ;w bus08 ;w bus09 ;w VB    ;w F1I   ;w bus0C ;w bus0D ;w bus0E ;w F1P   ;\
+r bus10 ;r WC?   ;r bus12 ;r ??    ;r bus14 ;r bus15 ;r bus16 ;r bus17 ;r bus18 ;r bus19 ;r VBI   ;r bus1B ;r bus1C ;r WC    ;r VBP   ;r F1    ;\
+w bus20 ;w bus21 ;w bus22 ;w bus23 ;w bus24 ;w bus25 ;w bus26 ;w bus27 ;w bus28 ;w bus29 ;w bus2A ;w bus2B ;w bus2C ;w I     ;w bus2E ;w bus2F ;\
+r bus30 ;r ??    ;r bus32 ;r bus33 ;r bus34 ;r bus35 ;r bus36 ;r bus37 ;r SVI   ;r ??    ;r bus3A ;r bus3B ;r SVP   ;r I     ;r bus3E ;r VP    ", bus, ";")
+  
+  split(\
+"a_ma_lo;a_ma_hi;a_mb_lo;a_mb_hi;a_a    ;a_b    ;a_unk  ;a_count;\
+b_ma_lo;b_ma_hi;b_mb_lo;b_mb_hi;b_a    ;b_b    ;b_unk  ;b_count;\
+g_ma_lo;g_ma_hi;g_mb_lo;g_mb_hi;g_a    ;g_b    ;g_unk  ;g_count;\
+r_ma_lo;r_ma_hi;r_mb_lo;r_mb_hi;r_a    ;r_b    ;r_unk  ;r_count;\
+z_ma_lo;z_ma_hi;z_mb_lo;z_mb_hi;z_a    ;z_b    ;z_unk  ;z_count;\
+y_ma_lo;y_ma_hi;y_mb_lo;y_mb_hi;y_a    ;y_b    ;y_unk  ;y_count;\
+x_ma_lo;x_ma_hi;x_mb_lo;x_mb_hi;x_a    ;x_b    ;x_unk  ;x_count;\
+EPcmnd ;unk 7,1;stipple;unk 7,3;unk 7,4;pbptr  ;EPmode ;recip  ",epregs,";")
+}
+
+{
+#  printf "%04x: %sn%s %ss%s%s%s%s%s%s%s%sw z%s", NR-1,$49,$50,$57,$58,$59,$60,$61,$62,$63,$64,$65,$72
+  printf "%04x: %sn%s %ss%x%xw z%s", NR-1,$49,$50,$57,hex($58,$59,$60,$61),hex($62,$63,$64,$65),$72
+  printf " I%x%x%x%x", hex($29,$30,$31,$32), hex($17,$18,$19,$20), hex($21,$22,$23,$24), hex($9,$10,$11,$12)  
+  if ($53 == "0") {if ($54 == "0") {printf " VP--  "} else {printf " VP++  "}}
+  if ($53 == "1" && $54 == "0") {printf " VPL%s", VPbus[1 + hex2("0",$41,$42,$51,$52,$55,$56)]}
+  if ($53 == "1" && $54 == "1") {printf "       "}
+  printf " %s", alu[1 + hex2($46,$47,$33,$48,$34,$35,$36)]
+  printf "%s", aluload[1 + hex("0","0",$44,$45)]
+  printf "%s", bus[1 + hex2("0",$41,$42,$51,$52,$55,$56)]
+  if ($49 == "1" || $57 == "1" || $72 == "1") {printf " %s", epregs[1 + hex2("0",$66,$67,$68,$69,$70,$71)]} else {printf "        "}
+  if ($43 == "1") {printf " hf"} else {printf "   "}
+  if ($37 == "0") {printf " %s%s P%x%x%x", programflow0[1 + hex($25,$26,$27,$28)], bc[1 + hex("0",$39,$40,$25)], hex($13,$14,$15,$16), hex($1,$2,$3,$4), hex($5,$6,$7,$8)}
+  else {printf " %s", programflow1[1 + hex($25,$26,$27,$28)]}
+  if ($50 == "0") {printf " GM(%x)", hex("0",$29,$30,$31)}  else {printf "      "}
+  printf " #\n"
+}
+
+END {
+}
+
+
+function hex(bit3, bit2, bit1, bit0,   digit) {
+  digit = 0
+  digit += (bit3 == "1") ? 8 : 0
+  digit += (bit2 == "1") ? 4 : 0
+  digit += (bit1 == "1") ? 2 : 0
+  digit += (bit0 == "1") ? 1 : 0
+  return digit
+}
+
+function hex2(bit6, bit5, bit4, bit3, bit2, bit1, bit0,   digit) {
+  digit = 0
+  digit += (bit6 == "1") ? 64 : 0
+  digit += (bit5 == "1") ? 32 : 0
+  digit += (bit4 == "1") ? 16 : 0
+  digit += (bit3 == "1") ? 8 : 0
+  digit += (bit2 == "1") ? 4 : 0
+  digit += (bit1 == "1") ? 2 : 0
+  digit += (bit0 == "1") ? 1 : 0
+  return digit
+}
