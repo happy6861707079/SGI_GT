@@ -155,8 +155,8 @@ Columns description
 	           a blank field indicates sequential program flow, no branch or call
     beq, ceq       branch or call if equal (zero flag true)
     b, c           branch or call no condition
-    blteq, clteq   branch or call if less than or equal (carry flag true)
-    bgt, cgt       branch or call if greater than (sign bit/flag false, zero flag false)
+    blteq, clteq   branch or call if less than or equal (sign bit/flag true or zero flag true)
+    bgt, cgt       branch or call if greater than, signed comparison (carry flag false)
     bneq, cneq     branch or call if not equal (zero flag false)
     blt, clt       branch or call if less than (sign bit/flag true)
     bGM, cGM       branch or call if GM busy (undetermined what indicates the GM is busy)
@@ -165,8 +165,8 @@ Columns description
   GM - GM communication, likely toggles bits in the GM/PP status register cc000000
 
                    a blank field indicates no operation
-                   0 usually at start of PP commands
-                   1 usually at end of PP commands
+                   0 usually at start of PP commands, clear (cc000000) bit 1, PP busy ?
+                   1 usually at end of PP commands, set (cc000000) bit 1, PP done ?
                    2 transfer to GM ?
                    3 resume from GM, transfer to GE ?
                    4 used to send PP interrupt
