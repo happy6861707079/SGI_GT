@@ -9,6 +9,8 @@ PP_overview.txt  - an attempt to explain the Polygon Processor and the disassemb
 
 pptpucode_comment.txt  - a commented disassembly of the text port (tp) microcode from the GM PROM  
 
+ppdiagucode_comment.txt - a commented disassembly of the pp diagnostics microcode  
+
 ppdasm  - an awk script to disassemble pp microcode  
 
 ge4dasm  - an awk script to disassemble ge4 microcode  
