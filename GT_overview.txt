@@ -741,10 +741,13 @@ ppdiag microcode for the ppdiag test, commands
   02 alu add carry in 1 test, (c800c000) = 0000
   03 alu add 1 carry in 1 test, (c800c000) = 0001
   04 alu Add test, (c800c000) = ffff
-  05 write SRAM () = error data
+  05 not used, read SRAM(B)
+  06 not used, read SRAM(000)
   07 alu And test, (c800c000) = ffff
-  08 write SRAM () = error address/offset
-  09 write SRAM () = error data or address/offset
+  08 not used, read A
+  09 not used, read B
+  0a not used, unconditional branch test ?
+  0c not used, conditional branch test ?
   0d COND EQ true test, (c800c000) = 0005, zero flag set
   0e COND EQ false test, (c800c000) = ffff, zero flag not set
   0f COND latch true test, (c800c000) = 0005, no condition latch this test
@@ -762,6 +765,7 @@ ppdiag microcode for the ppdiag test, commands
   1b alu DecB test, (c800c000) = ffff
   1c PP done test
   1d PP_EP cmd interface test, (c800c000) = 0000
+  1e not used, PP done
   1f alu IncA test, (c800c000) = 0000
   20 alu IncB test, (c800c000) = 0000
   21 pp to gm interrupt test, (a8001404) = 00000001
@@ -776,13 +780,14 @@ ppdiag microcode for the ppdiag test, commands
   2c write PP SRAM word, address SRAM (000) to (c800c000)
   2e SRAM write test, PPSRAM wrt 0x5555/0xAAAA, (c800c000) = 0000, last (fault) address
   2f SRAM write test, PPSRAM wrt 0xAAAA/0x5555, (c800c000) = 0000
-  30 write SRAM error data ?
+  30 not used, read VP
   32 SRAM read test, (c800c000) == SRAM (000), aaaa
   33 SRAM read test, (c800c000) == SRAM (001), aaaa
   34 SRAM write test, SRAM (000) = aaaa
   35 SRAM write test, SRAM (001) = aaaa
   36 SRAM write test, PPSRAM wrt addr=data, (c800c000) = 0000
   37 SRAM write test, PPSRAM inv addr=data, (c800c000) = 0fff
+  38 not used, call stack test ?
   39 alu SUB0DIAG test, (c800c000) = 0000
   3a alu SUB1DIAG test, (c800c000) = 0001
   3b alu SUBCIDIAG test, (c800c000) = 0000
@@ -792,6 +797,7 @@ ppdiag microcode for the ppdiag test, commands
   42 VP test for loading addr, (c800c000) = 0fff
   43 read VP, vertex pointer
   44 write VP, vertex pointer
+  46 not used, read word count
   47 write GM PP wordcount to (c800c000)
   48 write PP SRAM word data SRAM (001) to address SRAM (000)
   49 alu Xor test, (c800c000) = ffff
