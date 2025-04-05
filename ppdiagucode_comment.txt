@@ -911,7 +911,7 @@ B += 0003
 02d8: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
 02d9: 0n1 0s21w z0 I0000        PASS A                r I                 ret              #
 
-?? (nothing reaches here)
+(nothing reaches here unless return stack doesn't work)
 02da: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff, A = (fff)
 02db: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore value
 02dc: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
