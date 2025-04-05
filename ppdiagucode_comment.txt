@@ -1,0 +1,1453 @@
+0000: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1f5 GM(0) #
+0001: 0n0 0s21w z0 I0000        PASS A                r I                 b     P127 GM(0) #
+0002: 0n0 0s21w z0 I0000        PASS A                r I                 b     P134 GM(0) #
+0003: 0n0 0s21w z0 I0000        PASS A                r I                 b     P118 GM(0) #
+0004: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1e2 GM(0) #
+0005: 0n0 0s21w z0 I0000        PASS A                r I                 b     P225 GM(0) #
+0006: 0n0 0s21w z0 I0000        PASS A                r I                 b     P320 GM(0) #
+0007: 0n0 0s21w z0 I0000        PASS A                r I                 b     P141 GM(0) #
+0008: 0n0 0s21w z0 I0000        PASS A                r I                 b     P30e GM(0) #
+0009: 0n0 0s21w z0 I0000        PASS A                r I                 b     P310 GM(0) #
+000a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P335 GM(0) #
+000b: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) # all bits in this instruction are 0
+000c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P356 GM(0) #
+000d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P38e GM(0) #
+000e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P400 GM(0) #
+000f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3c7 GM(0) #
+0010: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3a1 GM(0) #
+0011: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3b4 GM(0) #
+0012: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3ed GM(0) #
+0013: 0n0 0s21w z0 I0000        PASS A                r I                 b     P424 GM(0) #
+0014: 0n0 0s21w z0 I0000        PASS A                r I                 b     P411 GM(0) #
+0015: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3da GM(0) #
+0016: 0n0 0s21w z0 I0000        PASS A                r I                 b     P437 GM(0) #
+0017: 0n0 0s21w z0 I0000        PASS A                r I                 b     P157 GM(0) #
+0018: 0n0 0s21w z0 I0000        PASS A                r I                 b     P164 GM(0) #
+0019: 0n0 0s21w z0 I0000        PASS A                r I                 b     P14a GM(0) #
+001a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P26c GM(0) #
+001b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P27a GM(0) #
+001c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1f0 GM(0) #
+001d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P102 GM(0) #
+001e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P100 GM(0) #
+001f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P265 GM(0) #
+0020: 0n0 0s21w z0 I0000        PASS A                r I                 b     P273 GM(0) #
+0021: 0n0 0s21w z0 I0000        PASS A                r I                 b     P332 GM(0) #
+0022: 0n0 0s21w z0 I0000        PASS A                r I                 b     P257 GM(0) #
+0023: 0n0 0s21w z0 I0000        PASS A                r I                 b     P25e GM(0) #
+0024: 0n0 0s21w z0 I0000        PASS A                r I                 b     P171 GM(0) #
+0025: 0n0 0s21w z0 I0000        PASS A                r I                 b     P17e GM(0) #
+0026: 0n0 0s21w z0 I0000        PASS A                r I                 b     P18b GM(0) #
+0027: 0n0 0s21w z0 I0000        PASS A                r I                 b     P190 GM(0) #
+0028: 0n0 0s21w z0 I0000        PASS A                r I                 b     P199 GM(0) #
+0029: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1a0 GM(0) #
+002a: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+002b: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+002c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2b5 GM(0) #
+002d: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+002e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1fd GM(0) #
+002f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P211 GM(0) #
+0030: 0n0 0s21w z0 I0000        PASS A                r I                 b     P293 GM(0) #
+0031: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0032: 0n0 0s21w z0 I0000        PASS A                r I                 b     P22b GM(0) #
+0033: 0n0 0s21w z0 I0000        PASS A                r I                 b     P240 GM(0) #
+0034: 0n0 0s21w z0 I0000        PASS A                r I                 b     P236 GM(0) #
+0035: 0n0 0s21w z0 I0000        PASS A                r I                 b     P24b GM(0) #
+0036: 0n0 0s21w z0 I0000        PASS A                r I                 b     P296 GM(0) #
+0037: 0n0 0s21w z0 I0000        PASS A                r I                 b     P281 GM(0) #
+0038: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2be GM(0) #
+0039: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1bf GM(0) #
+003a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1cc GM(0) #
+003b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1b0 GM(0) #
+003c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1a7 GM(0) #
+003d: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+003e: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+003f: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0040: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2e2 GM(0) #
+0041: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2f1 GM(0) #
+0042: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2fd GM(0) #
+0043: 0n0 0s21w z0 I0000        PASS A                r I                 b     P315 GM(0) #
+0044: 0n0 0s21w z0 I0000        PASS A                r I                 b     P312 GM(0) #
+0045: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0046: 0n0 0s21w z0 I0000        PASS A                r I                 b     P316 GM(0) #
+0047: 0n0 0s21w z0 I0000        PASS A                r I                 b     P32b GM(0) #
+0048: 0n0 0s21w z0 I0000        PASS A                r I                 b     P2ab GM(0) #
+0049: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1d9 GM(0) #
+004a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1eb GM(0) #
+004b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P44a GM(0) #
+004c: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+004d: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+004e: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+004f: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0050: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0051: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0052: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0053: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0054: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0055: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0056: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0057: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0058: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0059: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005a: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005b: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005c: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005d: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005e: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+005f: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0060: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0061: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0062: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0063: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0064: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0065: 0n0 0s21w z0 I0000        PASS A                r I                 b     P12e GM(0) #
+0066: 0n0 0s21w z0 I0000        PASS A                r I                 b     P13b GM(0) #
+0067: 0n0 0s21w z0 I0000        PASS A                r I                 b     P120 GM(0) #
+0068: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1e7 GM(0) #
+0069: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+006a: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+006b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P146 GM(0) #
+006c: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+006d: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+006e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P346 GM(0) #
+006f: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0070: 0n0 0s21w z0 I0000        PASS A                r I                 b     P373 GM(0) #
+0071: 0n0 0s21w z0 I0000        PASS A                r I                 b     P398 GM(0) #
+0072: 0n0 0s21w z0 I0000        PASS A                r I                 b     P409 GM(0) #
+0073: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3d1 GM(0) #
+0074: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3ab GM(0) #
+0075: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3be GM(0) #
+0076: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3f7 GM(0) #
+0077: 0n0 0s21w z0 I0000        PASS A                r I                 b     P42e GM(0) #
+0078: 0n0 0s21w z0 I0000        PASS A                r I                 b     P41b GM(0) #
+0079: 0n0 0s21w z0 I0000        PASS A                r I                 b     P3e4 GM(0) #
+007a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P441 GM(0) #
+007b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P15e GM(0) #
+007c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P16b GM(0) #
+007d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P151 GM(0) #
+007e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P270 GM(0) #
+007f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P27e GM(0) #
+0080: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1f3 GM(0) #
+0081: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0082: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0083: 0n0 0s21w z0 I0000        PASS A                r I                 b     P269 GM(0) #
+0084: 0n0 0s21w z0 I0000        PASS A                r I                 b     P277 GM(0) #
+0085: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0086: 0n0 0s21w z0 I0000        PASS A                r I                 b     P25b GM(0) #
+0087: 0n0 0s21w z0 I0000        PASS A                r I                 b     P262 GM(0) #
+0088: 0n0 0s21w z0 I0000        PASS A                r I                 b     P178 GM(0) #
+0089: 0n0 0s21w z0 I0000        PASS A                r I                 b     P185 GM(0) #
+008a: 0n0 0s21w z0 I0000        PASS A                r I                 b     P18e GM(0) #
+008b: 0n0 0s21w z0 I0000        PASS A                r I                 b     P195 GM(0) #
+008c: 0n0 0s21w z0 I0000        PASS A                r I                 b     P19d GM(0) #
+008d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1a4 GM(0) #
+008e: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+008f: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0090: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0091: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0092: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0093: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0094: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0095: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0096: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0097: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0098: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+0099: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+009a: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+009b: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+009c: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+009d: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1c6 GM(0) #
+009e: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1d3 GM(0) #
+009f: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1b8 GM(0) #
+00a0: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1ac GM(0) #
+00a1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a4: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00a9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00aa: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ab: 0n0 0s21w z0 I0000        PASS A                r I                 b     P32f GM(0) #
+00ac: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ad: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1de GM(0) #
+00ae: 0n0 0s21w z0 I0000        PASS A                r I                 b     P1ee GM(0) #
+00af: 0n0 0s21w z0 I0000        PASS A                r I                 b     P455 GM(0) #
+00b0: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b4: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00b9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ba: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00bb: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00bc: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00bd: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00be: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00bf: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c0: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c4: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00c9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ca: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00cb: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00cc: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00cd: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ce: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00cf: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d0: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d4: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00d9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00da: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00db: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00dc: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00dd: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00de: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00df: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e0: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e4: 0n0 0s00w z0 I5db8 VP--   A + NOT(F) + C LOAD ABw bus00             beq   P100 GM(2) # ?? raw instruction, 00 81 db 05 20 00 00 00
+00e5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00e9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ea: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00eb: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ec: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ed: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ee: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ef: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f0: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f1: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f2: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f3: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f4: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f5: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f6: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f7: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f8: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00f9: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00fa: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00fb: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00fc: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00fd: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00fe: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+00ff: 0n0 0s00w z0 I0000 VP--   CLEAR + C      LOAD ABw bus00             beq   P000 GM(0) #
+
+1e ?? PP done
+0100: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P100 GM(1) # wait for GM
+0101: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+1d PP_EP cmd interface test
+loop
+0102: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0103: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0104: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0105: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0106: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0107: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0108: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P108       # wait for EP
+0109: 1n1 1s8fw z1 I0000        PASS A                r I      EPcmnd                      # EP command = 0000
+010a: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+010b: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+010c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+010d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+010e: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+010f: 0n1 0s21w z0 I0000        PASS A                r I                 bEP   P10f       # wait for EP
+0110: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+0111: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = previous (restore value 0000)
+0112: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0113: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P115       # (fff) == 0
+(fff) != 0
+0114: 0n0 0s21w z0 I2000        PASS A                r I                 b     P102 GM(1) # loop, branch to 0102, loop start
+(fff) == 0
+0115: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0116: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P116 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0000, pass
+0117: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+03 alu add 1 carry in 1 test
+0118: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0119: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+011a: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+011b: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+011c: 0n1 0s21w z0 I0000        A + B + C             r I                                  # ffff + 0001 + C,1
+011d: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, 0001
+011e: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P11e GM(1) # wait for GM, PASS B -> gm(c800c000) == 0001, pass
+011f: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+67 (03 + 64), alu add 1 carry in 1 test, loop
+0120: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0121: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0122: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  #
+0123: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0124: 0n1 0s21w z0 I0000        A + B + C             r I                                  #
+0125: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 #
+0126: 0n0 0s21w z0 I2000        PASS B                r I                 b     P120 GM(1) #
+
+01 alu add 1 carry in 0 test
+0127: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0128: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0129: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+012a: 0n1 0s21w z0 I0000        A + B                 r I                                  # 0000 + ffff + 0
+012b: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, ffff
+012c: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P12c GM(1) # wait for GM, PASS B -> gm(c800c000) == ffff, pass
+012d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+65 (01 + 64), alu add 1 carry in 0 test, loop
+012e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+012f: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+0130: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0131: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0132: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 #
+0133: 0n0 0s21w z0 I2000        PASS B                r I                 b     P12e GM(1) #
+
+02 alu add carry in 1 test
+0134: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0135: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0136: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0137: 0n1 0s21w z0 I0000        A + B + 1             r I                                  # 0000 + ffff + 1
+0138: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, 0000
+0139: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P139 GM(1) # wait for GM, PASS B -> gm(c800c000) == 0000, pass
+013a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+66 (02 + 64), alu add carry in 1 test, loop
+013b: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+013c: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+013d: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+013e: 0n1 0s21w z0 I0000        A + B + 1             r I                                  #
+013f: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 #
+0140: 0n0 0s21w z0 I2000        PASS B                r I                 b     P13b GM(1) #
+
+07 alu And test
+0141: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0142: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0143: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0144: 0n0 0s21w z0 I2000        A AND B               r I                 bGM   P144 GM(1) # wait for GM, A AND B -> gm(c800c000) == ffff, pass
+0145: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+6b (07 + 64), alu And test, loop
+0146: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0147: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0148: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0149: 0n0 0s21w z0 I2000        A AND B               r I                 b     P146 GM(1) #
+
+19 alu carry control test
+014a: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+014b: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+014c: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+014d: 0n1 0s21w z0 I0000        A + B + 1             r I                                  # ffff + 0000 + 1
+014e: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0000
+014f: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P14f GM(1) # wait for GM, PASS A -> gm(c800c000) == 0000, pass
+0150: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7d (19 + 64), alu carry control test, loop
+0151: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0152: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0153: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  #
+0154: 0n1 0s21w z0 I0000        A + B + 1             r I                                  #
+0155: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+0156: 0n0 0s21w z0 I2000        PASS A                r I                 b     P151 GM(1) #
+
+17 alu carry control-0 test
+0157: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0158: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0159: 0n1 0s21w z0 I0001        CLEAR          LOAD B r I                                  # B = 0001
+015a: 0n1 0s21w z0 I0000        A + B                 r I                                  # ffff + 0001 + 0
+015b: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0000
+015c: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P15c GM(1) # wait for GM, PASS A -> gm(c800c000) == 0000, pass
+015d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7b (17 + 64), alu carry control-0 test, loop
+015e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+015f: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0160: 0n1 0s21w z0 I0001        CLEAR          LOAD B r I                                  #
+0161: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0162: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+0163: 0n0 0s21w z0 I2000        PASS A                r I                 b     P15e GM(1) #
+
+18 alu carry control-1 test
+0164: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0165: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0166: 0n1 0s21w z0 I0001        CLEAR          LOAD B r I                                  # B = 0001
+0167: 0n1 0s21w z0 I0000        A + B + 1             r I                                  # ffff + 0001 + 1
+0168: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0001
+0169: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P169 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0001, pass
+016a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7c (18 + 64), alu carry control-1 test, loop
+016b: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+016c: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+016d: 0n1 0s21w z0 I0001        CLEAR          LOAD B r I                                  #
+016e: 0n1 0s21w z0 I0000        A + B + 1             r I                                  #
+016f: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+0170: 0n0 0s21w z0 I2000        PASS A                r I                 b     P16b GM(1) #
+
+24 alu neg sub test
+0171: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0172: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0173: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+0174: 0n1 0s21w z0 I0000        B - A                 r I                                  # 0000 + ~ffff + 1
+0175: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0001
+0176: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P176 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0001, pass
+0177: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+88 (24 + 64) alu neg sub test, loop
+0178: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0179: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+017a: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  #
+017b: 0n1 0s21w z0 I0000        B - A                 r I                                  #
+017c: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+017d: 0n0 0s21w z0 I2000        PASS A                r I                 b     P178 GM(1) #
+
+25 alu neg sub 0 test
+017e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+017f: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  # A = fffe
+0180: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0181: 0n1 0s21w z0 I0000        B - A                 r I                                  # ffff + ~fffe + 1
+0182: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0001
+0183: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P183 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0001, pass
+0184: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+89 (25 + 64) alu neg sub 0 test, loop
+0185: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0186: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  #
+0187: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0188: 0n1 0s21w z0 I0000        B - A                 r I                                  #
+0189: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+018a: 0n0 0s21w z0 I2000        PASS A                r I                 b     P185 GM(1) #
+
+26 alu One test
+018b: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+018c: 0n0 0s21w z0 I2000        PRESET                r I                 bGM   P18c GM(1) # wait for GM, PRESET -> gm(c800c000) == ffff, pass
+018d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+8a (26 + 64) alu One test, loop
+018e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+018f: 0n0 0s21w z0 I2000        PRESET                r I                 b     P18e GM(1) #
+
+27 alu Or test
+0190: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0191: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0192: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0193: 0n0 0s21w z0 I2000        A OR B                r I                 bGM   P193 GM(1) # wait for GM, A OR B -> gm(c800c000) == ffff, pass
+0194: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+8b (27 + 64) alu Or test, loop
+0195: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0196: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+0197: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0198: 0n0 0s21w z0 I2000        A OR B                r I                 b     P195 GM(1) #
+
+28 alu PassA test
+0199: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+019a: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+019b: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P19b GM(1) # wait for GM, PASS A -> gm(c800c000) == ffff, pass
+019c: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+8c (28 + 64) alu PassA test, loop
+019d: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+019e: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+019f: 0n0 0s21w z0 I2000        PASS A                r I                 b     P19d GM(1) #
+
+29 alu PassB test
+01a0: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01a1: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01a2: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P1a2 GM(1) # wait for GM, PASS B -> gm(c800c000) == ffff, pass
+01a3: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+8d (29 + 64) alu PassB test, loop
+01a4: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01a5: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01a6: 0n0 0s21w z0 I2000        PASS B                r I                 b     P1a4 GM(1) #
+
+3c alu SUBDIAG test
+01a7: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01a8: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+01a9: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+01aa: 0n0 0s21w z0 I2000        A - B                 r I                 bGM   P1aa GM(1) # wait for GM, A + ~B + 1 -> gm(c800c000) == ffff, pass
+01ab: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+a0 (3c + 64) alu SUBDIAG test, loop
+01ac: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01ad: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+01ae: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  #
+01af: 0n0 0s21w z0 I2000        A - B                 r I                 b     P1ac GM(1) #
+
+3b alu SUBCIDIAG test
+01b0: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01b1: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+01b2: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01b3: 0n1 0s21w z0 I0000        A + B                 r I                                  # ffff + ffff ( set carry )
+01b4: 0n1 0s21w z0 I0000        A + NOT(B) + C        r I                                  # ffff + ~ffff + C,1
+01b5: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0000
+01b6: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P1b6 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0000, pass
+01b7: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+9f (3b + 64) alu SUBCIDIAG test, loop
+01b8: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01b9: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+01ba: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01bb: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+01bc: 0n1 0s21w z0 I0000        A + NOT(B) + C        r I                                  #
+01bd: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+01be: 0n0 0s21w z0 I2000        PASS A                r I                 b     P1b8 GM(1) #
+
+39 alu SUB0DIAG
+01bf: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01c0: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+01c1: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01c2: 0n1 0s21w z0 I0000        A + NOT(B)            r I                                  # 0000 + ~ffff + 0
+01c3: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, 0000
+01c4: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P1c4 GM(1) # wait for GM, PASS B -> gm(c800c000) == 0000, pass
+01c5: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+9d (39 + 64) alu SUB0DIAG, loop
+01c6: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01c7: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+01c8: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01c9: 0n1 0s21w z0 I0000        A + NOT(B)            r I                                  #
+01ca: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 #
+01cb: 0n0 0s21w z0 I2000        PASS B                r I                 b     P1c6 GM(1) #
+
+3a alu SUB1DIAG test
+01cc: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01cd: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+01ce: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01cf: 0n1 0s21w z0 I0000        A - B                 r I                                  # 0000 + ~ffff + 1
+01d0: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, 0001
+01d1: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P1d1 GM(1) # wait for GM, PASS A -> gm(c800c000) == 0001, pass
+01d2: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+9e (3a + 64) alu SUB1DIAG test, loop
+01d3: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01d4: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+01d5: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01d6: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+01d7: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 #
+01d8: 0n0 0s21w z0 I2000        PASS A                r I                 b     P1d3 GM(1) #
+
+49 alu Xor test
+01d9: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01da: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+01db: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01dc: 0n0 0s21w z0 I2000        A XOR B               r I                 bGM   P1dc GM(1) # wait for GM, A XOR B -> gm(c800c000) == ffff, pass
+01dd: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+ad (49 + 64) alu Xor test, loop
+01de: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01df: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+01e0: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01e1: 0n0 0s21w z0 I2000        A XOR B               r I                 b     P1de GM(1) #
+
+04 alu Add test
+01e2: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01e3: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+01e4: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+01e5: 0n0 0s21w z0 I2000        A + B                 r I                 bGM   P1e5 GM(1) # wait for GM, A + B + 0 -> gm(c800c000) == ffff, pass
+01e6: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+68 (04 + 64) alu Add test, loop
+01e7: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01e8: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+01e9: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+01ea: 0n0 0s21w z0 I2000        A + B                 r I                 b     P1e7 GM(1) #
+
+4a alu Zero test
+01eb: 0n1 0s21w z0 I0000        PRESET                r I                                  #
+01ec: 0n0 0s21w z0 I2000        CLEAR                 r I                 bGM   P1ec GM(1) # wait for GM, CLEAR -> gm(c800c000) == 0000, pass
+01ed: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+ae (4a + 64) alu Zero test, loop
+01ee: 0n1 0s21w z0 I0000        PRESET                r I                                  #
+01ef: 0n0 0s21w z0 I2000        CLEAR                 r I                 b     P1ee GM(1) #
+
+1c PP done test
+01f0: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01f1: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P1f1 GM(1) # wait for GM, gm(cc000000), bit 1 set (PP done), pass
+01f2: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+80 (1c + 64) PP done test, loop
+01f3: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+01f4: 0n0 0s21w z0 I2000        PASS A                r I                 b     P1f3 GM(1) #
+
+00 ??
+01f5: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+01f6: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore previous value
+01f7: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+01f8: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P1fa       # A, (fff) == 0
+(fff) != 0
+01f9: 0n0 0s21w z0 I2000        PASS A                r I                 b     P1f5 GM(1) # loop
+(fff) == 0
+01fa: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+01fb: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P1fb GM(1) # wait for GM, PASS A
+01fc: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+2e SRAM write test, 0x5555, 0xaaaa
+01fd: 0n1 0s21w z0 I1000        PASS A         LOAD A r I                                  # A = 1000
+01fe: 0n1 0s21w z0 I5555        PASS A         LOAD B r I                                  # B = 5555
+loop
+01ff: 0n1 0s21w z0 I0000        DEC A                 r I                                  #
+0200: 0n1 0s21w z0 I0000        PASS B         LOAD A r F1                                 # A = result, DEC A
+0201: 0n1 0s21w z0 I0000 VPLF   DEC A                 w F1P                                # VP = R; (VP) = B, 5555
+0202: 0n1 0s21w z0 I0000        NOT(B)         LOAD A r F1                                 # A = result, DEC A
+0203: 0n1 0s21w z0 I0000 VPLF   PASS A                w F1P               bneq  P1ff       # VP = R; (VP) = ~B, aaaa; inst 0201, DEC A != 0
+next (DEC A == 0)
+0204: 0n1 0s21w z0 I5555        PASS A         LOAD A r I                                  # A = 5555
+0205: 0n1 0s21w z0 I0fff VPLI   PASS A                r ??                                 # VP = 0fff
+loop
+0206: 0n1 0s21w z0 I0000        PASS A         LOAD B r SVP                                # B = (VP)
+0207: 0n1 0s21w z0 I0000        A - B          LOAD B r VP                                 # B = VP
+0208: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0209: 0n1 0s21w z0 I0000        NOT(A)                r I                 bneq  P2a7       # A != B,(VP), jump 02a7, error
+A == B
+020a: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, ~A
+020b: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+020c: 0n1 0s21w z0 I0000        DEC B                 r I                                  #
+020d: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, DEC B
+020e: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                bneq  P206       # VP = DEC B; inst 020c, DEC B != 0
+next (DEC B == 0)
+020f: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P20f GM(1) # wait for GM, PASS B -> gm(c800c000) == 0000, pass
+0210: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+2f SRAM write test, 0xaaaa, 0x5555
+0211: 0n1 0s21w z0 I1000        PASS A         LOAD A r I                                  # A = 1000
+0212: 0n1 0s21w z0 Iaaaa        PASS A         LOAD B r I                                  # B = aaaa
+loop
+0213: 0n1 0s21w z0 I0000        DEC A                 r I                                  #
+0214: 0n1 0s21w z0 I0000        PASS B         LOAD A r F1                                 # A = result, DEC A
+0215: 0n1 0s21w z0 I0000 VPLF   DEC A                 w F1P                                # VP = R; (VP) = B, aaaa
+0216: 0n1 0s21w z0 I0000        NOT(B)         LOAD A r F1                                 # A = result, DEC A
+0217: 0n1 0s21w z0 I0000 VPLF   PASS A                w F1P               bneq  P213       # VP = R; (VP) = ~B, 5555; inst 0215, DEC A != 0
+next (DEC A == 0)
+0218: 0n1 0s21w z0 Iaaaa        PASS A         LOAD A r I                                  # A = aaaa
+0219: 0n1 0s21w z0 I0fff VPLI   PASS A                r ??                                 # VP = 0fff
+loop
+021a: 0n1 0s21w z0 I0000        PASS A         LOAD B r SVP                                # B = (VP)
+021b: 0n1 0s21w z0 I0000        A - B          LOAD B r VP                                 # B = VP
+021c: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+021d: 0n1 0s21w z0 I0000        NOT(A)                r I                 bneq  P2a7       # A != B,(VP), jump 02a7, error
+A == B
+021e: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, ~A
+021f: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+0220: 0n1 0s21w z0 I0000        DEC B                 r I                                  #
+0221: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, DEC B
+0222: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                bneq  P21a       # VP = DEC B; inst 0220, DEC B != 0
+next (DEC B == 0)
+0223: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P223 GM(1) # wait for GM, PASS B -> gm(c800c000) == 0000, pass
+0224: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+05 ??, read SRAM(B)
+0225: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+0226: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, PASS B
+0227: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = R
+0228: 0n1 0s21w z0 I0000        PASS A         LOAD A r SVP                                # A = (VP)
+0229: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P229 GM(1) # wait GM, PASS A -> gm(c800c000)
+022a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+32 SRAM read test, SRAM(000) == aaaa
+022b: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+022c: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBI                                # A = VP(0)
+022d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+022e: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+022f: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore A = VP(0)
+0230: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0231: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P233       # inst 022f, PASS A, (fff) == 0
+(fff) != 0
+0232: 0n0 0s21w z0 I2000        PASS A                r I                 b     P22b GM(1) # loop
+(fff) == 0
+0233: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0234: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P234 GM(1) # wait GM, PASS A -> gm(c800c000) == aaaa, pass
+0235: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+34 SRAM write test, SRAM(000) = aaaa
+0236: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+0237: 0n1 0s21w z0 Iaaaa        PASS A         LOAD A w I                                  # (VP) = aaaa; A = aaaa
+0238: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+0239: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore A
+023a: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+023b: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P23d       # inst 0239, PASS A, (fff) == 0
+(fff) != 0
+023c: 0n0 0s21w z0 I2000        PASS A                r I                 b     P236 GM(1) # loop
+(fff) == 0
+023d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+023e: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P23e GM(1) # wait GM, PASS A -> gm(c800c000)
+023f: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+33 SRAM read test, SRAM(001) == aaaa
+0240: 0n1 0s21w z0 I0001 VPLI   PASS A                r ??                                 # VP = 0001
+0241: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBP                                # A = (VP)
+0242: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0243: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+0244: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore A = (VP)
+0245: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0246: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P248       # inst 0244, PASS A, (fff) == 0
+(fff) != 0
+0247: 0n0 0s21w z0 I2000        PASS A                r I                 b     P22b GM(1) # jump 022b, SRAM read test, SRAM(000) == aaaa
+(fff) == 0
+0248: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0249: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P249 GM(1) # wait GM, PASS A -> gm(c800c000) == aaaa, pass
+024a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+35 SRAM write test, SRAM(001) = aaaa
+024b: 0n1 0s21w z0 I0001 VPLI   PASS A                r ??                                 # VP = 0001
+024c: 0n1 0s21w z0 Iaaaa        PASS A         LOAD A r I                                  # A = aaaa
+024d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+024e: 0n1 0s21w z0 I0000        PASS A                w F1P                                # (VP) = inst 024d, PASS A, aaaa
+024f: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+0250: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore A = aaaa
+0251: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0252: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P254       # inst 0250, PASS A, (fff) == 0
+(fff) != 0
+0253: 0n0 0s21w z0 I2000        PASS A                r I                 b     P236 GM(1) # jump 0236, SRAM write test, SRAM(000) = aaaa
+(fff) == 0
+0254: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0255: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P255 GM(1) # wait GM, PASS A -> gm(c800c000)
+0256: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+22 alu InvA test
+0257: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0258: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+0259: 0n0 0s21w z0 I2000        NOT(A)                r I                 bGM   P259 GM(1) # wait GM, NOT(A) -> gm(c800c000) == ffff, pass
+025a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+86 (22 + 64) alu InvA test, loop
+025b: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+025c: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+025d: 0n0 0s21w z0 I2000        NOT(A)                r I                 b     P25b GM(1) #
+
+23 alu InvB test
+025e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+025f: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0260: 0n0 0s21w z0 I2000        NOT(B)                r I                 bGM   P260 GM(1) # wait GM, NOT(B) -> gm(c800c000) == 0000, pass
+0261: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+87 (23 + 64) alu InvB test, loop
+0262: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0263: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0264: 0n0 0s21w z0 I2000        NOT(B)                r I                 b     P262 GM(1) #
+
+1f alu IncA test
+0265: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0266: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0267: 0n0 0s21w z0 I2000        INC A                 r I                 bGM   P267 GM(1) # wait GM, INC A -> gm(c800c000) == 0000, pass
+0268: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+83 (1f + 64) alu IncA test, loop
+0269: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+026a: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+026b: 0n0 0s21w z0 I2000        INC A                 r I                 b     P269 GM(1) #
+
+1a alu DecA test
+026c: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+026d: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+026e: 0n0 0s21w z0 I2000        DEC A                 r I                 bGM   P26e GM(1) # wait GM, DEC A -> gm(c800c000) == ffff, pass
+026f: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7e (1a + 64) alu DecA test, loop
+0270: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0271: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  #
+0272: 0n0 0s21w z0 I2000        DEC A                 r I                 b     P270 GM(1) #
+
+20 alu IncB test
+0273: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0274: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0275: 0n0 0s21w z0 I2000        INC B                 r I                 bGM   P275 GM(1) # wait GM, INC B -> gm(c800c000) == 0000, pass
+0276: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+84 (20 + 64) alu IncB test, loop
+0277: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0278: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0279: 0n0 0s21w z0 I2000        INC B                 r I                 b     P277 GM(1) #
+
+1b alu DecB test
+027a: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+027b: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+027c: 0n0 0s21w z0 I2000        DEC B                 r I                 bGM   P27c GM(1) # wait GM, DEC B -> gm(c800c000) == ffff, pass
+027d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7f (1b + 64) alu DecB test, loop
+027e: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+027f: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  #
+0280: 0n0 0s21w z0 I2000        DEC B                 r I                 b     P27e GM(1) #
+
+37 SRAM write test, PPSRAM inv addr=data
+0281: 0n1 0s21w z0 I0fff        PASS A         LOAD A r I                                  # A = 0fff
+0282: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+loop
+0283: 0n1 0s21w z0 I0000        DEC A                 r I                                  #
+0284: 0n1 0s21w z0 I0000        INC B          LOAD A r F1                                 # A = result, DEC A
+0285: 0n1 0s21w z0 I0000 VPLF   PASS A         LOAD B w F1P               bneq  P283       # VP = result, DEC A; (VP) and B = result, INC B; DEC A != 0
+next (DEC A == 0)
+0286: 0n1 0s21w z0 I0fff        PASS A         LOAD A r I                                  # A = 0fff
+0287: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+loop
+0288: 0n1 0s21w z0 I0000        PASS A         LOAD B r SVP                                # B = (VP)
+0289: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+028a: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+028b: 0n1 0s21w z0 I0000        DEC A                 r I                 bneq  P2a7       # A, address != B, (VP) data, jump 02a7, error
+A == B
+028c: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, DEC A
+028d: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+028e: 0n1 0s21w z0 I0000        INC B                 r I                                  #
+028f: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, INC B
+0290: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                bneq  P288       # VP = result, INC B; INC B != 0
+next (INC B == 0)
+0291: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P291 GM(1) # wait GM, PASS B -> gm(c800c000) == 0fff ?, pass
+0292: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+30 ??, read VP
+0293: 0n1 0s21w z0 I0000        PASS A         LOAD A r VP                                 # A = VP
+0294: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P294 GM(1) # wait GM, PASS A -> gm(c800c000) = VP
+0295: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+36 SRAM write test, PPSRAM wrt addr=data
+0296: 0n1 0s21w z0 I1000        PASS A         LOAD A r I                                  # A = 1000
+loop
+0297: 0n1 0s21w z0 I0000        DEC A                 r I                                  #
+0298: 0n1 0s21w z0 I0000        DEC A          LOAD A r F1                                 # A = result, DEC A
+0299: 0n1 0s21w z0 I0000 VPLF   PASS A                w F1P               bneq  P297       # VP = result, DEC A; (VP) = result, DEC A; DEC A != 0
+next (DEC A == 0)
+029a: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+029b: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+loop
+029c: 0n1 0s21w z0 I0000        PASS A         LOAD B r SVP                                # B = (VP)
+029d: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+029e: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+029f: 0n1 0s21w z0 I0000        INC A                 r I                 bneq  P2a7       # A, address != B, data, jump 02a7, error
+A == B
+02a0: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, INC A
+02a1: 0n1 0s21w z0 I0fff        PASS A         LOAD B r I                                  # B = 0fff
+02a2: 0n1 0s21w z0 I0000        A AND B               r I                                  #
+02a3: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, A AND B, 0fff
+02a4: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                bneq  P29c       # VP = result, A AND B; A AND B != 0
+next (A AND B == 0)
+02a5: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P2a5 GM(1) # wait GM, PASS A -> gm(c800c000) == 0000, pass
+02a6: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+SRAM test error
+A address, B data
+02a7: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+02a8: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A
+02a9: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P2a9 GM(1) # wait GM, PASS B -> gm(c800c000)
+02aa: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+48 write PP SRAM word data SRAM (001) to address SRAM (000)
+02ab: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+02ac: 0n1 0s21w z0 I0001        PASS A         LOAD A r VBI                                # A = VP(1)
+02ad: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02ae: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02af: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02b0: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02b1: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = R, VP(0)
+02b2: 0n1 0s21w z0 I0000        PASS B                w F1P                                # (VP(0)) = result, PASS A, VP(1)
+02b3: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P2b3 GM(1) # wait GM, PASS B -> gm(c800c000) = VP(1), data
+02b4: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+2c read PP SRAM word data, address SRAM (000) to (c800c000)
+02b5: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+02b6: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02b7: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02b8: 0n1 0s21w z0 I0000        PASS A         LOAD B r VBI                                # B = VP(0)
+02b9: 0n1 0s21w z0 I0000 VPLR   PASS A                r ??                                 # VP = R, VP(0)
+02ba: 0n1 0s21w z0 I0000        PASS A         LOAD A r VBP                                # A = (VP(0))
+02bb: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+02bc: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P2bc GM(1) # wait GM, PASS A -> gm(c800c000) = (VP(0)), data
+02bd: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+38 ?? call/stack test ?
+02be: 0n0 0s21w z0 I0000        CLEAR                 r I                            GM(0) #
+02bf: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+02c0: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+02c1: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, PASS A, 0001
+02c2: 0n1 0s21w z0 I0000        PASS A                r I                 c     P2ce       # call 02ce, B += 0002 + 0003 + 0004
+02c3: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+02c4: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+02c5: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, A + B
+02c6: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff, A = (fff)
+02c7: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore value
+02c8: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+02c9: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P2cb       # inst 02c7, PASS A (fff) == 0
+(fff) != 0
+02ca: 0n0 0s21w z0 I2000        PASS A                r I                 b     P2be GM(1) # loop
+(fff) == 0
+02cb: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+02cc: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P2cc GM(1) # wait GM, PASS A, 000f -> gm(c800c000)
+02cd: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+B += 0002 + 0003 + 0004
+02ce: 0n1 0s21w z0 I0002        PASS A         LOAD A r I                                  # A = 0002
+02cf: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+02d0: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+02d1: 0n1 0s21w z0 I0000        PASS A                r I                 c     P2d6       # call 02d6, B += 0003
+02d2: 0n1 0s21w z0 I0004        PASS A         LOAD A r I                                  # A = 0004
+02d3: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+02d4: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+02d5: 0n1 0s21w z0 I0000        PASS A                r I                 ret              #
+
+B += 0003
+02d6: 0n1 0s21w z0 I0003        PASS A         LOAD A r I                                  # A = 0003
+02d7: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+02d8: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+02d9: 0n1 0s21w z0 I0000        PASS A                r I                 ret              #
+
+?? (nothing reaches here)
+02da: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff, A = (fff)
+02db: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore value
+02dc: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+02dd: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P2df       # inst 02db, PASS A (fff) == 0
+(fff) != 0
+02de: 0n0 0s21w z0 I2000        PASS A                r I                 b     P2be GM(1) # jump 02be test
+(fff) == 0
+02df: 0n1 0s21w z0 I0000        PASS B                r I                                  #
+02e0: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P2e0 GM(1) # wait GM, PASS B -> gm(c800c000)
+02e1: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+40 VP decrementer test
+02e2: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+02e3: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+02e4: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+loop
+02e5: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+02e6: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+02e7: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P30a       # A != B, error, jump 030a
+A == B, VP
+02e8: 0n1 0s21w z0 I0008        PASS A         LOAD A r I                                  # A = 0008
+02e9: 0n1 0s21w z0 I0fff        B - A          LOAD B r I                                  # B = 0fff
+02ea: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, B, VP - A, 0008
+02eb: 0n1 0s21w z0 I0000        A AND B               r I                 beq   P2ee       # result, B - A == 0, end loop
+B - A != 0
+02ec: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, A AND B, 0fff
+02ed: 0n1 0s21w z0 I0000 VP--   PASS A         LOAD B r VP                b     P2e5       # dec VP (VP -= 8); B = VP
+next, B - A == 0
+02ee: 0n1 0s21w z0 I0000 VP--   PASS A         LOAD B r VP                                 # dec VP (VP -= 8); B = VP
+02ef: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P2ef GM(1) # wait GM, PASS B -> gm(c800c000) == 0000, pass
+02f0: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+41 VP incrementer test
+02f1: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+02f2: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+02f3: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+loop
+02f4: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+02f5: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+02f6: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P30a       # A != B, error, jump 030a
+A == B, VP
+02f7: 0n1 0s21w z0 I0008        PASS A         LOAD A r I                                  # A = 0008
+02f8: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+02f9: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, A, 0008 + B, VP
+02fa: 0n1 0s21w z0 I0000 VP++   PASS A         LOAD B r VP                bneq  P2f4       # inc VP (VP += 8); B = VP; result, A + B != 0
+next A + B == 0
+02fb: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P2fb GM(1) # wait GM, PASS B -> gm(c800c000) == 0000, pass
+02fc: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+42 VP test for loading addr
+02fd: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+02fe: 0n1 0s21w z0 I0000        PASS A         LOAD A r I                                  # A = 0000
+loop
+02ff: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                                 # B = VP
+0300: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0301: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0302: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P30a       # A != B, error, jump 030a
+A == B, VP
+0303: 0n1 0s21w z0 I0fff        PASS A         LOAD A r I                                  # A = 0fff
+0304: 0n1 0s21w z0 I0001        A - B          LOAD A r I                                  # A = 0001
+0305: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0306: 0n1 0s21w z0 I0000        A + B          LOAD A r F1                beq   P308       # A = result, A,0001 + B; inst 0304 A,0fff == B , end loop
+A, 0fff != B, VP
+0307: 0n1 0s21w z0 I0000 VPLF   PASS A                r ??                b     P2ff       # VP = result, A,0001 + B
+next A,0fff == B,VP
+0308: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P308 GM(1) # wait GM, PASS B -> gm(c800c000) == 0fff, pass
+0309: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+VP test error
+A address or count
+030a: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+030b: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A
+030c: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P30c GM(1) # wait GM, PASS A -> gm(c800c000)
+030d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+08 read A
+030e: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P30e GM(1) # wait GM, PASS A -> gm(c800c000)
+030f: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+09 read B
+0310: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P310 GM(1) # wait GM, PASS B -> gm(c800c000)
+0311: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+44 write VP ( = A )
+0312: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0313: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0314: 0n1 0s21w z0 I0000 VPLF   PASS A                r ??                b     P312       # VP = result, PASS A
+
+43 read ( B = ) VP
+0315: 0n1 0s21w z0 I0000        PASS A         LOAD B r VP                b     P315       # B = VP
+
+46 ?? read word count
+0316: 0n1 0s21w z0 I0000        PASS A         LOAD A r WC                                 # A = WC
+0317: 0n1 0s21w z0 I0000 VPLR   PASS A                r WC?                                # VP = R, WC
+0318: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff, A = (fff)
+0319: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore value
+031a: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+031b: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P31d       # inst 0319, PASS A, (fff) == 0
+(fff) != 0
+031c: 0n0 0s21w z0 I2000        PASS A                r I                 b     P316 GM(1) # loop
+(fff) == 0
+031d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+031e: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P31e GM(1) # wait GM, PASS A -> gm(c800c000) = WC
+031f: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+06 ?? read SRAM(000)
+0320: 0n1 0s21w z0 I0000 VPLI   PASS A                r ??                                 # VP = 0000
+0321: 0n1 0s21w z0 I0000        PASS A         LOAD A r SVP                                # A = (000)
+0322: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0323: 0n1 0s21w z0 I0fff VPLI   PASS A         LOAD A r SVI                                # VP = 0fff; A = (fff)
+0324: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1                                 # A = result, PASS A, restore value
+0325: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0326: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P328       # inst 0324, PASS A, (fff) == 0
+(fff) != 0
+0327: 0n0 0s21w z0 I2000        PASS A                r I                 b     P320 GM(1) # loop
+(fff) == 0
+0328: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0329: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P329 GM(1) # wait GM, PASS A -> gm(c800c000) = (000)
+032a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+47 read word count
+032b: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+032c: 0n1 0s21w z0 I0000        PASS A         LOAD A r WC                                 # A = WC
+032d: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P32d GM(1) # wait GM, PASS A -> gm(c800c000) = WC
+032e: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+ab (47 + 64) read word count, loop
+032f: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0330: 0n1 0s21w z0 I0000        PASS A         LOAD A r WC                                 # A = WC
+0331: 0n0 0s21w z0 I2000        PASS A                r I                 b     P32f GM(1) # wait GM, PASS A -> gm(c800c000) = WC
+
+21 pp to gm interrupt test
+0332: 0n0 0s21w z0 I8000        PASS A                r I                            GM(4) # signal interrupt
+0333: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P333 GM(1) # wait GM, PASS A -> gm(c800c000)
+0334: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+0a ?? unconditional branch test
+0335: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+0336: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0337: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0338: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, PASS A, 0001
+0339: 0n1 0s21w z0 I0000        PASS A                r I                 b     P340       # jump 0340
+B += A
+033a: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+033b: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+033c: 0n1 0s21w z0 I0000        PASS A                r I                 b     P33d       # jump 033d
+B += A
+033d: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+033e: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+033f: 0n1 0s21w z0 I0000        PASS A                r I                 b     P344       # jump 0344
+B += A
+0340: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0341: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+0342: 0n1 0s21w z0 I0000        PASS A                r I                 b     P33a       # jump 033a
+fail ?
+0343: 0n1 0s21w z0 I000a        PASS A         LOAD B r I                                  # B = 000a
+common
+0344: 0n0 0s21w z0 I2000        PASS B                r I                 bGM   P344 GM(1) # wait GM, PASS B -> gm(c800c000) = 0004 ?
+0345: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+6e (0a + 64) ?? unconditional branch test, loop
+0346: 0n1 0s21w z0 I0000        PASS A         LOAD B r I                                  # B = 0000
+0347: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+0348: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0349: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, PASS A, 0001
+034a: 0n1 0s21w z0 I0000        PASS A                r I                 b     P351       # jump 0351
+B += A
+034b: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+034c: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+034d: 0n1 0s21w z0 I0000        PASS A                r I                 b     P34e       # jump 034e
+B += A
+034e: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+034f: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+0350: 0n1 0s21w z0 I0000        PASS A                r I                 b     P355       # jump 0355
+B += A
+0351: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0352: 0n1 0s21w z0 I0000        PASS A         LOAD B r F1                                 # B = result, A + B
+0353: 0n1 0s21w z0 I0000        PASS A                r I                 b     P34b       # jump 034b
+fail
+0354: 0n1 0s21w z0 I000a        PASS A         LOAD B r I                                  # B = 000a
+common
+0355: 0n0 0s21w z0 I2000        PASS B                r I                 b     P346 GM(1) # jump 0346, loop
+
+0c ?? conditional branch test
+0356: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0357: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0358: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0359: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+035a: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P370       #
+CLEAR !< 0 ?
+035b: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  # A = fffe
+035c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+035d: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+035e: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P360       #
+PASS A, fffe == 0 ?
+035f: 0n1 0s21w z0 I0000        PASS A                r I                 b     P370       #
+PASS A, fffe != 0 ?
+0360: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0361: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0362: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P364       # result, CLEAR == 0
+CLEAR != 0 ?
+0363: 0n1 0s21w z0 I0000        PASS A                r I                 b     P370       #
+CLEAR == 0 ?
+0364: 0n1 0s21w z0 Ifffd        PASS A         LOAD A r I                                  # A = fffd
+0365: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0366: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0367: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P369       #
+PASS A, fffd !< 0 ?
+0368: 0n1 0s21w z0 I0000        PASS A                r I                 b     P370       #
+PASS A, fffd < 0 ?
+0369: 0n1 0s21w z0 Ifffc        PASS A         LOAD A r I                                  # A = fffc
+036a: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+036b: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+036c: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P36e       #
+PASS A, fffc !<= 0 ?
+036d: 0n1 0s21w z0 I0000        PASS A                r I                 b     P370       #
+PASS A, fffc <= 0 ?
+036e: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+036f: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+0370: 0n0 0s21w z0 I0000        PASS A                r I                            GM(0) #
+0371: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P371 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005 ?
+0372: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+70 (0c + 64) ?? conditional branch test, loop
+0373: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+0374: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0375: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0376: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0377: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P38d       #
+0378: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  #
+0379: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+037a: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+037b: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P37d       #
+037c: 0n1 0s21w z0 I0000        PASS A                r I                 b     P38d       #
+037d: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+037e: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+037f: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P381       #
+0380: 0n1 0s21w z0 I0000        PASS A                r I                 b     P38d       #
+0381: 0n1 0s21w z0 Ifffd        PASS A         LOAD A r I                                  #
+0382: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0383: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0384: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P386       #
+0385: 0n1 0s21w z0 I0000        PASS A                r I                 b     P38d       #
+0386: 0n1 0s21w z0 Ifffc        PASS A         LOAD A r I                                  #
+0387: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0388: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+0389: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P38b       #
+038a: 0n1 0s21w z0 I0000        PASS A                r I                 b     P38d       #
+038b: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+038c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+038d: 0n0 0s21w z0 I2000        PASS A                r I                 b     P373 GM(1) #
+
+0d COND EQ true test (zero flag)
+038e: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+038f: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+0390: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+0391: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0000
+0392: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P394       # A == B ( A - B == 0 )
+A != B
+0393: 0n1 0s21w z0 I0000        PASS A                r I                 b     P396       #
+A == B
+0394: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+0395: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+0396: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P396 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+0397: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+71 (0d + 64) COND EQ true test, loop
+0398: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0399: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  #
+039a: 0n1 0s21w z0 I0000        A + B                 r I                                  #
+039b: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+039c: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P39e       #
+039d: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3a0       #
+039e: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+039f: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03a0: 0n0 0s21w z0 I2000        PASS A                r I                 b     P398 GM(1) #
+
+10 COND LT true test (negative sign flag)
+03a1: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+03a2: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  # B = 0001
+03a3: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03a4: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, fffe
+03a5: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P3a7       # A < B
+A !< B
+03a6: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3a9       #
+A < B
+03a7: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+03a8: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+03a9: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P3a9 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+03aa: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+74 (10 + 64) COND LT true test, loop
+03ab: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+03ac: 0n1 0s21w z0 I0001        PASS A         LOAD B r I                                  #
+03ad: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03ae: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+03af: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P3b1       #
+03b0: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3b3       #
+03b1: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+03b2: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03b3: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3ab GM(1) #
+
+11 COND LTEQ true test (zero flag)
+03b4: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+03b5: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+03b6: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03b7: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0000
+03b8: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P3ba       # A <= B
+A !<= B
+03b9: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3bc       #
+A <= B
+03ba: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+03bb: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+03bc: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P3bc GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+03bd: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+75 (11 + 64) COND LTEQ true test, loop
+03be: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+03bf: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+03c0: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03c1: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+03c2: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P3c4       #
+03c3: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3c6       #
+03c4: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+03c5: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03c6: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3be GM(1) #
+
+0f COND latch true test
+03c7: 0n1 0s21w z0 I0000        PRESET         LOAD A r I                                  # A = 0000, F = ffff
+03c8: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+03c9: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+03ca: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P3cf       # F == 0
+F != 0
+03cb: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P3cd       # F != 0
+F == 0
+03cc: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3cf       #
+F != 0
+03cd: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+03ce: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+03cf: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P3cf GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+03d0: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+73 (0f + 64) COND latch true test, loop
+03d1: 0n1 0s21w z0 I0000        PRESET         LOAD A r I                                  #
+03d2: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+03d3: 0n1 0s21w z0 I0000        PASS A                r I              hf                  #
+03d4: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P3d9       #
+03d5: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P3d7       #
+03d6: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3d9       #
+03d7: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+03d8: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03d9: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3d1 GM(1) #
+
+15 COND NEQ true test (zero flag)
+03da: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  # A = fffe
+03db: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+03dc: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03dd: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, ffff
+03de: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P3e0       # A != B
+A == B
+03df: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3e2       #
+A != B
+03e0: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+03e1: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+03e2: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P3e2 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+03e3: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+79 (15 + 64) COND NEQ true test, loop
+03e4: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  #
+03e5: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+03e6: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03e7: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+03e8: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P3ea       #
+03e9: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3ec       #
+03ea: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+03eb: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03ec: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3e4 GM(1) #
+
+12 COND LTEQ1 true test (negative sign flag)
+03ed: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  # A = fffe
+03ee: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+03ef: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03f0: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+03f1: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P3f3       # A <= B
+A !<= B
+03f2: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3f5       #
+A <= B
+03f3: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+03f4: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+03f5: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P3f5 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+03f6: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+76 (12 + 64) COND LTEQ1 true test, loop
+03f7: 0n1 0s21w z0 Ifffe        PASS A         LOAD A r I                                  #
+03f8: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+03f9: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+03fa: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+03fb: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P3fd       #
+03fc: 0n1 0s21w z0 I0000        PASS A                r I                 b     P3ff       #
+03fd: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+03fe: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+03ff: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3f7 GM(1) #
+
+0e COND EQ false test (zero flag)
+0400: 0n1 0s21w z0 I0000        CLEAR                 r I                                  # F = 0000
+0401: 0n1 0s21w z0 I0000        PRESET                r I                                  # F = ffff
+0402: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, ffff
+0403: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P405       # F == 0
+F != 0
+0404: 0n1 0s21w z0 I0000        PASS A                r I                 b     P407       #
+F == 0
+0405: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+0406: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+0407: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P407 GM(1) # wait GM, PASS A -> gm(c800c000) == ffff, pass
+0408: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+72 (0e + 64) COND EQ false test, loop
+0409: 0n1 0s21w z0 I0000        CLEAR                 r I                                  #
+040a: 0n1 0s21w z0 I0000        PRESET                r I                                  #
+040b: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+040c: 0n1 0s21w z0 I0000        PASS A                r I                 beq   P40e       #
+040d: 0n1 0s21w z0 I0000        PASS A                r I                 b     P410       #
+040e: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+040f: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0410: 0n0 0s21w z0 I2000        PASS A                r I                 b     P409 GM(1) #
+
+14 COND LT false test (negative sign flag)
+0411: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0412: 0n1 0s21w z0 Ifffe        PASS A         LOAD B r I                                  # B = fffe
+0413: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0414: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0001
+0415: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P417       # A < B
+A !< B
+0416: 0n1 0s21w z0 I0000        PASS A                r I                 b     P419       #
+A < B
+0417: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+0418: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+0419: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P419 GM(1) # wait GM, PASS A -> gm(c800c000) == 0001, pass
+041a: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+78 (14 + 64) COND LT false test, loop
+041b: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+041c: 0n1 0s21w z0 Ifffe        PASS A         LOAD B r I                                  #
+041d: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+041e: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+041f: 0n1 0s21w z0 I0000        PASS A                r I                 blt   P421       #
+0420: 0n1 0s21w z0 I0000        PASS A                r I                 b     P423       #
+0421: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+0422: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0423: 0n0 0s21w z0 I2000        PASS A                r I                 b     P41b GM(1) #
+
+13 COND LTEQ false test (zero flag, negative sign flag)
+0424: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0425: 0n1 0s21w z0 Ifffe        PASS A         LOAD B r I                                  # B = fffe
+0426: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0427: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0001
+0428: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P42a       # A <= B
+A !<= B
+0429: 0n1 0s21w z0 I0000        PASS A                r I                 b     P42c       #
+A <= B
+042a: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+042b: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+042c: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P42c GM(1) # wait GM, PASS A -> gm(c800c000) == 0001, pass
+042d: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+77 (13 + 64) COND LTEQ false test, loop
+042e: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+042f: 0n1 0s21w z0 Ifffe        PASS A         LOAD B r I                                  #
+0430: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0431: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+0432: 0n1 0s21w z0 I0000        PASS A                r I                 blteq P434       #
+0433: 0n1 0s21w z0 I0000        PASS A                r I                 b     P436       #
+0434: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+0435: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0436: 0n0 0s21w z0 I2000        PASS A                r I                 b     P3be GM(1) #
+
+16 COND NEQ true test (zero flag)
+0437: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  # A = ffff
+0438: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+0439: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+043a: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0000
+043b: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P43d       # A != B
+A == B
+043c: 0n1 0s21w z0 I0000        PASS A                r I                 b     P43f       #
+A != B
+043d: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+043e: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+043f: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P43f GM(1) # wait GM, PASS A -> gm(c800c000) == 0000, pass
+0440: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+7a (16 + 64) COND NEQ true test, loop
+0441: 0n1 0s21w z0 Iffff        PASS A         LOAD A r I                                  #
+0442: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0443: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0444: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+0445: 0n1 0s21w z0 I0000        PASS A                r I                 bneq  P447       #
+0446: 0n1 0s21w z0 I0000        PASS A                r I                 b     P449       #
+0447: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+0448: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0449: 0n0 0s21w z0 I2000        PASS A                r I                 b     P441 GM(1) #
+
+4b COND GT true test (carry flag)
+044a: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  # B = ffff
+044b: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  # A = 0001
+044c: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+044d: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  # A = result, 0002
+044e: 0n1 0s21w z0 I0000        PASS A                r I                 bgt   P450       # A > B
+A !> B
+044f: 0n1 0s21w z0 I0000        PASS A                r I                 b     P452       #
+A > B
+0450: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  # A = 0005
+0451: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+common
+0452: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+0453: 0n0 0s21w z0 I2000        PASS A                r I                 bGM   P453 GM(1) # wait GM, PASS A -> gm(c800c000) == 0005, pass
+0454: 0n1 0s21w z0 I0000        PASS A                r I                 halt             #
+
+af (4b + 64) COND GT true test, loop
+0455: 0n1 0s21w z0 Iffff        PASS A         LOAD B r I                                  #
+0456: 0n1 0s21w z0 I0001        PASS A         LOAD A r I                                  #
+0457: 0n1 0s21w z0 I0000        A - B                 r I                                  #
+0458: 0n1 0s21w z0 I0000        PASS A         LOAD A r F1             hf                  #
+0459: 0n1 0s21w z0 I0000        PASS A                r I                 bgt   P45b       #
+045a: 0n1 0s21w z0 I0000        PASS A                r I                 b     P45d       #
+045b: 0n1 0s21w z0 I0005        PASS A         LOAD A r I                                  #
+045c: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+045d: 0n1 0s21w z0 I0000        PASS A                r I                                  #
+045e: 0n0 0s21w z0 I2000        PASS A                r I                 b     P455 GM(1) #
